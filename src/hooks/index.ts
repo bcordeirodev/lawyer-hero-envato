@@ -97,6 +97,15 @@ export {
 export type { LocalStorageOptions } from './useLocalStorage'
 
 // ============================================================================
+// PERFORMANCE HOOKS
+// ============================================================================
+
+export {
+    useMemoryMonitoring, usePagePerformance, usePerformance
+} from './usePerformance'
+export type { PerformanceMetrics } from './usePerformance'
+
+// ============================================================================
 // ALL HOOKS (for convenience)
 // ============================================================================
 

@@ -5,9 +5,9 @@
 
 "use client"
 
-import React, { createContext, useContext, useState, useCallback, ReactNode } from 'react'
 import { LAWYER_CONFIG } from '@/config'
 import { useLocalStorage } from '@/hooks/useLocalStorage'
+import React, { createContext, ReactNode, useCallback, useContext, useState } from 'react'
 
 // ============================================================================
 // APP STATE TYPES
@@ -67,24 +67,24 @@ export interface AppContextType extends AppState, AppActions { }
 // INITIAL STATE
 // ============================================================================
 
-const initialState: AppState = {
-    // Lawyer data
-    lawyer: LAWYER_CONFIG.lawyer,
-    services: LAWYER_CONFIG.services,
-    contactInfo: LAWYER_CONFIG.lawyer.contact,
-    statistics: LAWYER_CONFIG.lawyer.statistics,
-
-    // UI State
-    isMenuOpen: false,
-    activeSection: 'home',
-    isLoading: false,
-    notifications: [],
-
-    // User preferences
-    preferredContact: 'whatsapp',
-    lastVisit: new Date().toISOString(),
-    visitCount: 0
-}
+// const initialState: AppState = {
+//     // Lawyer data
+//     lawyer: LAWYER_CONFIG.lawyer,
+//     services: LAWYER_CONFIG.services,
+//     contactInfo: LAWYER_CONFIG.lawyer.contact,
+//     statistics: LAWYER_CONFIG.lawyer.statistics,
+//
+//     // UI State
+//     isMenuOpen: false,
+//     activeSection: 'home',
+//     isLoading: false,
+//     notifications: [],
+//
+//     // User preferences
+//     preferredContact: 'whatsapp',
+//     lastVisit: new Date().toISOString(),
+//     visitCount: 0
+// }
 
 // ============================================================================
 // APP CONTEXT
@@ -103,7 +103,7 @@ interface AppProviderProps {
 
 export const AppProvider: React.FC<AppProviderProps> = ({
     children,
-    initialData = {}
+    initialData: _initialData = {}
 }) => {
     // Local storage hooks for persistent data
     const [preferredContact, setPreferredContactStorage] = useLocalStorage<'whatsapp' | 'email' | 'phone'>(
@@ -124,8 +124,8 @@ export const AppProvider: React.FC<AppProviderProps> = ({
     // State management
     const [lawyer, setLawyer] = useState(LAWYER_CONFIG.lawyer)
     const [services, setServices] = useState(LAWYER_CONFIG.services)
-    const [contactInfo, setContactInfo] = useState(LAWYER_CONFIG.lawyer.contact)
-    const [statistics, setStatistics] = useState(LAWYER_CONFIG.lawyer.statistics)
+    const [contactInfo] = useState(LAWYER_CONFIG.lawyer.contact)
+    const [statistics] = useState(LAWYER_CONFIG.lawyer.statistics)
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [activeSection, setActiveSection] = useState('home')
@@ -148,6 +148,10 @@ export const AppProvider: React.FC<AppProviderProps> = ({
         setIsLoading(loading)
     }, [])
 
+    const removeNotification = useCallback((id: string) => {
+        setNotifications(prev => prev.filter(notification => notification.id !== id))
+    }, [])
+
     const addNotification = useCallback((notification: Omit<Notification, 'id' | 'timestamp'>) => {
         const newNotification: Notification = {
             ...notification,
@@ -163,11 +167,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({
                 removeNotification(newNotification.id)
             }, notification.duration)
         }
-    }, [])
-
-    const removeNotification = useCallback((id: string) => {
-        setNotifications(prev => prev.filter(notification => notification.id !== id))
-    }, [])
+    }, [removeNotification])
 
     const clearNotifications = useCallback(() => {
         setNotifications([])

@@ -136,7 +136,7 @@ export const Textarea = forwardRef<TextareaRef, TextareaProps>(({
         if (autoResize) {
             adjustHeight()
         }
-    }, [internalValue, autoResize])
+    }, [internalValue, autoResize, adjustHeight])
 
     return (
         <div className="space-y-2">

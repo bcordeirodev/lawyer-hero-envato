@@ -1,15 +1,15 @@
 "use client"
 
+import { AnimatePresence, motion } from "framer-motion"
+import { Menu, Scale, X } from "lucide-react"
 import { useState } from "react"
-import { Scale, Menu, X } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
-import { useTheme } from "@/contexts/ThemeContext"
+// import { useTheme } from "@/contexts/ThemeContext" // Removido temporariamente
 import { ThemeToggle } from "@/components/ui/theme"
 import { LAWYER_CONFIG } from "@/config"
 
 export function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
-    const { theme } = useTheme()
+    // const { theme } = useTheme() // Removido temporariamente até implementação do tema
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen)

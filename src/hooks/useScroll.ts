@@ -3,7 +3,7 @@
  * Manages scroll detection, intersection observer, and scroll-based animations
  */
 
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 // ============================================================================
 // SCROLL TYPES
@@ -58,7 +58,7 @@ export function useScroll() {
         const maxScroll = document.documentElement.scrollHeight - window.innerHeight
         const scrollProgress = maxScroll > 0 ? (currentScrollY / maxScroll) * 100 : 0
 
-        setScrollState(prev => ({
+        setScrollState(_prev => ({
             scrollY: currentScrollY,
             scrollX: currentScrollX,
             scrollDirection: currentScrollY > lastScrollY.current ? 'down' : 'up',
@@ -188,7 +188,7 @@ export function useScrollProgress(elementId: string) {
             const element = document.getElementById(elementId)
             if (!element) return
 
-            const rect = element.getBoundingClientRect()
+            // const rect = element.getBoundingClientRect()
             const windowHeight = window.innerHeight
             const elementHeight = element.offsetHeight
 

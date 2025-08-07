@@ -61,6 +61,7 @@ function parseBoolean(value: string | undefined, defaultValue: boolean = false):
  * @param value - Valor string
  * @param defaultValue - Valor padrão
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function parseNumber(value: string | undefined, defaultValue: number = 0): number {
     if (!value) return defaultValue
     const parsed = parseInt(value, 10)

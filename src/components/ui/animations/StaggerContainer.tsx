@@ -78,7 +78,7 @@ export function StaggerContainer({
 export function StaggerItem({
     children,
     className,
-    index
+    index: _index
 }: StaggerItemProps) {
     return (
         <motion.div

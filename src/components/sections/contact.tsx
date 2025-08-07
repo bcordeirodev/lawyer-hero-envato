@@ -5,19 +5,19 @@
  * Displays contact information and contact form
  */
 
-import React from 'react'
-import { motion } from "framer-motion"
 import { ContactForm } from '@/components/forms/ContactForm'
 import { LAWYER_CONFIG } from '@/config'
-import { useTheme } from '@/contexts/ThemeContext'
-import { Mail, Phone, MapPin, Clock } from 'lucide-react'
+import { motion } from "framer-motion"
+import React from 'react'
+// import { useTheme } from '@/contexts/ThemeContext' // Removido temporariamente
+import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 
 /**
  * Contact Section Component
  * Provides contact information and a contact form for potential clients
  */
 export const Contact: React.FC = () => {
-    const { theme } = useTheme()
+    // const { theme } = useTheme() // Removido temporariamente até implementação do tema
     const { lawyer } = LAWYER_CONFIG
 
     const contactInfo = [

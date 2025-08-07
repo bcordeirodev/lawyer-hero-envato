@@ -11,8 +11,8 @@
  * @version 1.0.0
  */
 
-import { useState, useEffect, useCallback, useRef } from 'react'
-import { useAnimation } from './useAnimation'
+import { useCallback, useEffect, useRef, useState } from 'react'
+// import { useAnimation } from './useAnimation' // Removido temporariamente
 
 // ============================================================================
 // TYPES
@@ -81,7 +81,7 @@ export function useScrollAnimation(config: ScrollAnimationConfig = {}): UseScrol
         triggerOnce = true,
         delay = 0,
         duration = 0.6,
-        stagger = 0
+        // stagger: _stagger = 0  // Removido temporariamente
     } = config
 
     // ============================================================================
@@ -95,7 +95,7 @@ export function useScrollAnimation(config: ScrollAnimationConfig = {}): UseScrol
     })
 
     const ref = useRef<HTMLElement>(null)
-    const { fadeIn, scaleIn, slideInLeft, slideInRight } = useAnimation()
+    // const { fadeIn, scaleIn, slideInLeft, slideInRight } = useAnimation() // Removido temporariamente
 
     // ============================================================================
     // INTERSECTION OBSERVER

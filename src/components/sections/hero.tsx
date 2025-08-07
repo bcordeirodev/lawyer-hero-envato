@@ -1,7 +1,7 @@
 "use client"
 
 import { LAWYER_CONFIG } from "@/config"
-import { useTheme } from "@/contexts/ThemeContext"
+// import { useTheme } from "@/contexts/ThemeContext" // Removido temporariamente
 import { motion } from "framer-motion"
 import Image from "next/image"
 
@@ -10,7 +10,7 @@ import Image from "next/image"
  * Exibe informações do advogado, call-to-action e estatísticas
  */
 export function Hero() {
-    const { theme } = useTheme()
+    // const { theme } = useTheme() // Removido temporariamente até implementação do tema
     const { lawyer } = LAWYER_CONFIG
 
     const statistics = [

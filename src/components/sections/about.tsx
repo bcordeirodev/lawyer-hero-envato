@@ -1,7 +1,7 @@
 "use client"
 
 import { LAWYER_CONFIG } from "@/config"
-import { useTheme } from "@/contexts/ThemeContext"
+// import { useTheme } from "@/contexts/ThemeContext" // Removido temporariamente
 import { motion } from "framer-motion"
 
 /**
@@ -9,7 +9,7 @@ import { motion } from "framer-motion"
  * Displays information about the lawyer and their expertise
  */
 export function About() {
-    const { theme } = useTheme()
+    // const { theme } = useTheme() // Removido temporariamente até implementação do tema
     const { lawyer, about } = LAWYER_CONFIG
 
     return (

@@ -214,7 +214,7 @@ export function useContactForm(
         } finally {
             setIsLoading(false)
         }
-    }, [formData, onSuccess, onError])
+    }, [formData, onError])
 
     // ============================================================================
     // SUBMISSION LOGIC

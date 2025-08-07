@@ -1,12 +1,12 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Scale, Phone, Mail, MapPin, Clock, Award, Users, Shield, Zap } from "lucide-react"
-import { useTheme } from "@/contexts/ThemeContext"
+import { Clock, Mail, MapPin, Phone, Scale, Shield, Users, Zap } from "lucide-react"
+// import { useTheme } from "@/contexts/ThemeContext" // Removido temporariamente
 import { LAWYER_CONFIG } from "@/config"
 
 export function Footer() {
-    const { theme } = useTheme()
+    // const { theme } = useTheme() // Removido temporariamente até implementação do tema
     const { lawyer, services } = LAWYER_CONFIG
 
     const contactInfo = [

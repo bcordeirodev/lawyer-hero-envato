@@ -1,9 +1,0 @@
-{
-  "/robots.txt/route": "/robots.txt",
-  "/sitemap.xml/route": "/sitemap.xml",
-  "/favicon.ico/route": "/favicon.ico",
-  "/_not-found/page": "/_not-found",
-  "/page": "/",
-  "/servicos/[service]/page": "/servicos/[service]",
-  "/api/og/route": "/api/og"
-}

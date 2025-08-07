@@ -1,12 +1,12 @@
 "use client"
 
-import React from 'react'
-import { motion } from 'framer-motion'
-import { Sun, Moon } from 'lucide-react'
 import { useTheme } from '@/contexts/ThemeContext'
+import { motion } from 'framer-motion'
+import { Moon, Sun } from 'lucide-react'
+import React from 'react'
 
 export const ThemeToggle: React.FC = () => {
-    const { theme, toggleTheme, isLight, isDark } = useTheme()
+    const { toggleTheme, isLight } = useTheme()
 
     return (
         <motion.button
