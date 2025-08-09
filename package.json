@@ -1,7 +1,12 @@
 {
-  "name": "lawyer-hero-template",
+  "name": "lawyer-hero-envato",
   "version": "1.0.0",
   "description": "Professional landing page template for lawyers built with Next.js 15, TypeScript and Tailwind CSS",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bcordeirodev/lawyer-hero-envato.git"
+  },
+  "homepage": "https://github.com/bcordeirodev/lawyer-hero-envato",
   "keywords": [
     "lawyer",
     "template",

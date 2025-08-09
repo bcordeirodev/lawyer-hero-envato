@@ -109,7 +109,7 @@ src/
 git clone [url-do-repositorio]
 
 # Entre na pasta
-cd lawyer-hero
+cd lawyer-hero-envato
 
 # Instale as dependências
 npm install

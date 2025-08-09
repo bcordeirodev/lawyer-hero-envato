@@ -180,14 +180,14 @@ CMD ["node", "server.js"]
 
 ```bash
 # Build
-docker build -t lawyer-hero .
+docker build -t lawyer-hero-envato .
 
 # Run local
-docker run -p 3000:3000 lawyer-hero
+docker run -p 3000:3000 lawyer-hero-envato
 
 # Deploy para container registry
-docker tag lawyer-hero:latest your-registry/lawyer-hero:latest
-docker push your-registry/lawyer-hero:latest
+docker tag lawyer-hero-envato:latest your-registry/lawyer-hero-envato:latest
+docker push your-registry/lawyer-hero-envato:latest
 ```
 
 ## 📱 Configuração de Domínio

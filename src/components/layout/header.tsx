@@ -1,7 +1,8 @@
 "use client"
 
 import { AnimatePresence, motion } from "framer-motion"
-import { Menu, Scale, X } from "lucide-react"
+import { Menu, X } from "lucide-react"
+import Image from "next/image"
 import { useState } from "react"
 // import { useTheme } from "@/contexts/ThemeContext" // Removido temporariamente
 import { ThemeToggle } from "@/components/ui/theme"
@@ -20,17 +21,25 @@ export function Header() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16 sm:h-20">
                     {/* Logo */}
-                    <motion.div
+                    <motion.a
+                        href="#home"
                         className="flex items-center space-x-2 sm:space-x-3"
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <div className="flex h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 items-center justify-center rounded-lg bg-gradient-to-br from-gold-500 to-gold-600 shadow-xl">
-                            <Scale className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-white" />
+                        <div className="relative h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 overflow-hidden rounded-lg shadow-xl">
+                            <Image
+                                src="/logo-header.png"
+                                alt={`${LAWYER_CONFIG.lawyer.name} - Logo`}
+                                width={64}
+                                height={64}
+                                className="h-full w-full object-contain"
+                                priority
+                            />
                         </div>
                         <span className="text-lg sm:text-xl md:text-2xl font-bold text-text-primary">{LAWYER_CONFIG.lawyer.name}</span>
-                    </motion.div>
+                    </motion.a>
 
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center space-x-8 lg:space-x-10">
