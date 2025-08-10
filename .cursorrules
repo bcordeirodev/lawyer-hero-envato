@@ -1,70 +1,122 @@
 # Cursor AI Rules for LawyerHero Project
 
-## Project Context
+## 📚 Documentation Organization Rules
 
-This is a Next.js 15 lawyer landing page template with TypeScript, Tailwind CSS, and Framer Motion.
+### **File Structure**
 
-## Performance Optimization Rules
+- **Root Level**: Keep only essential files (README.md, package.json, config files)
+- **Documentation**: All .md files should go in the `docs/` folder
+- **Organization**: Use clear, descriptive filenames with consistent naming conventions
 
-### File Processing
+### **Documentation Standards**
 
-- Always prefer reading specific files over full directory scans
-- Use targeted grep searches instead of broad codebase searches
-- Skip node_modules, .next, and build directories in all operations
-- Limit file reads to necessary lines only
+#### **File Naming Convention**
 
-### Code Analysis
+- Use UPPERCASE for main documentation files
+- Use descriptive names that indicate content
+- Examples: `CUSTOMIZATION.md`, `DEPLOYMENT.md`, `API_REFERENCE.md`
 
-- Focus on TypeScript and TSX files in src/ directory
-- Use semantic searches for specific functionality
-- Avoid processing large auto-generated files
-- Cache TypeScript compilation results
+#### **Content Organization**
 
-### Project Structure
+- Start with a clear title and overview
+- Use consistent emoji icons for sections
+- Include table of contents for files > 100 lines
+- End with a conclusion and next steps
 
-- Main source code is in src/ (157 files)
-- Configuration files are centralized in src/config/
-- Components follow atomic design pattern
-- Hooks provide reusable business logic
+#### **Documentation Categories**
 
-### Key Files to Prioritize
+1. **User Guides** (CUSTOMIZATION.md, DEPLOYMENT.md)
+2. **Technical Docs** (TEMPLATE_GUIDE.md, API_REFERENCE.md)
+3. **Integration Guides** (TEMPLATE_EMAILJS.md, STRIPE_INTEGRATION.md)
+4. **Distribution** (ENVATO_SUBMISSION_CHECKLIST.md)
+5. **Maintenance** (UPDATE_INSTRUCTIONS.md, CHANGELOG.md)
 
-- src/config/\* - Centralized configuration
-- src/components/\* - UI components
-- src/hooks/\* - Business logic
-- src/lib/\* - Utilities and core functions
+### **When Creating New Documentation**
 
-### Optimization Guidelines
+#### **✅ DO:**
 
-1. Always exclude node_modules from searches
-2. Use incremental TypeScript compilation
-3. Leverage Next.js built-in optimizations
-4. Focus on changed files in git diff
-5. Use path aliases (@/\*) for clean imports
+- Place all .md files in the `docs/` folder
+- Update `docs/README.md` index when adding new files
+- Use consistent formatting and structure
+- Include practical examples and code snippets
+- Add to appropriate category in the index
 
-### Memory Management
+#### **❌ DON'T:**
 
-- Available RAM: 15GB (8GB available)
-- CPU Cores: 20
-- Disk: 14GB free (88% used - monitor)
-- Current project size: 1GB (745MB node_modules)
+- Create .md files in the root directory
+- Use inconsistent naming conventions
+- Forget to update the documentation index
+- Create documentation without clear purpose
 
-### Common Operations
+### **Documentation Template Structure**
 
-- Use `src/config/lawyer.ts` for lawyer data
-- Components import from `@/config` for centralized data
-- TypeScript strict mode enabled
-- ESLint configured for Next.js best practices
+```markdown
+# 📋 [Title] - LawyerHero Template
 
-## File Patterns to Monitor
+## 🎯 **VISÃO GERAL**
 
-- _.ts, _.tsx - Primary development files
-- \*.json - Configuration files
-- \*.md - Documentation
+Brief description of what this document covers
 
-## Performance Targets
+## 📖 **CONTEÚDO**
 
-- Keep file operations under 100 files at once
-- Prioritize incremental analysis
-- Use TypeScript project references when possible
-- Leverage Next.js turbopack for faster builds
+Main sections with clear headings
+
+## 🔧 **IMPLEMENTAÇÃO**
+
+Code examples and practical steps
+
+## 📱 **EXEMPLOS**
+
+Real-world usage examples
+
+## 🆘 **TROUBLESHOOTING**
+
+Common issues and solutions
+
+## 🚀 **PRÓXIMOS PASSOS**
+
+What to do next
+
+**🚀 Boa sorte com [specific topic]!**
+```
+
+### **Index Maintenance**
+
+- Always update `docs/README.md` when adding new documentation
+- Categorize new files appropriately
+- Update the file count and structure
+- Maintain consistent linking patterns
+
+### **Quality Standards**
+
+- **Clarity**: Easy to understand for target audience
+- **Completeness**: Cover all necessary information
+- **Consistency**: Same style and format across all docs
+- **Practicality**: Include real examples and use cases
+- **Maintenance**: Keep documentation up-to-date
+
+### **File Management**
+
+- **New Documentation**: Always goes in `docs/` folder
+- **Updates**: Modify existing files in place
+- **Archiving**: Move outdated docs to `docs/archive/` if needed
+- **Versioning**: Use semantic versioning for major changes
+
+### **Integration with Project**
+
+- Reference relevant code files and components
+- Include configuration examples
+- Link to external resources when appropriate
+- Maintain consistency with project structure
+
+---
+
+## 🎯 **Summary**
+
+- **All .md files → `docs/` folder**
+- **Update index when adding new docs**
+- **Use consistent naming and formatting**
+- **Maintain quality and completeness**
+- **Follow established templates and patterns**
+
+This ensures the project remains organized and professional while providing comprehensive documentation for users and developers.

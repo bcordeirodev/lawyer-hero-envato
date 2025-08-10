@@ -225,9 +225,10 @@ Para alterar as cores, edite:
 
 Para instruções detalhadas, consulte:
 
-- 📖 [CUSTOMIZATION.md](./CUSTOMIZATION.md) - Guia completo de personalização
-- 🚀 [DEPLOYMENT.md](./DEPLOYMENT.md) - Guia de deploy detalhado
-- 📋 [TEMPLATE_GUIDE.md](./TEMPLATE_GUIDE.md) - Instruções originais
+- 📚 **[docs/](./docs/)** - Documentação completa organizada
+- 📖 [docs/CUSTOMIZATION.md](./docs/CUSTOMIZATION.md) - Guia completo de personalização
+- 🚀 [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md) - Guia de deploy detalhado
+- 📋 [docs/TEMPLATE_GUIDE.md](./docs/TEMPLATE_GUIDE.md) - Instruções originais
 
 ## 🔥 Melhorias Implementadas
 

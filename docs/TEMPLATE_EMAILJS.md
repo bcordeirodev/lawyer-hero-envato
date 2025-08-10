@@ -54,7 +54,7 @@ npm install @emailjs/browser
 
 ```typescript
 // src/lib/email/emailjs.ts
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 // Inicializar EmailJS
 emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
@@ -72,10 +72,10 @@ export const sendEmail = async (formData: ContactFormData) => {
         subject: `Novo contato de ${formData.name}`,
       }
     );
-    
+
     return { success: true, result };
   } catch (error) {
-    console.error('EmailJS error:', error);
+    console.error("EmailJS error:", error);
     return { success: false, error };
   }
 };
@@ -90,43 +90,55 @@ export const sendEmail = async (formData: ContactFormData) => {
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Novo Contato - LawyerHero</title>
-</head>
-<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+  </head>
+  <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
     <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
-        <h2 style="color: #3b82f6; border-bottom: 2px solid #3b82f6; padding-bottom: 10px;">
-            🎯 Novo Contato Recebido
-        </h2>
-        
-        <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <h3 style="color: #1e3a8a; margin-top: 0;">📋 Informações do Contato</h3>
-            
-            <p><strong>👤 Nome:</strong> {{from_name}}</p>
-            <p><strong>📧 Email:</strong> {{from_email}}</p>
-            <p><strong>📱 Telefone:</strong> {{phone}}</p>
-            <p><strong>📝 Assunto:</strong> {{subject}}</p>
-        </div>
-        
-        <div style="background: #ffffff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;">
-            <h3 style="color: #1e3a8a; margin-top: 0;">💬 Mensagem</h3>
-            <p style="white-space: pre-wrap;">{{message}}</p>
-        </div>
-        
-        <div style="margin-top: 30px; padding: 20px; background: #f0f9ff; border-radius: 8px; border-left: 4px solid #3b82f6;">
-            <p style="margin: 0; color: #1e40af;">
-                <strong>⏰ Recebido em:</strong> {{sent_date}}
-            </p>
-        </div>
-        
-        <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 30px 0;">
-        
-        <p style="text-align: center; color: #64748b; font-size: 14px;">
-            Este email foi enviado através do formulário de contato do seu site.
+      <h2
+        style="color: #3b82f6; border-bottom: 2px solid #3b82f6; padding-bottom: 10px;"
+      >
+        🎯 Novo Contato Recebido
+      </h2>
+
+      <div
+        style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;"
+      >
+        <h3 style="color: #1e3a8a; margin-top: 0;">
+          📋 Informações do Contato
+        </h3>
+
+        <p><strong>👤 Nome:</strong> {{from_name}}</p>
+        <p><strong>📧 Email:</strong> {{from_email}}</p>
+        <p><strong>📱 Telefone:</strong> {{phone}}</p>
+        <p><strong>📝 Assunto:</strong> {{subject}}</p>
+      </div>
+
+      <div
+        style="background: #ffffff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;"
+      >
+        <h3 style="color: #1e3a8a; margin-top: 0;">💬 Mensagem</h3>
+        <p style="white-space: pre-wrap;">{{message}}</p>
+      </div>
+
+      <div
+        style="margin-top: 30px; padding: 20px; background: #f0f9ff; border-radius: 8px; border-left: 4px solid #3b82f6;"
+      >
+        <p style="margin: 0; color: #1e40af;">
+          <strong>⏰ Recebido em:</strong> {{sent_date}}
         </p>
+      </div>
+
+      <hr
+        style="border: none; border-top: 1px solid #e2e8f0; margin: 30px 0;"
+      />
+
+      <p style="text-align: center; color: #64748b; font-size: 14px;">
+        Este email foi enviado através do formulário de contato do seu site.
+      </p>
     </div>
-</body>
+  </body>
 </html>
 ```
 
@@ -158,8 +170,8 @@ Este email foi enviado através do formulário de contato do seu site.
 
 ```typescript
 // src/hooks/useContactForm.ts
-import { useState } from 'react';
-import { sendEmail } from '@/lib/email/emailjs';
+import { useState } from "react";
+import { sendEmail } from "@/lib/email/emailjs";
 
 export const useContactForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -169,19 +181,19 @@ export const useContactForm = () => {
   const handleSubmit = async (formData: ContactFormData) => {
     setIsLoading(true);
     setError(null);
-    
+
     try {
       const result = await sendEmail(formData);
-      
+
       if (result.success) {
         setIsSuccess(true);
         return true;
       } else {
-        setError('Erro ao enviar email. Tente novamente.');
+        setError("Erro ao enviar email. Tente novamente.");
         return false;
       }
     } catch (err) {
-      setError('Erro inesperado. Tente novamente.');
+      setError("Erro inesperado. Tente novamente.");
       return false;
     } finally {
       setIsLoading(false);
@@ -196,7 +208,7 @@ export const useContactForm = () => {
     reset: () => {
       setIsSuccess(false);
       setError(null);
-    }
+    },
   };
 };
 ```
@@ -205,7 +217,7 @@ export const useContactForm = () => {
 
 ```typescript
 // src/components/forms/ContactForm.tsx
-import { useContactForm } from '@/hooks/useContactForm';
+import { useContactForm } from "@/hooks/useContactForm";
 
 export const ContactForm = () => {
   const { isLoading, isSuccess, error, handleSubmit, reset } = useContactForm();
@@ -231,19 +243,11 @@ export const ContactForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       {/* Campos do formulário */}
-      
-      {error && (
-        <div className="error-message">
-          ❌ {error}
-        </div>
-      )}
-      
-      <button 
-        type="submit" 
-        disabled={isLoading}
-        className="submit-button"
-      >
-        {isLoading ? 'Enviando...' : 'Enviar Mensagem'}
+
+      {error && <div className="error-message">❌ {error}</div>}
+
+      <button type="submit" disabled={isLoading} className="submit-button">
+        {isLoading ? "Enviando..." : "Enviar Mensagem"}
       </button>
     </form>
   );
@@ -332,30 +336,27 @@ export const ContactForm = () => {
 
 ```typescript
 // src/lib/validation/contact-schema.ts
-import * as yup from 'yup';
+import * as yup from "yup";
 
 export const contactSchema = yup.object({
   name: yup
     .string()
-    .required('Nome é obrigatório')
-    .min(2, 'Nome deve ter pelo menos 2 caracteres')
-    .max(100, 'Nome deve ter no máximo 100 caracteres'),
-  
-  email: yup
-    .string()
-    .required('Email é obrigatório')
-    .email('Email inválido'),
-  
+    .required("Nome é obrigatório")
+    .min(2, "Nome deve ter pelo menos 2 caracteres")
+    .max(100, "Nome deve ter no máximo 100 caracteres"),
+
+  email: yup.string().required("Email é obrigatório").email("Email inválido"),
+
   phone: yup
     .string()
-    .required('Telefone é obrigatório')
-    .matches(/^[\d\s\-\+\(\)]+$/, 'Telefone inválido'),
-  
+    .required("Telefone é obrigatório")
+    .matches(/^[\d\s\-\+\(\)]+$/, "Telefone inválido"),
+
   message: yup
     .string()
-    .required('Mensagem é obrigatória')
-    .min(10, 'Mensagem deve ter pelo menos 10 caracteres')
-    .max(1000, 'Mensagem deve ter no máximo 1000 caracteres'),
+    .required("Mensagem é obrigatória")
+    .min(10, "Mensagem deve ter pelo menos 10 caracteres")
+    .max(1000, "Mensagem deve ter no máximo 1000 caracteres"),
 });
 ```
 
@@ -368,15 +369,15 @@ const [lastSubmission, setLastSubmission] = useState<number>(0);
 const handleSubmit = async (formData: ContactFormData) => {
   const now = Date.now();
   const timeSinceLastSubmission = now - lastSubmission;
-  
+
   // Limitar a 1 envio por minuto
   if (timeSinceLastSubmission < 60000) {
-    setError('Aguarde 1 minuto antes de enviar outra mensagem.');
+    setError("Aguarde 1 minuto antes de enviar outra mensagem.");
     return false;
   }
-  
+
   // ... resto da lógica
-  
+
   setLastSubmission(now);
 };
 ```
@@ -444,7 +445,7 @@ NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=seu_template_id
 
 ```typescript
 // Solução: Verificar importação
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 // E inicialização
 emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
@@ -479,33 +480,33 @@ emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
 export const sendEmail = async (formData: ContactFormData) => {
   try {
     // Google Analytics (se configurado)
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'form_submit', {
-        event_category: 'Contact',
-        event_label: 'Contact Form'
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "form_submit", {
+        event_category: "Contact",
+        event_label: "Contact Form",
       });
     }
-    
+
     const result = await emailjs.send(/* ... */);
-    
+
     // Tracking de sucesso
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'form_success', {
-        event_category: 'Contact',
-        event_label: 'Email Sent'
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "form_success", {
+        event_category: "Contact",
+        event_label: "Email Sent",
       });
     }
-    
+
     return { success: true, result };
   } catch (error) {
     // Tracking de erro
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'form_error', {
-        event_category: 'Contact',
-        event_label: 'Email Failed'
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "form_error", {
+        event_category: "Contact",
+        event_label: "Email Failed",
       });
     }
-    
+
     throw error;
   }
 };
@@ -544,17 +545,10 @@ const emailParams = {
 
 ```typescript
 // Enviar para múltiplos emails
-const emails = [
-  'contato@seuemail.com',
-  'secretaria@seuemail.com'
-];
+const emails = ["contato@seuemail.com", "secretaria@seuemail.com"];
 
 for (const email of emails) {
-  await emailjs.send(
-    serviceId,
-    templateId,
-    { ...params, to_email: email }
-  );
+  await emailjs.send(serviceId, templateId, { ...params, to_email: email });
 }
 ```
 
