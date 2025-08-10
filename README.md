@@ -1,270 +1,270 @@
-# 🏛️ LawyerHero - Template Profissional para Advogados
+# 🏛️ LawyerHero - Professional Template for Lawyers
 
 [![Next.js](https://img.shields.io/badge/Next.js-15.4.6-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-blue)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4.17-38bdf8)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-Template de landing page profissional para advogados, desenvolvido com tecnologias modernas. Design elegante, alta performance e totalmente personalizável.
+Professional landing page template for lawyers, developed with modern technologies. Elegant design, high performance, and fully customizable.
 
-## ✨ Características
+## ✨ Features
 
-- 🎨 **Design Profissional**: Interface elegante com paleta dourada
-- 📱 **100% Responsivo**: Otimizado para mobile, tablet e desktop
-- ⚡ **Performance Excepcional**: Lighthouse Score 95+ | Core Web Vitals ✅
-- 🌓 **Tema Adaptável**: Dark/Light mode com preferência do sistema
-- 📧 **Formulário Inteligente**: Validação em tempo real + EmailJS
-- 🚀 **Deploy Simplificado**: Vercel, Netlify, AWS - um clique
-- ♿ **Acessibilidade**: WCAG 2.1 AA compliant
-- 🔍 **SEO Otimizado**: Schema.org + Open Graph + sitemap
-- 🛡️ **Segurança**: Headers de segurança + Error Boundaries
+- 🎨 **Professional Design**: Elegant interface with gold palette
+- 📱 **100% Responsive**: Optimized for mobile, tablet, and desktop
+- ⚡ **Exceptional Performance**: Lighthouse Score 95+ | Core Web Vitals ✅
+- 🌓 **Adaptive Theme**: Dark/Light mode with system preference
+- 📧 **Smart Form**: Real-time validation + EmailJS
+- 🚀 **Simple Deployment**: Vercel, Netlify, AWS - one click
+- ♿ **Accessibility**: WCAG 2.1 AA compliant
+- 🔍 **SEO Optimized**: Schema.org + Open Graph + sitemap
+- 🛡️ **Security**: Security headers + Error Boundaries
 - 📊 **Analytics Ready**: Google Analytics + Web Vitals tracking
 
-## 🚀 Tecnologias Utilizadas
+## 🚀 Technologies Used
 
 ### Core
 
-- **Next.js 15.4.6** com App Router + Turbopack
-- **TypeScript 5.9.2** com strict mode
-- **React 19.1** com Server Components
-- **Tailwind CSS 3.4.17** com design system customizado
+- **Next.js 15.4.6** with App Router + Turbopack
+- **TypeScript 5.9.2** with strict mode
+- **React 19.1** with Server Components
+- **Tailwind CSS 3.4.17** with custom design system
 
 ### UI & UX
 
-- **Framer Motion 12.23** para animações fluidas
-- **Lucide React 0.537** para ícones consistentes
-- **CVA** para variantes de componentes
-- **clsx + tailwind-merge** para classes dinâmicas
+- **Framer Motion 12.23** for fluid animations
+- **Lucide React 0.537** for consistent icons
+- **CVA** for component variants
+- **clsx + tailwind-merge** for dynamic classes
 
-### Formulários & Validação
+### Forms & Validation
 
-- **React Hook Form 7.62** para performance
-- **Zod 4.0.15** para validação type-safe
-- **EmailJS 4.4.1** para envio de emails
+- **React Hook Form 7.62** for performance
+- **Zod 4.0.15** for type-safe validation
+- **EmailJS 4.4.1** for email sending
 
 ### Performance & SEO
 
-- **Next.js Image** com WebP/AVIF
-- **Bundle Analyzer** para otimização
-- **Structured Data** para rich snippets
-- **Web Vitals** tracking integrado
+- **Next.js Image** with WebP/AVIF
+- **Bundle Analyzer** for optimization
+- **Structured Data** for rich snippets
+- **Web Vitals** integrated tracking
 
-## 📁 Estrutura do Projeto
+## 📁 Project Structure
 
 ```
 src/
 ├── app/                    # App Router (Next.js 14)
-│   ├── globals.css        # Estilos globais
-│   ├── layout.tsx         # Layout principal
-│   └── page.tsx           # Página inicial
+│   ├── globals.css        # Global styles
+│   ├── layout.tsx         # Main layout
+│   └── page.tsx           # Home page
 ├── components/
-│   ├── ui/                # Componentes base
-│   │   ├── button.tsx     # Botão reutilizável
-│   │   └── card.tsx       # Card reutilizável
-│   ├── layout/            # Componentes de layout
-│   │   ├── header.tsx     # Header com navegação
-│   │   └── footer.tsx     # Footer com informações
-│   └── sections/          # Seções da landing page
-│       ├── hero.tsx       # Seção principal
-│       ├── services.tsx   # Áreas de atuação
-│       ├── about.tsx      # Sobre a advogada
-│       └── contact.tsx    # Formulário de contato
+│   ├── ui/                # Base components
+│   │   ├── button.tsx     # Reusable button
+│   │   └── card.tsx       # Reusable card
+│   ├── layout/            # Layout components
+│   │   ├── header.tsx     # Header with navigation
+│   │   └── footer.tsx     # Footer with information
+│   └── sections/          # Landing page sections
+│       ├── hero.tsx       # Main section
+│       ├── services.tsx   # Practice areas
+│       ├── about.tsx      # About the lawyer
+│       └── contact.tsx    # Contact form
 └── lib/
-    └── utils.ts           # Utilitários (clsx, twMerge)
+    └── utils.ts           # Utilities (clsx, twMerge)
 ```
 
 ## 🎨 Design System
 
-### Cores Principais
+### Main Colors
 
-- **Azul**: `#2563eb` (Primary)
-- **Índigo**: `#4f46e5` (Secondary)
-- **Cinza**: Tons neutros para texto e backgrounds
-- **Branco**: Para cards e elementos de destaque
+- **Blue**: `#2563eb` (Primary)
+- **Indigo**: `#4f46e5` (Secondary)
+- **Gray**: Neutral tones for text and backgrounds
+- **White**: For cards and highlight elements
 
-### Tipografia
+### Typography
 
-- **Títulos**: Font-bold com gradientes
-- **Corpo**: Font-medium para legibilidade
-- **Destaque**: Gradientes azul-índigo
+- **Headings**: Font-bold with gradients
+- **Body**: Font-medium for readability
+- **Highlight**: Blue-indigo gradients
 
-### Animações
+### Animations
 
-- **Entrada**: Fade-in com stagger
-- **Hover**: Scale e transform suaves
-- **Scroll**: Animações baseadas em viewport
-- **Micro-interactions**: Feedback visual imediato
+- **Entry**: Fade-in with stagger
+- **Hover**: Smooth scale and transform
+- **Scroll**: Viewport-based animations
+- **Micro-interactions**: Immediate visual feedback
 
-## 🚀 Como Executar
+## 🚀 How to Run
 
-### Pré-requisitos
+### Prerequisites
 
 - Node.js 18+
-- npm ou yarn
+- npm or yarn
 
-### Instalação
+### Installation
 
 ```bash
-# Clone o repositório
-git clone [url-do-repositorio]
+# Clone the repository
+git clone [repository-url]
 
-# Entre na pasta
+# Enter the folder
 cd lawyer-hero-envato
 
-# Instale as dependências
+# Install dependencies
 npm install
 
-# Execute em modo desenvolvimento
+# Run in development mode
 npm run dev
 ```
 
-### Scripts Disponíveis
+### Available Scripts
 
 ```bash
-npm run dev          # Desenvolvimento
-npm run build        # Build de produção
-npm run start        # Servidor de produção
+npm run dev          # Development
+npm run build        # Production build
+npm run start        # Production server
 npm run lint         # Linting
 ```
 
-## 📱 Responsividade
+## 📱 Responsiveness
 
-A landing page é totalmente responsiva e otimizada para:
+The landing page is fully responsive and optimized for:
 
 - **Mobile**: 320px - 768px
 - **Tablet**: 768px - 1024px
 - **Desktop**: 1024px+
 
-## 🎯 Funcionalidades
+## 🎯 Features
 
-### Seções Principais
+### Main Sections
 
-1. **Hero Section**: Apresentação da advogada com estatísticas
-2. **Services**: Áreas de atuação com cards interativos
-3. **About**: Informações detalhadas e diferenciais
-4. **Contact**: Formulário de contato e informações
+1. **Hero Section**: Lawyer presentation with statistics
+2. **Services**: Practice areas with interactive cards
+3. **About**: Detailed information and differentials
+4. **Contact**: Contact form and information
 
-### Características
+### Characteristics
 
-- ✅ **Design moderno** e profissional
-- ✅ **Animações suaves** com Framer Motion
-- ✅ **Formulário funcional** com validação
-- ✅ **SEO otimizado** com metadata
-- ✅ **Performance otimizada** com Next.js
-- ✅ **Acessibilidade** com ARIA labels
-- ✅ **Responsividade** completa
+- ✅ **Modern** and professional design
+- ✅ **Smooth animations** with Framer Motion
+- ✅ **Functional form** with validation
+- ✅ **SEO optimized** with metadata
+- ✅ **Optimized performance** with Next.js
+- ✅ **Accessibility** with ARIA labels
+- ✅ **Complete** responsiveness
 
-## 🛠️ Personalização
+## 🛠️ Customization
 
-### Dados da Advogada
+### Lawyer Data
 
-Para personalizar para outro advogado, atualize:
+To customize for another lawyer, update:
 
 1. **Hero Section** (`src/components/sections/hero.tsx`)
 
-   - Nome e título
-   - Estatísticas
-   - Descrição
+   - Name and title
+   - Statistics
+   - Description
 
 2. **About Section** (`src/components/sections/about.tsx`)
 
-   - Informações pessoais
-   - Experiência
-   - Diferenciais
+   - Personal information
+   - Experience
+   - Differentials
 
 3. **Contact Section** (`src/components/sections/contact.tsx`)
 
-   - Dados de contato
-   - Endereço
+   - Contact data
+   - Address
 
 4. **Layout** (`src/app/layout.tsx`)
 
-   - Metadata para SEO
-   - Título da página
+   - SEO metadata
+   - Page title
 
 5. **Footer** (`src/components/layout/footer.tsx`)
-   - Informações de contato
-   - Redes sociais
+   - Contact information
+   - Social media
 
-### Cores e Estilo
+### Colors and Style
 
-Para alterar as cores, edite:
+To change colors, edit:
 
-- `src/app/globals.css` - Variáveis CSS
-- `tailwind.config.ts` - Configuração do Tailwind
+- `src/app/globals.css` - CSS variables
+- `tailwind.config.ts` - Tailwind configuration
 
 ## 📊 Performance
 
-- **Lighthouse Score**: 95+ em todas as métricas
-- **Core Web Vitals**: Otimizado
+- **Lighthouse Score**: 95+ in all metrics
+- **Core Web Vitals**: Optimized
 - **Bundle Size**: < 200KB
 - **Loading Time**: < 2s
 
-## 🔧 Manutenção
+## 🔧 Maintenance
 
-### Estrutura Modular
+### Modular Structure
 
-- Componentes reutilizáveis
-- Separação clara de responsabilidades
-- Fácil manutenção e atualização
+- Reusable components
+- Clear separation of responsibilities
+- Easy maintenance and updates
 
-### Documentação
+### Documentation
 
-- Código bem documentado
-- Componentes auto-explicativos
-- README detalhado
+- Well-documented code
+- Self-explanatory components
+- Detailed README
 
-## 🚀 Como Usar
+## 🚀 How to Use
 
-1. **Clone o repositório**
-2. **Instale as dependências**: `npm install`
-3. **Configure seus dados** em `src/config/lawyer.ts`
-4. **Configure EmailJS** (opcional)
-5. **Execute em desenvolvimento**: `npm run dev`
-6. **Faça o deploy**: `npm run build`
+1. **Clone the repository**
+2. **Install dependencies**: `npm install`
+3. **Configure your data** in `src/config/lawyer.ts`
+4. **Configure EmailJS** (optional)
+5. **Run in development**: `npm run dev`
+6. **Deploy**: `npm run build`
 
-Para instruções detalhadas, consulte:
+For detailed instructions, see:
 
-- 📚 **[docs/](./docs/)** - Documentação completa organizada
-- 📖 [docs/CUSTOMIZATION.md](./docs/CUSTOMIZATION.md) - Guia completo de personalização
-- 🚀 [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md) - Guia de deploy detalhado
-- 📋 [docs/TEMPLATE_GUIDE.md](./docs/TEMPLATE_GUIDE.md) - Instruções originais
+- 📚 **[docs/](./docs/)** - Complete organized documentation
+- 📖 [docs/CUSTOMIZATION.md](./docs/CUSTOMIZATION.md) - Complete customization guide
+- 🚀 [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md) - Detailed deployment guide
+- 📋 [docs/TEMPLATE_GUIDE.md](./docs/TEMPLATE_GUIDE.md) - Original instructions
 
-## 🔥 Melhorias Implementadas
+## 🔥 Implemented Improvements
 
-### ✅ Qualidade de Código
+### ✅ Code Quality
 
-- **Zero warnings** no ESLint/TypeScript
-- **Error Boundaries** para tratamento de erros
-- **Performance hooks** para monitoramento
-- **Código limpo** com padrões consistentes
+- **Zero warnings** in ESLint/TypeScript
+- **Error Boundaries** for error handling
+- **Performance hooks** for monitoring
+- **Clean code** with consistent patterns
 
 ### ⚡ Performance
 
-- **Lazy loading** de componentes
-- **Otimização de imagens** WebP/AVIF
-- **Bundle analysis** configurado
+- **Lazy loading** of components
+- **Image optimization** WebP/AVIF
+- **Bundle analysis** configured
 - **Core Web Vitals** tracking
-- **Memory monitoring** integrado
+- **Memory monitoring** integrated
 
-### 🛡️ Segurança & Confiabilidade
+### 🛡️ Security & Reliability
 
-- **Headers de segurança** configurados
-- **Validação robusta** de formulários
-- **Error handling** aprimorado
-- **Type safety** completa
+- **Security headers** configured
+- **Robust validation** of forms
+- **Enhanced error handling**
+- **Complete type safety**
 
-### 📚 Documentação
+### 📚 Documentation
 
-- **Guias detalhados** de customização
-- **Deploy em múltiplas plataformas**
-- **Troubleshooting** completo
-- **Best practices** documentadas
+- **Detailed guides** for customization
+- **Deploy on multiple platforms**
+- **Complete troubleshooting**
+- **Documented best practices**
 
-## 📄 Licença
+## 📄 License
 
-Este template está disponível sob licença MIT. Você pode usar, modificar e distribuir livremente.
+This template is available under the MIT license. You can freely use, modify, and distribute it.
 
 ---
 
-**Desenvolvido com ❤️ para advogados que buscam uma presença digital profissional e moderna.**
+**Developed with ❤️ for lawyers seeking a professional and modern digital presence.**
