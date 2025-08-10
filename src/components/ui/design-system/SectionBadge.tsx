@@ -35,8 +35,8 @@ const badgeVariants = {
  * 
  * @example
  * ```tsx
- * <SectionBadge animated>⚖️ Nossos Serviços</SectionBadge>
- * <SectionBadge variant="outline">📞 Contato</SectionBadge>
+ * <SectionBadge animated>⚖️ Our Services</SectionBadge>
+ * <SectionBadge variant="outline">📞 Contact</SectionBadge>
  * ```
  */
 export function SectionBadge({
@@ -72,22 +72,22 @@ export function SectionBadge({
 // ============================================================================
 
 /**
- * ServicesBadge - Preset para seção de serviços
+ * ServicesBadge - Preset for services section
  */
 export function ServicesBadge() {
-    return <SectionBadge>⚖️ Nossos Serviços</SectionBadge>
+    return <SectionBadge>⚖️ Our Services</SectionBadge>
 }
 
 /**
- * AboutBadge - Preset para seção sobre
+ * AboutBadge - Preset for about section
  */
 export function AboutBadge() {
-    return <SectionBadge>👩‍💼 Sobre a Advogada</SectionBadge>
+    return <SectionBadge>👩‍💼 About the Attorney</SectionBadge>
 }
 
 /**
- * ContactBadge - Preset para seção de contato
+ * ContactBadge - Preset for contact section
  */
 export function ContactBadge() {
-    return <SectionBadge>📞 Entre em Contato</SectionBadge>
+    return <SectionBadge>📞 Get in Touch</SectionBadge>
 }

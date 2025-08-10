@@ -15,26 +15,26 @@ export const appConfig = {
     contactInfo: LAWYER_CONFIG.lawyer.contact,
     statistics: LAWYER_CONFIG.lawyer.statistics,
     formSubjects: [
-        "Consulta Jurídica",
-        "Direito Civil",
-        "Direito Empresarial",
-        "Direito de Família",
-        "Direito Imobiliário",
-        "Direito do Trabalho",
-        "Direito Digital",
-        "Outro"
+        "Legal Consultation",
+        "Civil Law",
+        "Business Law",
+        "Family Law",
+        "Real Estate Law",
+        "Labor Law",
+        "Digital Law",
+        "Other"
     ],
     aboutHighlights: [
-        "Especialização em Direito Civil e Empresarial",
-        "Mais de 5 anos de experiência jurídica",
-        "Atendimento personalizado e transparente",
-        "Compromisso com resultados eficazes"
+        "Specialization in Civil and Business Law",
+        "More than 5 years of legal experience",
+        "Personalized and transparent service",
+        "Commitment to effective results"
     ],
     whyChooseUs: [
-        "Atendimento personalizado e dedicado",
-        "Transparência em todos os processos",
-        "Experiência em casos complexos",
-        "Compromisso com prazos e resultados"
+        "Personalized and dedicated service",
+        "Transparency in all processes",
+        "Experience in complex cases",
+        "Commitment to deadlines and results"
     ]
 }
 
@@ -197,25 +197,25 @@ export const themeConfig = {
 export const seoConfig = {
     title: {
         default: `${lawyerConfig.name} - ${lawyerConfig.title}`,
-        services: `Áreas de Atuação - ${lawyerConfig.name}`,
-        contact: `Contato - ${lawyerConfig.name}`,
-        about: `Sobre - ${lawyerConfig.name}`
+        services: `Practice Areas - ${lawyerConfig.name}`,
+        contact: `Contact - ${lawyerConfig.name}`,
+        about: `About - ${lawyerConfig.name}`
     },
     description: {
         default: lawyerConfig.description,
-        services: 'Conheça nossas áreas de atuação: direito civil, empresarial e família. Assessoria jurídica especializada.',
-        contact: `Entre em contato com ${lawyerConfig.name} para assessoria jurídica personalizada.`,
-        about: `Conheça ${lawyerConfig.name}, advogada especialista com mais de ${lawyerConfig.statistics.experience} anos de experiência.`
+        services: 'Discover our practice areas: civil, business and family law. Specialized legal counsel.',
+        contact: `Contact ${lawyerConfig.name} for personalized legal counsel.`,
+        about: `Meet ${lawyerConfig.name}, expert attorney with more than ${lawyerConfig.statistics.experience} years of experience.`
     },
     keywords: {
-        default: 'advogada, direito civil, direito empresarial, direito família, assessoria jurídica',
-        services: 'direito civil, direito empresarial, direito família, advocacia',
-        contact: 'contato advogada, assessoria jurídica',
-        about: 'advogada, experiência jurídica, especialista direito'
+        default: 'attorney, civil law, business law, family law, legal counsel',
+        services: 'civil law, business law, family law, law office',
+        contact: 'contact attorney, legal counsel',
+        about: 'attorney, legal experience, law expert'
     },
     author: lawyerConfig.name,
     ogImage: '/og-image.jpg',
-    twitterHandle: '@geovannanery'
+    twitterHandle: '@johnsmithlaw'
 } as const
 
 // ============================================================================
@@ -226,8 +226,8 @@ export const socialConfig = {
     whatsapp: lawyerConfig.contact.phone,
     email: lawyerConfig.contact.email,
     phone: lawyerConfig.contact.phone,
-    linkedin: 'https://linkedin.com/in/geovannanery',
-    instagram: 'https://instagram.com/geovannanery'
+    linkedin: 'https://linkedin.com/in/johnsmithlaw',
+    instagram: 'https://instagram.com/johnsmithlaw'
 } as const
 
 // ============================================================================
@@ -236,17 +236,17 @@ export const socialConfig = {
 
 export const contactDetailsConfig = {
     address: {
-        street: 'Rua das Flores, 123',
-        neighborhood: 'Vila Madalena',
+        street: '123 Main Street',
+        neighborhood: 'Manhattan',
         city: lawyerConfig.credentials.location.split(', ')[0],
         state: lawyerConfig.credentials.location.split(', ')[1],
-        zipCode: '01234-567',
-        country: 'Brasil'
+        zipCode: '10001',
+        country: 'United States'
     },
     hours: {
         weekdays: '09:00 - 18:00',
         saturday: '09:00 - 12:00',
-        sunday: 'Fechado'
+        sunday: 'Closed'
     },
     emergency: {
         phone: lawyerConfig.contact.phone,
@@ -260,19 +260,19 @@ export const contactDetailsConfig = {
 
 export const navigationConfig = {
     main: [
-        { name: 'Início', href: '#home' },
-        { name: 'Serviços', href: '#services' },
-        { name: 'Sobre', href: '#about' },
-        { name: 'Contato', href: '#contact' }
+        { name: 'Home', href: '#home' },
+        { name: 'Services', href: '#services' },
+        { name: 'About', href: '#about' },
+        { name: 'Contact', href: '#contact' }
     ],
     services: [
-        { name: 'Direito Civil', href: '/servicos/direito-civil' },
-        { name: 'Direito Empresarial', href: '/servicos/direito-empresarial' },
-        { name: 'Direito de Família', href: '/servicos/direito-familia' }
+        { name: 'Civil Law', href: '/servicos/civil-law' },
+        { name: 'Business Law', href: '/servicos/business-law' },
+        { name: 'Family Law', href: '/servicos/family-law' }
     ],
     legal: [
-        { name: 'Política de Privacidade', href: '/politica-privacidade' },
-        { name: 'Termos de Uso', href: '/termos-uso' },
+        { name: 'Privacy Policy', href: '/privacy-policy' },
+        { name: 'Terms of Use', href: '/terms-of-use' },
         { name: 'Cookies', href: '/cookies' }
     ]
 } as const

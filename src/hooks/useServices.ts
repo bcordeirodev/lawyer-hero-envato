@@ -1,18 +1,18 @@
 /**
  * useServices Hook
  * 
- * Hook para gerenciar serviços jurídicos com funcionalidades de:
- * - Filtragem por categoria
- * - Busca por texto
- * - Ordenação
- * - Paginação
+ * Hook to manage legal services with features:
+ * - Category filtering
+ * - Text search
+ * - Sorting
+ * - Pagination
  * 
  * @author Bruno Cordeiro
  * @version 1.0.0
  */
 
-import { useState, useMemo, useCallback } from 'react'
 import { LAWYER_CONFIG } from '@/config'
+import { useCallback, useMemo, useState } from 'react'
 
 // ============================================================================
 // TYPES
@@ -56,11 +56,11 @@ const initialFilter: ServiceFilter = {
 // ============================================================================
 
 /**
- * useServices - Hook para gerenciar serviços jurídicos
+ * useServices - Hook to manage legal services
  * 
- * Fornece funcionalidades de filtragem, busca e ordenação dos serviços
+ * Provides filtering, search and sorting functionalities for services
  * 
- * @returns Objeto com serviços e funcionalidades de filtragem
+ * @returns Object with services and filtering functionalities
  * 
  * @example
  * ```tsx
@@ -133,8 +133,8 @@ export function useServices(): UseServicesReturn {
     // ============================================================================
 
     /**
-     * Atualiza o filtro de serviços
-     * @param newFilter - Novos valores do filtro
+     * Updates the services filter
+     * @param newFilter - New filter values
      */
     const setFilter = useCallback((newFilter: Partial<ServiceFilter>) => {
         setFilterState(prev => ({ ...prev, ...newFilter }))
@@ -158,17 +158,17 @@ export function useServices(): UseServicesReturn {
     }, [services])
 
     /**
-     * Busca serviços por categoria
-     * @param category - Categoria dos serviços
-     * @returns Array de serviços da categoria
+     * Search services by category
+     * @param category - Service category
+     * @returns Array of services in the category
      */
     const getServicesByCategory = useCallback((category: ServiceCategory) => {
         return services.filter(service => service.category === category)
     }, [services])
 
     /**
-     * Define a categoria ativa
-     * @param category - Categoria a ser definida como ativa
+     * Sets the active category
+     * @param category - Category to be set as active
      */
     const setActiveCategory = useCallback((category: ServiceCategory | null) => {
         setActiveCategoryState(category)

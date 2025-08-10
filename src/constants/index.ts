@@ -17,7 +17,7 @@ export const APP_CONFIG = {
     version: '1.0.0',
     description: 'Professional lawyer landing page',
     author: lawyerConfig.name,
-    url: 'https://geovannanery.com'
+    url: 'https://johnsmithlaw.com'
 } as const
 
 // ============================================================================
@@ -25,16 +25,16 @@ export const APP_CONFIG = {
 // ============================================================================
 
 export const SERVICE_CATEGORIES = {
-    civil: 'Direito Civil',
-    business: 'Direito Empresarial',
-    family: 'Direito de Família',
-    labor: 'Direito do Trabalho',
-    realEstate: 'Direito Imobiliário',
-    consumer: 'Direito do Consumidor',
-    inheritance: 'Direito Sucessório',
-    contracts: 'Contratos',
-    litigation: 'Contencioso',
-    consulting: 'Consultoria'
+    civil: 'Civil Law',
+    business: 'Business Law',
+    family: 'Family Law',
+    labor: 'Labor Law',
+    realEstate: 'Real Estate Law',
+    consumer: 'Consumer Law',
+    inheritance: 'Inheritance Law',
+    contracts: 'Contracts',
+    litigation: 'Litigation',
+    consulting: 'Consulting'
 } as const
 
 // ============================================================================
@@ -43,26 +43,26 @@ export const SERVICE_CATEGORIES = {
 
 export const LEGAL_DOCUMENTS = {
     contracts: [
-        'Contratos de Compra e Venda',
-        'Contratos de Locação',
-        'Contratos de Prestação de Serviços',
-        'Contratos Empresariais',
-        'Acordos e Convenções'
+        'Purchase and Sale Contracts',
+        'Lease Agreements',
+        'Service Contracts',
+        'Business Contracts',
+        'Agreements and Conventions'
     ],
     family: [
-        'Divórcio',
-        'Guarda de Filhos',
-        'Pensão Alimentícia',
-        'Inventário',
-        'Testamento',
-        'Adoção'
+        'Divorce',
+        'Child Custody',
+        'Child Support',
+        'Estate Administration',
+        'Wills',
+        'Adoption'
     ],
     business: [
-        'Constituição de Empresas',
-        'Contratos Sociais',
-        'Fusões e Aquisições',
+        'Business Formation',
+        'Corporate Contracts',
+        'Mergers and Acquisitions',
         'Compliance',
-        'Recuperação Judicial'
+        'Judicial Recovery'
     ]
 } as const
 
@@ -73,26 +73,26 @@ export const LEGAL_DOCUMENTS = {
 export const TESTIMONIALS = [
     {
         id: 1,
-        name: 'Maria Silva',
+        name: 'Sarah Johnson',
         rating: 5,
-        text: 'Excelente advogada, muito profissional e atenciosa. Resolveu meu problema rapidamente.',
-        service: 'Direito Civil',
+        text: 'Excellent attorney, very professional and attentive. Resolved my problem quickly.',
+        service: 'Civil Law',
         date: '2024-01-15'
     },
     {
         id: 2,
-        name: 'João Santos',
+        name: 'Michael Davis',
         rating: 5,
-        text: `${lawyerConfig.name} é muito competente e dedicada. Recomendo fortemente.`,
-        service: 'Direito Empresarial',
+        text: `${lawyerConfig.name} is very competent and dedicated. I strongly recommend.`,
+        service: 'Business Law',
         date: '2024-01-10'
     },
     {
         id: 3,
-        name: 'Ana Costa',
+        name: 'Emily Wilson',
         rating: 5,
-        text: 'Atendimento excepcional e conhecimento técnico impecável.',
-        service: 'Direito de Família',
+        text: 'Exceptional service and impeccable technical knowledge.',
+        service: 'Family Law',
         date: '2024-01-05'
     }
 ] as const
@@ -104,25 +104,25 @@ export const TESTIMONIALS = [
 export const STATISTICS = [
     {
         id: 1,
-        label: 'Anos de Experiência',
+        label: 'Years of Experience',
         value: `${lawyerConfig.statistics.experience}+`,
         icon: 'briefcase'
     },
     {
         id: 2,
-        label: 'Casos Resolvidos',
+        label: 'Cases Resolved',
         value: `${lawyerConfig.statistics.casesResolved}+`,
         icon: 'check-circle'
     },
     {
         id: 3,
-        label: 'Taxa de Sucesso',
+        label: 'Success Rate',
         value: `${lawyerConfig.statistics.successRate}`,
         icon: 'trending-up'
     },
     {
         id: 4,
-        label: 'Clientes Satisfeitos',
+        label: 'Satisfied Clients',
         value: '200+',
         icon: 'users'
     }
@@ -134,12 +134,6 @@ export const STATISTICS = [
 
 // Re-export configurations from the centralized config
 export {
-    breakpoints as BREAKPOINTS,
-    coreAnimationConfig as ANIMATION,
-    formValidationConfig as FORM,
-    seoConfig as SEO,
-    socialConfig as SOCIAL,
-    contactDetailsConfig as CONTACT,
-    themeConfig as THEME,
-    navigationConfig as NAVIGATION
-} from '@/lib/core/config' 
+    coreAnimationConfig as ANIMATION, breakpoints as BREAKPOINTS, contactDetailsConfig as CONTACT, formValidationConfig as FORM, navigationConfig as NAVIGATION, seoConfig as SEO,
+    socialConfig as SOCIAL, themeConfig as THEME
+} from '@/lib/core/config'

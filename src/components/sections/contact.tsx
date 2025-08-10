@@ -30,21 +30,21 @@ export const Contact: React.FC = () => {
         },
         {
             type: 'phone',
-            label: 'Telefone',
+            label: 'Phone',
             value: lawyer.contact.phone,
             icon: Phone,
             href: `tel:${lawyer.contact.phone}`
         },
         {
             type: 'location',
-            label: 'Localização',
+            label: 'Location',
             value: lawyer.credentials.location,
             icon: MapPin,
             href: null
         },
         {
             type: 'hours',
-            label: 'Horário de Atendimento',
+            label: 'Working Hours',
             value: lawyer.contact.workingHours,
             icon: Clock,
             href: null
@@ -63,7 +63,7 @@ export const Contact: React.FC = () => {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         whileHover={{ scale: 1.05, y: -2 }}
                     >
-                        📞 Contato
+                        📞 Contact
                     </motion.div>
                     <motion.h2
                         className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-text-primary via-gold-500 to-text-primary bg-clip-text text-transparent mb-4 drop-shadow-sm hover:scale-105 transition-transform duration-300 cursor-default"
@@ -73,10 +73,10 @@ export const Contact: React.FC = () => {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         whileHover={{ scale: 1.02 }}
                     >
-                        Entre em Contato
+                        Get in Touch
                     </motion.h2>
                     <p className="text-lg text-text-secondary max-w-3xl mx-auto">
-                        Estou aqui para ajudar você com suas questões jurídicas
+                        I&apos;m here to help you with your legal questions
                     </p>
                 </div>
 
@@ -90,10 +90,10 @@ export const Contact: React.FC = () => {
                     >
                         <div>
                             <h3 className="text-xl sm:text-2xl font-semibold text-text-primary mb-4 sm:mb-6">
-                                Informações de Contato
+                                Contact Information
                             </h3>
                             <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
-                                Entre em contato através dos canais abaixo ou preencha o formulário
+                                Get in touch through the channels below or fill out the form
                             </p>
                         </div>
 
@@ -148,10 +148,10 @@ export const Contact: React.FC = () => {
                     >
                         <div>
                             <h3 className="text-xl sm:text-2xl font-semibold text-text-primary mb-4 sm:mb-6">
-                                Envie uma Mensagem
+                                Send a Message
                             </h3>
                             <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
-                                Preencha o formulário abaixo e entrarei em contato em breve
+                                Fill out the form below and I&apos;ll get back to you soon
                             </p>
                         </div>
                         <ContactForm />

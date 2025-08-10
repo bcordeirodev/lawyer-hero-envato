@@ -46,10 +46,10 @@ export const LAYOUT_CONFIG: LayoutConfig = {
         enableMap: true
     },
     seo: {
-        siteName: "Dra. Geovanna Nery - Advocacia",
-        siteDescription: "Advocacia especializada em Direito Civil, Empresarial e Família em Brasília, DF. Atendimento personalizado e soluções jurídicas eficazes.",
-        siteUrl: "https://geovannanery.com",
-        defaultLanguage: "pt-BR",
+        siteName: "Attorney John Smith - Law Office",
+        siteDescription: "Specialized law practice in Civil, Business and Family Law in New York, NY. Personalized service and effective legal solutions.",
+        siteUrl: "https://johnsmithlaw.com",
+        defaultLanguage: "en-US",
         enableStructuredData: true
     },
     animations: {
@@ -59,7 +59,7 @@ export const LAYOUT_CONFIG: LayoutConfig = {
     },
     features: {
         enableEnvironmentInfo: true,
-        enableLanguageSelector: false, // Desabilitado após rollback
+        enableLanguageSelector: false, // Disabled after rollback
         enableThemeToggle: true
     }
 }
@@ -89,10 +89,10 @@ export const CONTACT_CONFIG: ContactConfig = {
         requiredFields: ['name', 'email', 'message']
     },
     map: {
-        latitude: -15.7801,
-        longitude: -47.9292,
+        latitude: 40.7128,
+        longitude: -74.0060,
         zoom: 15,
-        address: "Brasília, DF, Brasil"
+        address: "New York, NY, USA"
     }
 }
 

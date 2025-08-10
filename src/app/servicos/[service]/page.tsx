@@ -60,7 +60,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                     <div className="max-w-4xl mx-auto">
                         <div className="bg-card-primary rounded-lg p-8 mb-8">
                             <h2 className="text-2xl font-semibold text-text-primary mb-6">
-                                O que oferecemos em {serviceData.title}
+                                What we offer in {serviceData.title}
                             </h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 {serviceData.features.map((feature: string, index: number) => (
@@ -75,14 +75,14 @@ export default async function ServicePage({ params }: ServicePageProps) {
                         {/* Contact CTA */}
                         <div className="bg-gradient-to-r from-accent-primary to-accent-secondary rounded-lg p-8 text-center">
                             <h3 className="text-2xl font-semibold text-white mb-4">
-                                Precisa de assistência em {serviceData.title}?
+                                Need assistance with {serviceData.title}?
                             </h3>
                             <p className="text-white/90 mb-6">
-                                Entre em contato com {lawyer.name} para uma consulta personalizada
+                                Contact {lawyer.name} for a personalized consultation
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <a
-                                    href={`${LAWYER_CONFIG.socialMedia.whatsapp}?text=Olá! Gostaria de agendar uma consulta sobre ${serviceData.title}`}
+                                    href={`${LAWYER_CONFIG.socialMedia.whatsapp}?text=Hello! I would like to schedule a consultation about ${serviceData.title}`}
                                     className="bg-white text-accent-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                                     target="_blank"
                                     rel="noopener noreferrer"

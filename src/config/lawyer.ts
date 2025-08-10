@@ -107,120 +107,120 @@ export interface LawyerConfig {
 
 export const LAWYER_CONFIG: LawyerConfig = {
     lawyer: {
-        name: "Dr. Alexandre Silva",
-        fullName: "Alexandre Silva Santos",
-        title: "Advogado - Atuação em Direito Civil, Empresarial e Família",
-        description: "Olá! Sou o Dr. Alexandre Silva, advogado inscrito na OAB-SP. Acredito que cada caso é único e merece atenção especial. Atuo com transparência, ética e dedicação, sempre priorizando o interesse dos meus clientes.",
-        detailedDescription: "Advogado com atuação dedicada na prestação de serviços jurídicos. Acredito que cada cliente é único e que cada caso exige atenção personalizada, estratégia e comprometimento. Atuo com ética, transparência e dedicação, oferecendo um atendimento jurídico cuidadoso e profissional.",
+        name: "Attorney John Smith",
+        fullName: "John Michael Smith",
+        title: "Attorney at Law - Civil, Business & Family Law",
+        description: "Hello! I'm Attorney John Smith, a licensed attorney with over 15 years of experience. I believe every case is unique and deserves special attention. I practice with transparency, ethics, and dedication, always prioritizing my clients' interests.",
+        detailedDescription: "Attorney with dedicated practice in providing legal services. I believe that every client is unique and that each case requires personalized attention, strategy, and commitment. I practice with ethics, transparency, and dedication, offering careful and professional legal representation.",
         credentials: {
-            bar: "OAB-SP 123.456",
-            location: "São Paulo, SP"
+            bar: "Bar Number: 123456",
+            location: "New York, NY"
         },
         statistics: {
-            experience: "Experiência",
-            casesResolved: "Casos",
-            successRate: "Dedicação"
+            experience: "Experience",
+            casesResolved: "Cases",
+            successRate: "Dedication"
         },
         contact: {
-            email: "contato@alexandresilva.adv.br",
-            phone: "(11) 99999-9999",
-            workingHours: "Segunda a Sexta: 9h às 18h | Sábados: 9h às 12h"
+            email: "contact@johnsmithlaw.com",
+            phone: "(555) 123-4567",
+            workingHours: "Monday to Friday: 9AM to 6PM | Saturdays: 9AM to 12PM"
         },
         photo: {
             src: "/images/perfil.png",
-            placeholder: "Dr. Alexandre Silva",
-            alt: "Dr. Alexandre Silva - Advogado"
+            placeholder: "Attorney John Smith",
+            alt: "Attorney John Smith - Attorney at Law"
         }
     },
 
     services: [
         {
             id: "civil-law",
-            title: "Direito Civil",
-            description: "Protejo seus direitos civis com assessoria completa e personalizada. Desde contratos até questões de responsabilidade, estou aqui para defender seus interesses com eficiência e comprometimento.",
+            title: "Civil Law",
+            description: "I protect your civil rights with complete and personalized legal counsel. From contracts to liability issues, I'm here to defend your interests with efficiency and commitment.",
             icon: Scale,
             features: [
-                "Contratos civis e comerciais",
-                "Responsabilidade civil e indenizações por danos morais e materiais",
-                "Direito do consumidor e relações de consumo",
-                "Direito de propriedade e ações possessórias",
-                "Cobrança de dívidas e execuções cíveis"
+                "Civil and commercial contracts",
+                "Civil liability and compensation for moral and material damages",
+                "Consumer law and consumer relations",
+                "Property law and possessory actions",
+                "Debt collection and civil executions"
             ],
             gradient: "from-yellow-500 to-orange-500",
             category: "civil"
         },
         {
             id: "business-law",
-            title: "Direito Empresarial",
-            description: "Acompanho o crescimento da sua empresa com assessoria jurídica estratégica. Do planejamento à resolução de conflitos, sua empresa estará sempre bem amparada.",
+            title: "Business Law",
+            description: "I support your company's growth with strategic legal counsel. From planning to conflict resolution, your business will always be well-protected.",
             icon: Building,
             features: [
-                "Contratos comerciais e empresariais",
-                "Direito societário e resolução de conflitos entre sócios",
-                "Recuperação judicial e extrajudicial de empresas",
-                "Compliance, governança e adequação legal",
-                "Defesa em execuções fiscais e ações tributárias"
+                "Commercial and business contracts",
+                "Corporate law and shareholder conflict resolution",
+                "Judicial and extrajudicial business recovery",
+                "Compliance, governance and legal adequacy",
+                "Defense in tax executions and tax lawsuits"
             ],
             gradient: "from-yellow-500 to-orange-500",
             category: "business"
         },
         {
             id: "family-law",
-            title: "Direito de Família",
-            description: "Entendo que questões familiares são delicadas e pessoais. Ofereço assessoria com sensibilidade e respeito, sempre priorizando o bem-estar da família.",
+            title: "Family Law",
+            description: "I understand that family matters are delicate and personal. I offer counsel with sensitivity and respect, always prioritizing family well-being.",
             icon: Heart,
             features: [
-                "Divórcio consensual e litigioso",
-                "Guarda compartilhada, unilateral e regulamentação de visitas",
-                "Pensão alimentícia, revisional e execução de alimentos",
-                "Inventário, partilha de bens e testamentos",
-                "Reconhecimento de paternidade e ações de adoção",
-                "Medidas protetivas e violência doméstica (Lei Maria da Penha)"
+                "Consensual and contested divorce",
+                "Shared custody, sole custody and visitation regulations",
+                "Child support, modifications and enforcement",
+                "Estate administration, asset division and wills",
+                "Paternity recognition and adoption proceedings",
+                "Protective orders and domestic violence"
             ],
             gradient: "from-yellow-500 to-orange-500",
             category: "family"
         },
         {
             id: "health-law",
-            title: "Direito à Saúde",
-            description: "Defesa dos seus direitos em relação a planos de saúde, atendimento médico e acesso a tratamentos essenciais.",
+            title: "Health Law",
+            description: "Defense of your rights regarding health insurance, medical care and access to essential treatments.",
             icon: Heart,
             features: [
-                "Ações contra negativa de cobertura por planos de saúde",
-                "Fornecimento de medicamentos pelo SUS",
-                "Internações e cirurgias urgentes",
-                "Tratamentos fora do rol da ANS",
-                "Responsabilidade por erro médico"
+                "Actions against health insurance coverage denials",
+                "Medication provision through public health system",
+                "Emergency hospitalizations and surgeries",
+                "Treatments outside standard coverage",
+                "Medical malpractice liability"
             ],
             gradient: "from-yellow-500 to-orange-500",
             category: "civil"
         },
         {
             id: "labor-law",
-            title: "Direito do Trabalho",
-            description: "Assessoria jurídica completa para empregados e empregadores, com foco na resolução de conflitos trabalhistas.",
+            title: "Labor Law",
+            description: "Complete legal counsel for employees and employers, focusing on resolving workplace conflicts.",
             icon: Activity,
             features: [
-                "Verbas rescisórias, FGTS e horas extras",
-                "Reconhecimento de vínculo empregatício",
-                "Assédio moral e sexual no trabalho",
-                "Estabilidade e reintegração no cargo",
-                "Defesa em reclamações trabalhistas"
+                "Severance pay, unemployment benefits and overtime",
+                "Employment relationship recognition",
+                "Workplace harassment and sexual harassment",
+                "Job security and reinstatement",
+                "Defense in labor complaints"
             ],
             gradient: "from-yellow-500 to-orange-500",
             category: "labor"
         },
         {
             id: "tax-law",
-            title: "Direito Tributário",
-            description: "Suporte jurídico para enfrentar cobranças indevidas, regularizar pendências fiscais e planejar com eficiência.",
+            title: "Tax Law",
+            description: "Legal support to face undue charges, regularize tax issues and plan efficiently.",
             icon: TrendingUp,
             features: [
-                "Defesa em execuções fiscais",
-                "Restituição de tributos pagos indevidamente",
-                "Planejamento e consultoria tributária",
-                "Impugnação de autos de infração",
-                "Regularização fiscal e parcelamentos"
+                "Defense in tax executions",
+                "Refund of unduly paid taxes",
+                "Tax planning and consulting",
+                "Challenge of violation notices",
+                "Tax regularization and installment plans"
             ],
             gradient: "from-yellow-500 to-orange-500",
             category: "business"
@@ -228,53 +228,53 @@ export const LAWYER_CONFIG: LawyerConfig = {
     ],
 
     socialMedia: {
-        whatsapp: "https://wa.me/5511999999999",
-        instagram: "https://instagram.com/alexandresilvaadv",
-        linkedin: "https://linkedin.com/in/alexandresilvaadv",
-        facebook: "https://facebook.com/alexandresilvaadv"
+        whatsapp: "https://wa.me/15551234567",
+        instagram: "https://instagram.com/johnsmithlaw",
+        linkedin: "https://linkedin.com/in/johnsmithlaw",
+        facebook: "https://facebook.com/johnsmithlaw"
     },
 
     form: {
         subjects: [
-            "Consulta Jurídica",
-            "Direito Civil",
-            "Direito Empresarial",
-            "Direito de Família",
-            "Direito à Saúde",
-            "Direito do Trabalho",
-            "Direito Tributário",
-            "Outro"
+            "Legal Consultation",
+            "Civil Law",
+            "Business Law",
+            "Family Law",
+            "Health Law",
+            "Labor Law",
+            "Tax Law",
+            "Other"
         ],
         placeholders: {
-            name: "Seu nome completo",
-            email: "seu@email.com",
-            phone: "(61) 99999-9999",
-            subject: "Selecione um assunto",
-            message: "Descreva sua situação ou dúvida..."
+            name: "Your full name",
+            email: "your@email.com",
+            phone: "(555) 123-4567",
+            subject: "Select a subject",
+            message: "Describe your situation or question..."
         },
         labels: {
-            name: "Nome",
+            name: "Name",
             email: "Email",
-            phone: "Telefone",
-            subject: "Assunto",
-            message: "Mensagem",
-            submit: "Enviar Mensagem",
-            loading: "Enviando..."
+            phone: "Phone",
+            subject: "Subject",
+            message: "Message",
+            submit: "Send Message",
+            loading: "Sending..."
         }
     },
 
     about: {
         highlights: [
-            "Atuação focada em Direito Civil e Empresarial",
-            "Experiência consolidada na área jurídica",
-            "Atendimento personalizado e transparente",
-            "Compromisso com ética e dedicação"
+            "Focus on Civil and Business Law",
+            "Consolidated experience in legal practice",
+            "Personalized and transparent service",
+            "Commitment to ethics and dedication"
         ],
         whyChooseUs: [
-            "Atendimento personalizado e dedicado",
-            "Transparência em todos os processos",
-            "Atuação em diversos casos jurídicos",
-            "Compromisso com ética e responsabilidade"
+            "Personalized and dedicated service",
+            "Transparency in all processes",
+            "Experience in various legal cases",
+            "Commitment to ethics and responsibility"
         ]
     }
 } 

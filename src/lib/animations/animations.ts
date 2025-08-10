@@ -92,21 +92,21 @@ export const staggerItem: Variants = {
  */
 export const animationConfig = {
     duration: {
-        fast: 0.2,
-        normal: 0.3,
-        slow: 0.6,
-        slower: 0.8
+        fast: 0.15,
+        normal: 0.2,
+        slow: 0.4,
+        slower: 0.6
     },
     easing: {
-        easeOut: 'easeOut',
-        easeInOut: 'easeInOut',
-        easeIn: 'easeIn'
+        easeOut: [0.16, 1, 0.3, 1], // Custom easing curve for smoother animations
+        easeInOut: [0.65, 0, 0.35, 1],
+        easeIn: [0.32, 0, 0.67, 0]
     },
     delay: {
         none: 0,
-        small: 0.1,
-        medium: 0.2,
-        large: 0.3
+        small: 0.05,
+        medium: 0.1,
+        large: 0.2
     }
 }
 
@@ -226,6 +226,8 @@ export const hoverAnimations = {
  */
 export const viewportAnimations = {
     once: true,
-    amount: 0.3,
-    margin: "-100px"
+    amount: 0.2, // Reduced threshold for better performance
+    margin: "-50px", // Reduced margin for smoother triggering
+    rootMargin: "-50px", // Added root margin for better control
+    threshold: [0, 0.2, 1] // Added thresholds for more precise control
 } 

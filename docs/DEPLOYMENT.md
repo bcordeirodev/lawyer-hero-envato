@@ -1,70 +1,70 @@
-# 🚀 Guia de Deploy - LawyerHero Template
+# 🚀 Deployment Guide - LawyerHero Template
 
-## 📋 **PLATAFORMAS SUPORTADAS**
+## 📋 **SUPPORTED PLATFORMS**
 
-### ✅ **Recomendadas (Fácil)**
+### ✅ **Recommended (Easy)**
 
-- **Vercel** - Deploy automático, otimizado para Next.js
-- **Netlify** - Deploy automático, boa performance
-- **Railway** - Deploy simples, bom para projetos pequenos
+- **Vercel** - Automatic deployment, optimized for Next.js
+- **Netlify** - Automatic deployment, good performance
+- **Railway** - Simple deployment, good for small projects
 
-### 🔧 **Avançadas (Configuração manual)**
+### 🔧 **Advanced (Manual configuration)**
 
 - **AWS** - Amplify, EC2, S3 + CloudFront
 - **Google Cloud** - App Engine, Cloud Run
 - **DigitalOcean** - App Platform, Droplets
-- **Heroku** - PaaS tradicional
+- **Heroku** - Traditional PaaS
 
-### 📱 **Static Hosting (Export estático)**
+### 📱 **Static Hosting (Static export)**
 
-- **GitHub Pages** - Gratuito, bom para demos
-- **Surge.sh** - Deploy via CLI
-- **Firebase Hosting** - Google, boa performance
+- **GitHub Pages** - Free, good for demos
+- **Surge.sh** - CLI deployment
+- **Firebase Hosting** - Google, good performance
 
 ---
 
-## 🚀 **DEPLOY NO VERCEL (RECOMENDADO)**
+## 🚀 **VERCEL DEPLOYMENT (RECOMMENDED)**
 
-### ⚡ **Deploy Automático (GitHub)**
+### ⚡ **Automatic Deployment (GitHub)**
 
-#### **1. Preparar Repositório**
+#### **1. Prepare Repository**
 
 ```bash
-# Verificar se está tudo commitado
+# Check if everything is committed
 git status
 git add .
-git commit -m "feat: preparar para deploy Vercel"
+git commit -m "feat: prepare for Vercel deployment"
 git push origin main
 ```
 
-#### **2. Conectar no Vercel**
+#### **2. Connect to Vercel**
 
-1. Acesse [vercel.com](https://vercel.com)
-2. Faça login com GitHub
-3. Clique em "New Project"
-4. Importe seu repositório
-5. Configure as variáveis de ambiente
+1. Visit [vercel.com](https://vercel.com)
+2. Login with GitHub
+3. Click on "New Project"
+4. Import your repository
+5. Configure environment variables
 
-#### **3. Variáveis de Ambiente**
+#### **3. Environment Variables**
 
 ```bash
-# .env.local (para desenvolvimento)
-NEXT_PUBLIC_SITE_URL=https://seusite.vercel.app
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=sua_chave_publica
-EMAILJS_SERVICE_ID=seu_service_id
-EMAILJS_TEMPLATE_ID=seu_template_id
+# .env.local (for development)
+NEXT_PUBLIC_SITE_URL=https://yoursite.vercel.app
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+EMAILJS_SERVICE_ID=your_service_id
+EMAILJS_TEMPLATE_ID=your_template_id
 
-# No Vercel Dashboard, adicione:
-NEXT_PUBLIC_SITE_URL=https://seusite.vercel.app
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=sua_chave_publica
-EMAILJS_SERVICE_ID=seu_service_id
-EMAILJS_TEMPLATE_ID=seu_template_id
+# In Vercel Dashboard, add:
+NEXT_PUBLIC_SITE_URL=https://yoursite.vercel.app
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+EMAILJS_SERVICE_ID=your_service_id
+EMAILJS_TEMPLATE_ID=your_template_id
 ```
 
-#### **4. Configurações do Projeto**
+#### **4. Project Settings**
 
 ```json
-// vercel.json (opcional)
+// vercel.json (optional)
 {
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
@@ -73,33 +73,33 @@ EMAILJS_TEMPLATE_ID=seu_template_id
 }
 ```
 
-#### **5. Deploy Automático**
+#### **5. Automatic Deployment**
 
-- A cada `git push`, o Vercel faz deploy automático
-- Preview deployments para cada PR
-- Rollback fácil para versões anteriores
+- Each `git push` triggers automatic deployment
+- Preview deployments for each PR
+- Easy rollback to previous versions
 
 ---
 
-## 🌐 **DEPLOY NO NETLIFY**
+## 🌐 **NETLIFY DEPLOYMENT**
 
-### 📋 **Configuração Básica**
+### 📋 **Basic Configuration**
 
-#### **1. Preparar Build**
+#### **1. Prepare Build**
 
 ```bash
-# Build para produção
+# Production build
 npm run build
 
-# Verificar se build foi bem-sucedido
+# Check if build was successful
 ls -la .next/
 ```
 
-#### **2. Configurar Netlify**
+#### **2. Configure Netlify**
 
-1. Acesse [netlify.com](https://netlify.com)
-2. Faça login e clique em "New site from Git"
-3. Conecte com GitHub
+1. Visit [netlify.com](https://netlify.com)
+2. Login and click "New site from Git"
+3. Connect with GitHub
 4. Configure build settings:
 
 ```bash
@@ -113,20 +113,20 @@ npm run build
 18.17.0
 ```
 
-#### **3. Variáveis de Ambiente**
+#### **3. Environment Variables**
 
 ```bash
-# No Netlify Dashboard > Site settings > Environment variables
-NEXT_PUBLIC_SITE_URL=https://seusite.netlify.app
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=sua_chave_publica
-EMAILJS_SERVICE_ID=seu_service_id
-EMAILJS_TEMPLATE_ID=seu_template_id
+# In Netlify Dashboard > Site settings > Environment variables
+NEXT_PUBLIC_SITE_URL=https://yoursite.netlify.app
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+EMAILJS_SERVICE_ID=your_service_id
+EMAILJS_TEMPLATE_ID=your_template_id
 ```
 
-#### **4. Deploy Manual (se necessário)**
+#### **4. Manual Deployment (if needed)**
 
 ```bash
-# Instalar Netlify CLI
+# Install Netlify CLI
 npm install -g netlify-cli
 
 # Login
@@ -138,11 +138,11 @@ netlify deploy --prod --dir=.next
 
 ---
 
-## 📦 **DEPLOY ESTÁTICO (STATIC EXPORT)**
+## 📦 **STATIC DEPLOYMENT (STATIC EXPORT)**
 
-### 🎯 **Para GitHub Pages, Surge, Firebase**
+### 🎯 **For GitHub Pages, Surge, Firebase**
 
-#### **1. Configurar Next.js para Export**
+#### **1. Configure Next.js for Export**
 
 ```javascript
 // next.config.js
@@ -155,58 +155,58 @@ module.exports = {
 };
 ```
 
-#### **2. Build e Export**
+#### **2. Build and Export**
 
 ```bash
-# Build para produção
+# Production build
 npm run build
 
-# Export estático
+# Static export
 npm run export
 
-# Verificar arquivos gerados
+# Check generated files
 ls -la out/
 ```
 
-#### **3. Deploy no GitHub Pages**
+#### **3. Deploy to GitHub Pages**
 
 ```bash
-# Criar branch gh-pages
+# Create gh-pages branch
 git checkout -b gh-pages
 
-# Adicionar arquivos estáticos
+# Add static files
 git add out/
-git commit -m "feat: deploy estático para GitHub Pages"
+git commit -m "feat: static deployment for GitHub Pages"
 
-# Push para GitHub
+# Push to GitHub
 git push origin gh-pages
 
-# No GitHub: Settings > Pages > Source: gh-pages branch
+# On GitHub: Settings > Pages > Source: gh-pages branch
 ```
 
-#### **4. Deploy no Surge.sh**
+#### **4. Deploy to Surge.sh**
 
 ```bash
-# Instalar Surge
+# Install Surge
 npm install -g surge
 
 # Deploy
 cd out
 surge
 
-# Seguir instruções no terminal
+# Follow terminal instructions
 ```
 
-#### **5. Deploy no Firebase**
+#### **5. Deploy to Firebase**
 
 ```bash
-# Instalar Firebase CLI
+# Install Firebase CLI
 npm install -g firebase-tools
 
 # Login
 firebase login
 
-# Inicializar projeto
+# Initialize project
 firebase init hosting
 
 # Deploy
@@ -215,15 +215,15 @@ firebase deploy
 
 ---
 
-## ☁️ **DEPLOY NO AWS**
+## ☁️ **AWS DEPLOYMENT**
 
-### 🚀 **AWS Amplify (Mais Fácil)**
+### 🚀 **AWS Amplify (Easier)**
 
-#### **1. Conectar Repositório**
+#### **1. Connect Repository**
 
-1. Acesse [AWS Amplify Console](https://console.aws.amazon.com/amplify)
-2. Clique em "New app" > "Host web app"
-3. Conecte com GitHub
+1. Visit [AWS Amplify Console](https://console.aws.amazon.com/amplify)
+2. Click "New app" > "Host web app"
+3. Connect with GitHub
 4. Configure build settings:
 
 ```yaml
@@ -246,61 +246,61 @@ frontend:
       - node_modules/**/*
 ```
 
-#### **2. Variáveis de Ambiente**
+#### **2. Environment Variables**
 
 ```bash
-# No Amplify Console > Environment variables
-NEXT_PUBLIC_SITE_URL=https://seuapp.amplifyapp.com
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=sua_chave_publica
-EMAILJS_SERVICE_ID=seu_service_id
-EMAILJS_TEMPLATE_ID=seu_template_id
+# In Amplify Console > Environment variables
+NEXT_PUBLIC_SITE_URL=https://yourapp.amplifyapp.com
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+EMAILJS_SERVICE_ID=your_service_id
+EMAILJS_TEMPLATE_ID=your_template_id
 ```
 
-### 🐳 **AWS EC2 (Configuração Manual)**
+### 🐳 **AWS EC2 (Manual Configuration)**
 
-#### **1. Preparar Instância**
+#### **1. Prepare Instance**
 
 ```bash
-# Conectar via SSH
-ssh -i sua-chave.pem ubuntu@seu-ip
+# Connect via SSH
+ssh -i your-key.pem ubuntu@your-ip
 
-# Atualizar sistema
+# Update system
 sudo apt update && sudo apt upgrade -y
 
-# Instalar Node.js
+# Install Node.js
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
-# Instalar PM2
+# Install PM2
 sudo npm install -g pm2
 ```
 
-#### **2. Deploy da Aplicação**
+#### **2. Deploy Application**
 
 ```bash
-# Clonar repositório
-git clone https://github.com/seu-usuario/lawyer-hero-envato.git
+# Clone repository
+git clone https://github.com/your-username/lawyer-hero-envato.git
 cd lawyer-hero-envato
 
-# Instalar dependências
+# Install dependencies
 npm install
 
-# Build para produção
+# Production build
 npm run build
 
-# Iniciar com PM2
+# Start with PM2
 pm2 start npm --name "lawyer-hero" -- start
 pm2 startup
 pm2 save
 ```
 
-#### **3. Configurar Nginx**
+#### **3. Configure Nginx**
 
 ```nginx
 # /etc/nginx/sites-available/lawyer-hero
 server {
     listen 80;
-    server_name seusite.com www.seusite.com;
+    server_name yoursite.com www.yoursite.com;
 
     location / {
         proxy_pass http://localhost:3000;
@@ -315,22 +315,22 @@ server {
 
 ---
 
-## 🔧 **CONFIGURAÇÕES AVANÇADAS**
+## 🔧 **ADVANCED CONFIGURATIONS**
 
 ### ⚙️ **Environment Variables**
 
-#### **Arquivo .env.production**
+#### **File .env.production**
 
 ```bash
 # .env.production
 NODE_ENV=production
-NEXT_PUBLIC_SITE_URL=https://seusite.com
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=sua_chave_publica
-EMAILJS_SERVICE_ID=seu_service_id
-EMAILJS_TEMPLATE_ID=seu_template_id
+NEXT_PUBLIC_SITE_URL=https://yoursite.com
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+EMAILJS_SERVICE_ID=your_service_id
+EMAILJS_TEMPLATE_ID=your_template_id
 ```
 
-#### **Verificação de Variáveis**
+#### **Variable Verification**
 
 ```typescript
 // src/lib/env-checker.ts
@@ -356,7 +356,7 @@ export function checkRequiredEnvVars() {
 #### **1. Bundle Analyzer**
 
 ```bash
-# Instalar
+# Install
 npm install --save-dev @next/bundle-analyzer
 
 # next.config.js
@@ -365,10 +365,10 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 module.exports = withBundleAnalyzer({
-  // suas configurações
+  // your settings
 })
 
-# Analisar bundle
+# Analyze bundle
 ANALYZE=true npm run build
 ```
 
@@ -391,7 +391,7 @@ module.exports = withPWA({
 
 ### 🔒 **Security Headers**
 
-#### **Configuração no Next.js**
+#### **Next.js Configuration**
 
 ```javascript
 // next.config.js
@@ -426,11 +426,11 @@ module.exports = {
 
 ---
 
-## 📊 **MONITORAMENTO E ANALYTICS**
+## 📊 **MONITORING AND ANALYTICS**
 
 ### 📈 **Google Analytics**
 
-#### **1. Configuração**
+#### **1. Configuration**
 
 ```typescript
 // src/lib/analytics.ts
@@ -465,7 +465,7 @@ export const event = ({
 };
 ```
 
-#### **2. Implementação**
+#### **2. Implementation**
 
 ```tsx
 // src/app/layout.tsx
@@ -477,7 +477,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <head>
         <Script
           strategy="afterInteractive"
@@ -502,13 +502,13 @@ export default function RootLayout({
 }
 ```
 
-### 📊 **Vercel Analytics (se usar Vercel)**
+### 📊 **Vercel Analytics (if using Vercel)**
 
 ```bash
-# Instalar
+# Install
 npm install @vercel/analytics
 
-# Implementar
+# Implement
 import { Analytics } from '@vercel/analytics/react'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -525,120 +525,120 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
 ---
 
-## 🚨 **SOLUÇÃO DE PROBLEMAS**
+## 🚨 **TROUBLESHOOTING**
 
-### ❌ **Erros Comuns**
+### ❌ **Common Errors**
 
-#### **1. Build Falha**
+#### **1. Build Fails**
 
 ```bash
-# Verificar dependências
+# Check dependencies
 rm -rf node_modules package-lock.json
 npm install
 
-# Verificar TypeScript
+# Check TypeScript
 npm run type-check
 
-# Verificar ESLint
+# Check ESLint
 npm run lint
 
-# Build limpo
+# Clean build
 npm run build
 ```
 
-#### **2. Deploy Falha no Vercel**
+#### **2. Vercel Deploy Fails**
 
 ```bash
-# Verificar logs no Vercel Dashboard
-# Verificar variáveis de ambiente
-# Verificar versão do Node.js (18.17+)
-# Verificar se build funciona localmente
+# Check logs in Vercel Dashboard
+# Check environment variables
+# Check Node.js version (18.17+)
+# Check if build works locally
 ```
 
-#### **3. Imagens Não Carregam**
+#### **3. Images Don't Load**
 
 ```bash
-# Verificar next.config.js
-# Verificar se imagens estão em public/
-# Verificar se paths estão corretos
-# Verificar se formato é suportado
+# Check next.config.js
+# Check if images are in public/
+# Check if paths are correct
+# Check if format is supported
 ```
 
-#### **4. EmailJS Não Funciona**
+#### **4. EmailJS Doesn't Work**
 
 ```bash
-# Verificar variáveis de ambiente
-# Verificar se chaves estão corretas
-# Verificar console do navegador
-# Verificar se EmailJS está ativo
+# Check environment variables
+# Check if keys are correct
+# Check browser console
+# Check if EmailJS is active
 ```
 
-### 🔧 **Debug Local**
+### 🔧 **Local Debug**
 
 ```bash
-# Build local
+# Local build
 npm run build
 
-# Testar produção localmente
+# Test production locally
 npm start
 
-# Verificar logs
+# Check logs
 npm run dev 2>&1 | tee dev.log
 ```
 
 ---
 
-## 📋 **CHECKLIST DE DEPLOY**
+## 📋 **DEPLOYMENT CHECKLIST**
 
-### ✅ **Pré-Deploy**
+### ✅ **Pre-Deploy**
 
 - [ ] `npm run lint` - Zero warnings
 - [ ] `npm run type-check` - Zero errors
 - [ ] `npm run build` - Build successful
-- [ ] Testes passando
-- [ ] Variáveis de ambiente configuradas
-- [ ] Domínio configurado (se aplicável)
+- [ ] Tests passing
+- [ ] Environment variables configured
+- [ ] Domain configured (if applicable)
 
 ### ✅ **Deploy**
 
-- [ ] Repositório conectado à plataforma
-- [ ] Build automático configurado
-- [ ] Variáveis de ambiente definidas
-- [ ] Deploy bem-sucedido
-- [ ] Site acessível
+- [ ] Repository connected to platform
+- [ ] Automatic build configured
+- [ ] Environment variables set
+- [ ] Deploy successful
+- [ ] Site accessible
 
-### ✅ **Pós-Deploy**
+### ✅ **Post-Deploy**
 
-- [ ] Site carrega corretamente
-- [ ] Todas as páginas funcionam
-- [ ] Formulários funcionam
-- [ ] Imagens carregam
-- [ ] Responsivo em mobile
-- [ ] Performance boa (Lighthouse)
-- [ ] Analytics funcionando
+- [ ] Site loads correctly
+- [ ] All pages work
+- [ ] Forms work
+- [ ] Images load
+- [ ] Responsive on mobile
+- [ ] Good performance (Lighthouse)
+- [ ] Analytics working
 
 ---
 
-## 🎯 **PRÓXIMOS PASSOS**
+## 🎯 **NEXT STEPS**
 
-### 🚀 **Após Deploy Bem-Sucedido**
+### 🚀 **After Successful Deploy**
 
-1. **Configurar domínio personalizado**
-2. **Configurar SSL/HTTPS**
-3. **Configurar CDN (se necessário)**
-4. **Implementar monitoramento**
-5. **Configurar backups**
-6. **Documentar processo de deploy**
+1. **Configure custom domain**
+2. **Configure SSL/HTTPS**
+3. **Configure CDN (if needed)**
+4. **Implement monitoring**
+5. **Configure backups**
+6. **Document deployment process**
 
-### 📈 **Melhorias Futuras**
+### 📈 **Future Improvements**
 
 - [ ] CI/CD pipeline
-- [ ] Deploy automático por ambiente
-- [ ] Rollback automático
-- [ ] Monitoramento de performance
-- [ ] Alertas de erro
-- [ ] Backup automático
+- [ ] Automatic deployment by environment
+- [ ] Automatic rollback
+- [ ] Performance monitoring
+- [ ] Error alerts
+- [ ] Automatic backup
 
 ---
 
-**🏆 Com este guia, você tem tudo para fazer deploy do LawyerHero Template em qualquer plataforma!** 🚀⚖️
+**🏆 With this guide, you have everything to deploy the LawyerHero Template on any platform!** 🚀⚖️

@@ -1,179 +1,179 @@
-# 📚 Documentação LawyerHero Template
+# 📚 LawyerHero Template Documentation
 
-## 🎯 **VISÃO GERAL**
+## 🎯 **OVERVIEW**
 
-Esta pasta contém toda a documentação do template **LawyerHero**, organizada de forma lógica para facilitar a navegação e o uso.
-
----
-
-## 📖 **GUIA RÁPIDO**
-
-### **🚀 Para Começar**
-
-1. **`CUSTOMIZATION.md`** - Configure seu template em 5 minutos
-2. **`DEPLOYMENT.md`** - Deploy em qualquer plataforma
-3. **`TEMPLATE_GUIDE.md`** - Entenda a estrutura do template
-
-### **🔧 Para Desenvolvedores**
-
-- **`TEMPLATE_EMAILJS.md`** - Integração com EmailJS
-- **`IMPROVEMENTS_SUMMARY.md`** - Todas as melhorias implementadas
-- **`UPDATE_INSTRUCTIONS.md`** - Como atualizar o template
-
-### **📦 Para Envato**
-
-- **`ENVATO_SUBMISSION_CHECKLIST.md`** - Checklist para submissão
+This folder contains all the documentation for the **LawyerHero** template, organized logically for easy navigation and use.
 
 ---
 
-## 📋 **ÍNDICE COMPLETO**
+## 📖 **QUICK GUIDE**
 
-### **🎯 Guias Essenciais**
+### **🚀 Getting Started**
 
-| Arquivo                                      | Descrição                       | Público-Alvo    |
-| -------------------------------------------- | ------------------------------- | --------------- |
-| **[CUSTOMIZATION.md](./CUSTOMIZATION.md)**   | Guia completo de personalização | Usuários finais |
-| **[DEPLOYMENT.md](./DEPLOYMENT.md)**         | Instruções de deploy detalhadas | Desenvolvedores |
-| **[TEMPLATE_GUIDE.md](./TEMPLATE_GUIDE.md)** | Estrutura e uso do template     | Desenvolvedores |
+1. **`CUSTOMIZATION.md`** - Configure your template in 5 minutes
+2. **`DEPLOYMENT.md`** - Deploy on any platform
+3. **`TEMPLATE_GUIDE.md`** - Understand the template structure
 
-### **🔧 Guias Técnicos**
+### **🔧 For Developers**
 
-| Arquivo                                                  | Descrição                    | Público-Alvo    |
-| -------------------------------------------------------- | ---------------------------- | --------------- |
-| **[TEMPLATE_EMAILJS.md](./TEMPLATE_EMAILJS.md)**         | Configuração do EmailJS      | Desenvolvedores |
-| **[IMPROVEMENTS_SUMMARY.md](./IMPROVEMENTS_SUMMARY.md)** | Resumo de todas as melhorias | Desenvolvedores |
-| **[UPDATE_INSTRUCTIONS.md](./UPDATE_INSTRUCTIONS.md)**   | Instruções de atualização    | Desenvolvedores |
+- **`TEMPLATE_EMAILJS.md`** - EmailJS Integration
+- **`IMPROVEMENTS_SUMMARY.md`** - All implemented improvements
+- **`UPDATE_INSTRUCTIONS.md`** - How to update the template
 
-### **📦 Guias de Distribuição**
+### **📦 For Envato**
 
-| Arquivo                                                                | Descrição             | Público-Alvo |
-| ---------------------------------------------------------------------- | --------------------- | ------------ |
-| **[ENVATO_SUBMISSION_CHECKLIST.md](./ENVATO_SUBMISSION_CHECKLIST.md)** | Checklist para Envato | Vendedores   |
+- **`ENVATO_SUBMISSION_CHECKLIST.md`** - Submission checklist
 
 ---
 
-## 🚀 **ORDEM DE LEITURA RECOMENDADA**
+## 📋 **COMPLETE INDEX**
 
-### **👤 Para Usuários Finais (Advogados)**
+### **🎯 Essential Guides**
 
-1. **[CUSTOMIZATION.md](./CUSTOMIZATION.md)** - Configure seu site
-2. **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Faça o deploy
-3. **[TEMPLATE_GUIDE.md](./TEMPLATE_GUIDE.md)** - Entenda as funcionalidades
+| File                                         | Description                      | Target Audience |
+| -------------------------------------------- | -------------------------------- | --------------- |
+| **[CUSTOMIZATION.md](./CUSTOMIZATION.md)**   | Complete customization guide     | End users       |
+| **[DEPLOYMENT.md](./DEPLOYMENT.md)**         | Detailed deployment instructions | Developers      |
+| **[TEMPLATE_GUIDE.md](./TEMPLATE_GUIDE.md)** | Template structure and usage     | Developers      |
 
-### **👨‍💻 Para Desenvolvedores**
+### **🔧 Technical Guides**
 
-1. **[TEMPLATE_GUIDE.md](./TEMPLATE_GUIDE.md)** - Estrutura do projeto
-2. **[CUSTOMIZATION.md](./CUSTOMIZATION.md)** - Como customizar
-3. **[TEMPLATE_EMAILJS.md](./TEMPLATE_EMAILJS.md)** - Integrações
-4. **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Deploy e produção
+| File                                                     | Description                 | Target Audience |
+| -------------------------------------------------------- | --------------------------- | --------------- |
+| **[TEMPLATE_EMAILJS.md](./TEMPLATE_EMAILJS.md)**         | EmailJS Configuration       | Developers      |
+| **[IMPROVEMENTS_SUMMARY.md](./IMPROVEMENTS_SUMMARY.md)** | Summary of all improvements | Developers      |
+| **[UPDATE_INSTRUCTIONS.md](./UPDATE_INSTRUCTIONS.md)**   | Update instructions         | Developers      |
 
-### **📦 Para Vendedores (Envato)**
+### **📦 Distribution Guides**
 
-1. **[ENVATO_SUBMISSION_CHECKLIST.md](./ENVATO_SUBMISSION_CHECKLIST.md)** - Checklist completo
-2. **[IMPROVEMENTS_SUMMARY.md](./IMPROVEMENTS_SUMMARY.md)** - Diferenciais do produto
-3. **[CUSTOMIZATION.md](./CUSTOMIZATION.md)** - Facilidade de uso
+| File                                                                   | Description      | Target Audience |
+| ---------------------------------------------------------------------- | ---------------- | --------------- |
+| **[ENVATO_SUBMISSION_CHECKLIST.md](./ENVATO_SUBMISSION_CHECKLIST.md)** | Envato Checklist | Sellers         |
 
 ---
 
-## 🔍 **BUSCA RÁPIDA**
+## 🚀 **RECOMMENDED READING ORDER**
 
-### **💡 Quero...**
+### **👤 For End Users (Attorneys)**
 
-#### **...configurar meu site**
+1. **[CUSTOMIZATION.md](./CUSTOMIZATION.md)** - Configure your site
+2. **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Deploy it
+3. **[TEMPLATE_GUIDE.md](./TEMPLATE_GUIDE.md)** - Understand the features
+
+### **👨‍💻 For Developers**
+
+1. **[TEMPLATE_GUIDE.md](./TEMPLATE_GUIDE.md)** - Project structure
+2. **[CUSTOMIZATION.md](./CUSTOMIZATION.md)** - How to customize
+3. **[TEMPLATE_EMAILJS.md](./TEMPLATE_EMAILJS.md)** - Integrations
+4. **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Deployment and production
+
+### **📦 For Sellers (Envato)**
+
+1. **[ENVATO_SUBMISSION_CHECKLIST.md](./ENVATO_SUBMISSION_CHECKLIST.md)** - Complete checklist
+2. **[IMPROVEMENTS_SUMMARY.md](./IMPROVEMENTS_SUMMARY.md)** - Product differentials
+3. **[CUSTOMIZATION.md](./CUSTOMIZATION.md)** - Ease of use
+
+---
+
+## 🔍 **QUICK SEARCH**
+
+### **💡 I want to...**
+
+#### **...configure my site**
 
 → **[CUSTOMIZATION.md](./CUSTOMIZATION.md)**
 
-#### **...fazer deploy**
+#### **...deploy it**
 
 → **[DEPLOYMENT.md](./DEPLOYMENT.md)**
 
-#### **...entender o código**
+#### **...understand the code**
 
 → **[TEMPLATE_GUIDE.md](./TEMPLATE_GUIDE.md)**
 
-#### **...configurar EmailJS**
+#### **...configure EmailJS**
 
 → **[TEMPLATE_EMAILJS.md](./TEMPLATE_EMAILJS.md)**
 
-#### **...ver todas as melhorias**
+#### **...see all improvements**
 
 → **[IMPROVEMENTS_SUMMARY.md](./IMPROVEMENTS_SUMMARY.md)**
 
-#### **...atualizar o template**
+#### **...update the template**
 
 → **[UPDATE_INSTRUCTIONS.md](./UPDATE_INSTRUCTIONS.md)**
 
-#### **...vender no Envato**
+#### **...sell on Envato**
 
 → **[ENVATO_SUBMISSION_CHECKLIST.md](./ENVATO_SUBMISSION_CHECKLIST.md)**
 
 ---
 
-## 📱 **ESTRUTURA DE PASTAS**
+## 📱 **FOLDER STRUCTURE**
 
 ```
 docs/
-├── README.md                           # Este arquivo (índice)
-├── CUSTOMIZATION.md                    # Guia de personalização
-├── DEPLOYMENT.md                       # Guia de deploy
-├── TEMPLATE_GUIDE.md                   # Guia do template
-├── TEMPLATE_EMAILJS.md                 # Guia do EmailJS
-├── IMPROVEMENTS_SUMMARY.md             # Resumo de melhorias
-├── UPDATE_INSTRUCTIONS.md              # Instruções de atualização
-└── ENVATO_SUBMISSION_CHECKLIST.md     # Checklist para Envato
+├── README.md                           # This file (index)
+├── CUSTOMIZATION.md                    # Customization guide
+├── DEPLOYMENT.md                       # Deployment guide
+├── TEMPLATE_GUIDE.md                   # Template guide
+├── TEMPLATE_EMAILJS.md                 # EmailJS guide
+├── IMPROVEMENTS_SUMMARY.md             # Improvements summary
+├── UPDATE_INSTRUCTIONS.md              # Update instructions
+└── ENVATO_SUBMISSION_CHECKLIST.md     # Envato checklist
 ```
 
 ---
 
-## 🆘 **PRECISO DE AJUDA**
+## 🆘 **NEED HELP**
 
-### **❓ Dúvidas Comuns**
+### **❓ Common Questions**
 
-**Q: Por onde começar?**
-A: Comece pelo [CUSTOMIZATION.md](./CUSTOMIZATION.md) se você é usuário final, ou pelo [TEMPLATE_GUIDE.md](./TEMPLATE_GUIDE.md) se é desenvolvedor.
+**Q: Where to start?**
+A: Start with [CUSTOMIZATION.md](./CUSTOMIZATION.md) if you're an end user, or with [TEMPLATE_GUIDE.md](./TEMPLATE_GUIDE.md) if you're a developer.
 
-**Q: Como configurar EmailJS?**
-A: Siga o guia completo em [TEMPLATE_EMAILJS.md](./TEMPLATE_EMAILJS.md).
+**Q: How to configure EmailJS?**
+A: Follow the complete guide in [TEMPLATE_EMAILJS.md](./TEMPLATE_EMAILJS.md).
 
-**Q: Como fazer deploy?**
-A: Consulte o [DEPLOYMENT.md](./DEPLOYMENT.md) para instruções detalhadas.
+**Q: How to deploy?**
+A: Check [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions.
 
-**Q: Quais são as melhorias?**
-A: Veja o resumo completo em [IMPROVEMENTS_SUMMARY.md](./IMPROVEMENTS_SUMMARY.md).
+**Q: What are the improvements?**
+A: See the complete summary in [IMPROVEMENTS_SUMMARY.md](./IMPROVEMENTS_SUMMARY.md).
 
-### **📞 Suporte**
+### **📞 Support**
 
-- **Issues**: Use o sistema de issues do GitHub
-- **Documentação**: Esta pasta contém todas as respostas
-- **Código**: O código é bem documentado e comentado
+- **Issues**: Use GitHub's issue system
+- **Documentation**: This folder contains all answers
+- **Code**: The code is well documented and commented
 
 ---
 
-## 🔄 **ATUALIZAÇÕES**
+## 🔄 **UPDATES**
 
-### **📅 Versão Atual**
+### **📅 Current Version**
 
 - **Template**: LawyerHero v2.0
 - **Next.js**: 15.x
 - **TypeScript**: 5.x
 - **Tailwind CSS**: 3.x
 
-### **📝 Histórico de Mudanças**
+### **📝 Change History**
 
-- **v2.0**: Reescrita completa com Next.js 15 e TypeScript
-- **v1.0**: Versão inicial do template
+- **v2.0**: Complete rewrite with Next.js 15 and TypeScript
+- **v1.0**: Initial template version
 
 ---
 
-## 📚 **RECURSOS ADICIONAIS**
+## 📚 **ADDITIONAL RESOURCES**
 
-### **🔗 Links Úteis**
+### **🔗 Useful Links**
 
-- [Repositório GitHub](https://github.com/seu-usuario/lawyer-hero)
-- [Demo Online](https://seu-site.vercel.app)
-- [Issues](https://github.com/seu-usuario/lawyer-hero/issues)
+- [GitHub Repository](https://github.com/your-username/lawyer-hero)
+- [Online Demo](https://your-site.vercel.app)
+- [Issues](https://github.com/your-username/lawyer-hero/issues)
 
-### **📖 Documentação Externa**
+### **📖 External Documentation**
 
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Tailwind CSS](https://tailwindcss.com/docs)
@@ -182,14 +182,14 @@ A: Veja o resumo completo em [IMPROVEMENTS_SUMMARY.md](./IMPROVEMENTS_SUMMARY.md
 
 ---
 
-## 🎯 **CONCLUSÃO**
+## 🎯 **CONCLUSION**
 
-Esta documentação foi organizada para facilitar o uso do template **LawyerHero**. Cada arquivo tem um propósito específico e pode ser consultado independentemente.
+This documentation has been organized to facilitate the use of the **LawyerHero** template. Each file has a specific purpose and can be consulted independently.
 
-**💡 Dica**: Use o Ctrl+F (ou Cmd+F) para buscar rapidamente por palavras-chave dentro de cada arquivo.
+**💡 Tip**: Use Ctrl+F (or Cmd+F) to quickly search for keywords within each file.
 
-**🚀 Boa sorte com seu projeto!**
+**🚀 Good luck with your project!**
 
 ---
 
-_Última atualização: Dezembro 2024_
+_Last update: December 2024_

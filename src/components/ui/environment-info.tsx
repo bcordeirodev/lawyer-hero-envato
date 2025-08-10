@@ -9,12 +9,12 @@
 
 "use client"
 
-import { useEffect } from 'react'
 import { getEnvironmentSummary } from '@/lib/env-checker'
+import { useEffect } from 'react'
 
 /**
  * Componente Environment Info
- * Exibe informações sobre o ambiente atual (apenas em desenvolvimento)
+ * Displays information about the current environment (development only)
  */
 export function EnvironmentInfo() {
     const summary = getEnvironmentSummary()

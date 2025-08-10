@@ -1,62 +1,62 @@
-# 📧 Guia EmailJS - LawyerHero Template
+# 📧 EmailJS Guide - LawyerHero Template
 
-## 🎯 **VISÃO GERAL**
+## 🎯 **OVERVIEW**
 
-O **EmailJS** é uma solução para enviar emails diretamente do frontend sem necessidade de backend. Este guia explica como configurar e integrar o EmailJS no template LawyerHero para formulários de contato funcionais.
-
----
-
-## 🚀 **CONFIGURAÇÃO RÁPIDA**
-
-### **1. Criar Conta EmailJS**
-
-1. Acesse [emailjs.com](https://emailjs.com)
-2. Crie uma conta gratuita
-3. Verifique seu email
-
-### **2. Configurar Serviço de Email**
-
-1. No dashboard, vá em **"Email Services"**
-2. Clique em **"Add New Service"**
-3. Escolha seu provedor (Gmail, Outlook, etc.)
-4. Configure as credenciais
-5. Anote o **Service ID**
-
-### **3. Criar Template de Email**
-
-1. Vá em **"Email Templates"**
-2. Clique em **"Create New Template"**
-3. Use o template padrão ou crie um personalizado
-4. Anote o **Template ID**
+**EmailJS** is a solution for sending emails directly from the frontend without the need for a backend. This guide explains how to configure and integrate EmailJS in the LawyerHero template for functional contact forms.
 
 ---
 
-## ⚙️ **CONFIGURAÇÃO NO PROJETO**
+## 🚀 **QUICK SETUP**
 
-### **1. Variáveis de Ambiente**
+### **1. Create EmailJS Account**
 
-Crie um arquivo `.env.local` na raiz do projeto:
+1. Visit [emailjs.com](https://emailjs.com)
+2. Create a free account
+3. Verify your email
+
+### **2. Configure Email Service**
+
+1. In the dashboard, go to **"Email Services"**
+2. Click on **"Add New Service"**
+3. Choose your provider (Gmail, Outlook, etc.)
+4. Configure credentials
+5. Note down the **Service ID**
+
+### **3. Create Email Template**
+
+1. Go to **"Email Templates"**
+2. Click on **"Create New Template"**
+3. Use the default template or create a custom one
+4. Note down the **Template ID**
+
+---
+
+## ⚙️ **PROJECT CONFIGURATION**
+
+### **1. Environment Variables**
+
+Create a `.env.local` file in the project root:
 
 ```bash
 # .env.local
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=sua_chave_publica
-NEXT_PUBLIC_EMAILJS_SERVICE_ID=seu_service_id
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=seu_template_id
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
 ```
 
-### **2. Instalar Dependências**
+### **2. Install Dependencies**
 
 ```bash
 npm install @emailjs/browser
 ```
 
-### **3. Configurar EmailJS**
+### **3. Configure EmailJS**
 
 ```typescript
 // src/lib/email/emailjs.ts
 import emailjs from "@emailjs/browser";
 
-// Inicializar EmailJS
+// Initialize EmailJS
 emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
 
 export const sendEmail = async (formData: ContactFormData) => {
@@ -69,7 +69,7 @@ export const sendEmail = async (formData: ContactFormData) => {
         from_email: formData.email,
         message: formData.message,
         phone: formData.phone,
-        subject: `Novo contato de ${formData.name}`,
+        subject: `New contact from ${formData.name}`,
       }
     );
 
@@ -83,42 +83,40 @@ export const sendEmail = async (formData: ContactFormData) => {
 
 ---
 
-## 📝 **TEMPLATE DE EMAIL RECOMENDADO**
+## 📝 **RECOMMENDED EMAIL TEMPLATE**
 
-### **Template HTML**
+### **HTML Template**
 
 ```html
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Novo Contato - LawyerHero</title>
+    <title>New Contact - LawyerHero</title>
   </head>
   <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
     <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
       <h2
         style="color: #3b82f6; border-bottom: 2px solid #3b82f6; padding-bottom: 10px;"
       >
-        🎯 Novo Contato Recebido
+        🎯 New Contact Received
       </h2>
 
       <div
         style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;"
       >
-        <h3 style="color: #1e3a8a; margin-top: 0;">
-          📋 Informações do Contato
-        </h3>
+        <h3 style="color: #1e3a8a; margin-top: 0;">📋 Contact Information</h3>
 
-        <p><strong>👤 Nome:</strong> {{from_name}}</p>
+        <p><strong>👤 Name:</strong> {{from_name}}</p>
         <p><strong>📧 Email:</strong> {{from_email}}</p>
-        <p><strong>📱 Telefone:</strong> {{phone}}</p>
-        <p><strong>📝 Assunto:</strong> {{subject}}</p>
+        <p><strong>📱 Phone:</strong> {{phone}}</p>
+        <p><strong>📝 Subject:</strong> {{subject}}</p>
       </div>
 
       <div
         style="background: #ffffff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;"
       >
-        <h3 style="color: #1e3a8a; margin-top: 0;">💬 Mensagem</h3>
+        <h3 style="color: #1e3a8a; margin-top: 0;">💬 Message</h3>
         <p style="white-space: pre-wrap;">{{message}}</p>
       </div>
 
@@ -126,7 +124,7 @@ export const sendEmail = async (formData: ContactFormData) => {
         style="margin-top: 30px; padding: 20px; background: #f0f9ff; border-radius: 8px; border-left: 4px solid #3b82f6;"
       >
         <p style="margin: 0; color: #1e40af;">
-          <strong>⏰ Recebido em:</strong> {{sent_date}}
+          <strong>⏰ Received at:</strong> {{sent_date}}
         </p>
       </div>
 
@@ -135,38 +133,38 @@ export const sendEmail = async (formData: ContactFormData) => {
       />
 
       <p style="text-align: center; color: #64748b; font-size: 14px;">
-        Este email foi enviado através do formulário de contato do seu site.
+        This email was sent through your website's contact form.
       </p>
     </div>
   </body>
 </html>
 ```
 
-### **Template de Texto Simples**
+### **Plain Text Template**
 
 ```text
-🎯 NOVO CONTATO RECEBIDO
+🎯 NEW CONTACT RECEIVED
 
-📋 INFORMAÇÕES DO CONTATO:
-👤 Nome: {{from_name}}
+📋 CONTACT INFORMATION:
+👤 Name: {{from_name}}
 📧 Email: {{from_email}}
-📱 Telefone: {{phone}}
-📝 Assunto: {{subject}}
+📱 Phone: {{phone}}
+📝 Subject: {{subject}}
 
-💬 MENSAGEM:
+💬 MESSAGE:
 {{message}}
 
-⏰ Recebido em: {{sent_date}}
+⏰ Received at: {{sent_date}}
 
 ---
-Este email foi enviado através do formulário de contato do seu site.
+This email was sent through your website's contact form.
 ```
 
 ---
 
-## 🔧 **INTEGRAÇÃO NO COMPONENTE**
+## 🔧 **COMPONENT INTEGRATION**
 
-### **1. Hook Personalizado**
+### **1. Custom Hook**
 
 ```typescript
 // src/hooks/useContactForm.ts
@@ -189,11 +187,11 @@ export const useContactForm = () => {
         setIsSuccess(true);
         return true;
       } else {
-        setError("Erro ao enviar email. Tente novamente.");
+        setError("Error sending email. Please try again.");
         return false;
       }
     } catch (err) {
-      setError("Erro inesperado. Tente novamente.");
+      setError("Unexpected error. Please try again.");
       return false;
     } finally {
       setIsLoading(false);
@@ -213,7 +211,7 @@ export const useContactForm = () => {
 };
 ```
 
-### **2. Componente do Formulário**
+### **2. Form Component**
 
 ```typescript
 // src/components/forms/ContactForm.tsx
@@ -225,7 +223,7 @@ export const ContactForm = () => {
   const onSubmit = async (data: ContactFormData) => {
     const success = await handleSubmit(data);
     if (success) {
-      // Limpar formulário ou mostrar sucesso
+      // Clear form or show success
       reset();
     }
   };
@@ -233,21 +231,21 @@ export const ContactForm = () => {
   if (isSuccess) {
     return (
       <div className="success-message">
-        <h3>✅ Mensagem Enviada!</h3>
-        <p>Obrigado pelo contato. Retornaremos em breve.</p>
-        <button onClick={reset}>Enviar Nova Mensagem</button>
+        <h3>✅ Message Sent!</h3>
+        <p>Thank you for contacting us. We'll get back to you soon.</p>
+        <button onClick={reset}>Send New Message</button>
       </div>
     );
   }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      {/* Campos do formulário */}
+      {/* Form fields */}
 
       {error && <div className="error-message">❌ {error}</div>}
 
       <button type="submit" disabled={isLoading} className="submit-button">
-        {isLoading ? "Enviando..." : "Enviar Mensagem"}
+        {isLoading ? "Sending..." : "Send Message"}
       </button>
     </form>
   );
@@ -256,9 +254,9 @@ export const ContactForm = () => {
 
 ---
 
-## 🎨 **ESTILIZAÇÃO CSS**
+## 🎨 **CSS STYLING**
 
-### **Estilos para Mensagens**
+### **Message Styles**
 
 ```css
 /* src/styles/components.css */
@@ -330,9 +328,9 @@ export const ContactForm = () => {
 
 ---
 
-## 🔒 **SEGURANÇA E VALIDAÇÃO**
+## 🔒 **SECURITY AND VALIDATION**
 
-### **1. Validação do Frontend**
+### **1. Frontend Validation**
 
 ```typescript
 // src/lib/validation/contact-schema.ts
@@ -341,22 +339,22 @@ import * as yup from "yup";
 export const contactSchema = yup.object({
   name: yup
     .string()
-    .required("Nome é obrigatório")
-    .min(2, "Nome deve ter pelo menos 2 caracteres")
-    .max(100, "Nome deve ter no máximo 100 caracteres"),
+    .required("Name is required")
+    .min(2, "Name must be at least 2 characters")
+    .max(100, "Name must be at most 100 characters"),
 
-  email: yup.string().required("Email é obrigatório").email("Email inválido"),
+  email: yup.string().required("Email is required").email("Invalid email"),
 
   phone: yup
     .string()
-    .required("Telefone é obrigatório")
-    .matches(/^[\d\s\-\+\(\)]+$/, "Telefone inválido"),
+    .required("Phone is required")
+    .matches(/^[\d\s\-\+\(\)]+$/, "Invalid phone"),
 
   message: yup
     .string()
-    .required("Mensagem é obrigatória")
-    .min(10, "Mensagem deve ter pelo menos 10 caracteres")
-    .max(1000, "Mensagem deve ter no máximo 1000 caracteres"),
+    .required("Message is required")
+    .min(10, "Message must be at least 10 characters")
+    .max(1000, "Message must be at most 1000 characters"),
 });
 ```
 
@@ -370,13 +368,13 @@ const handleSubmit = async (formData: ContactFormData) => {
   const now = Date.now();
   const timeSinceLastSubmission = now - lastSubmission;
 
-  // Limitar a 1 envio por minuto
+  // Limit to 1 submission per minute
   if (timeSinceLastSubmission < 60000) {
-    setError("Aguarde 1 minuto antes de enviar outra mensagem.");
+    setError("Please wait 1 minute before sending another message.");
     return false;
   }
 
-  // ... resto da lógica
+  // ... rest of the logic
 
   setLastSubmission(now);
 };
@@ -384,102 +382,102 @@ const handleSubmit = async (formData: ContactFormData) => {
 
 ---
 
-## 🧪 **TESTANDO A INTEGRAÇÃO**
+## 🧪 **TESTING THE INTEGRATION**
 
-### **1. Teste Local**
+### **1. Local Testing**
 
 ```bash
-# 1. Configure as variáveis de ambiente
+# 1. Configure environment variables
 cp env.example .env.local
 
-# 2. Edite .env.local com suas credenciais
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=sua_chave
-NEXT_PUBLIC_EMAILJS_SERVICE_ID=seu_service_id
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=seu_template_id
+# 2. Edit .env.local with your credentials
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_key
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
 
-# 3. Execute o projeto
+# 3. Run the project
 npm run dev
 
-# 4. Teste o formulário em localhost:3000
+# 4. Test the form at localhost:3000
 ```
 
-### **2. Verificação de Envio**
+### **2. Send Verification**
 
-1. **Console do Navegador** - Verifique logs de sucesso/erro
-2. **Dashboard EmailJS** - Confirme emails recebidos
-3. **Caixa de Entrada** - Verifique se emails chegaram
-4. **Spam** - Verifique pasta de spam
+1. **Browser Console** - Check success/error logs
+2. **EmailJS Dashboard** - Confirm received emails
+3. **Inbox** - Check if emails arrived
+4. **Spam** - Check spam folder
 
 ---
 
-## 🚀 **DEPLOY E PRODUÇÃO**
+## 🚀 **DEPLOY AND PRODUCTION**
 
-### **1. Variáveis de Produção**
+### **1. Production Variables**
 
 ```bash
 # Vercel
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=sua_chave
-NEXT_PUBLIC_EMAILJS_SERVICE_ID=seu_service_id
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=seu_template_id
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_key
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
 
 # Netlify
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=sua_chave
-NEXT_PUBLIC_EMAILJS_SERVICE_ID=seu_service_id
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=seu_template_id
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_key
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
 ```
 
-### **2. Verificação Pós-Deploy**
+### **2. Post-Deploy Verification**
 
-1. **Teste o formulário** no site em produção
-2. **Verifique logs** de erro no console
-3. **Confirme emails** sendo recebidos
-4. **Teste em diferentes dispositivos**
+1. **Test the form** on production site
+2. **Check error logs** in console
+3. **Confirm emails** being received
+4. **Test on different devices**
 
 ---
 
 ## 🔧 **TROUBLESHOOTING**
 
-### **Problemas Comuns**
+### **Common Issues**
 
 #### **❌ "EmailJS is not defined"**
 
 ```typescript
-// Solução: Verificar importação
+// Solution: Check import
 import emailjs from "@emailjs/browser";
 
-// E inicialização
+// And initialization
 emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
 ```
 
 #### **❌ "Service ID not found"**
 
-1. Verificar se o Service ID está correto
-2. Confirmar se o serviço está ativo no dashboard
-3. Verificar variáveis de ambiente
+1. Verify Service ID is correct
+2. Confirm service is active in dashboard
+3. Check environment variables
 
 #### **❌ "Template ID not found"**
 
-1. Verificar se o Template ID está correto
-2. Confirmar se o template está publicado
-3. Verificar variáveis de ambiente
+1. Verify Template ID is correct
+2. Confirm template is published
+3. Check environment variables
 
 #### **❌ "Public Key invalid"**
 
-1. Verificar se a chave pública está correta
-2. Confirmar se a conta está verificada
-3. Verificar se não há espaços extras
+1. Verify public key is correct
+2. Confirm account is verified
+3. Check for extra spaces
 
 ---
 
-## 📊 **MONITORAMENTO E ANALYTICS**
+## 📊 **MONITORING AND ANALYTICS**
 
-### **1. Tracking de Envios**
+### **1. Send Tracking**
 
 ```typescript
 // src/lib/email/emailjs.ts
 export const sendEmail = async (formData: ContactFormData) => {
   try {
-    // Google Analytics (se configurado)
+    // Google Analytics (if configured)
     if (typeof window !== "undefined" && window.gtag) {
       window.gtag("event", "form_submit", {
         event_category: "Contact",
@@ -489,7 +487,7 @@ export const sendEmail = async (formData: ContactFormData) => {
 
     const result = await emailjs.send(/* ... */);
 
-    // Tracking de sucesso
+    // Success tracking
     if (typeof window !== "undefined" && window.gtag) {
       window.gtag("event", "form_success", {
         event_category: "Contact",
@@ -499,7 +497,7 @@ export const sendEmail = async (formData: ContactFormData) => {
 
     return { success: true, result };
   } catch (error) {
-    // Tracking de erro
+    // Error tracking
     if (typeof window !== "undefined" && window.gtag) {
       window.gtag("event", "form_error", {
         event_category: "Contact",
@@ -512,28 +510,28 @@ export const sendEmail = async (formData: ContactFormData) => {
 };
 ```
 
-### **2. Dashboard EmailJS**
+### **2. EmailJS Dashboard**
 
-- **Email Delivery Rate** - Taxa de entrega
-- **Bounce Rate** - Taxa de retorno
-- **Spam Reports** - Relatórios de spam
-- **Usage Analytics** - Uso da API
+- **Email Delivery Rate** - Delivery rate
+- **Bounce Rate** - Bounce rate
+- **Spam Reports** - Spam reports
+- **Usage Analytics** - API usage
 
 ---
 
-## 💡 **DICAS E MELHORIAS**
+## 💡 **TIPS AND IMPROVEMENTS**
 
-### **1. Personalização Avançada**
+### **1. Advanced Customization**
 
 ```typescript
-// Adicionar campos customizados
+// Add custom fields
 const emailParams = {
   from_name: formData.name,
   from_email: formData.email,
   message: formData.message,
   phone: formData.phone,
   subject: formData.subject,
-  // Campos customizados
+  // Custom fields
   lawyer_name: LAWYER_CONFIG.lawyer.name,
   service_area: formData.serviceArea,
   urgency: formData.urgency,
@@ -541,11 +539,11 @@ const emailParams = {
 };
 ```
 
-### **2. Notificações Múltiplas**
+### **2. Multiple Notifications**
 
 ```typescript
-// Enviar para múltiplos emails
-const emails = ["contato@seuemail.com", "secretaria@seuemail.com"];
+// Send to multiple emails
+const emails = ["contact@youremail.com", "secretary@youremail.com"];
 
 for (const email of emails) {
   await emailjs.send(serviceId, templateId, { ...params, to_email: email });
@@ -554,33 +552,33 @@ for (const email of emails) {
 
 ---
 
-## 📚 **RECURSOS ADICIONAIS**
+## 📚 **ADDITIONAL RESOURCES**
 
-### **Documentação Oficial**
+### **Official Documentation**
 
 - [EmailJS Documentation](https://www.emailjs.com/docs/)
 - [React Integration](https://www.emailjs.com/docs/react/)
 - [Template Examples](https://www.emailjs.com/docs/templates/)
 
-### **Alternativas**
+### **Alternatives**
 
-- **Formspree** - Formulários sem backend
-- **Netlify Forms** - Formulários nativos do Netlify
-- **Getform** - Formulários com webhooks
-
----
-
-## 🎯 **PRÓXIMOS PASSOS**
-
-1. **Configure** sua conta EmailJS
-2. **Crie** o template de email
-3. **Configure** as variáveis de ambiente
-4. **Teste** localmente
-5. **Faça deploy** e teste em produção
-6. **Monitore** o funcionamento
+- **Formspree** - Forms without backend
+- **Netlify Forms** - Native Netlify forms
+- **Getform** - Forms with webhooks
 
 ---
 
-**💡 Dica**: Sempre teste o formulário em produção antes de considerar o projeto finalizado.
+## 🎯 **NEXT STEPS**
 
-**🚀 Boa sorte com sua integração EmailJS!**
+1. **Configure** your EmailJS account
+2. **Create** the email template
+3. **Configure** environment variables
+4. **Test** locally
+5. **Deploy** and test in production
+6. **Monitor** functionality
+
+---
+
+**💡 Tip**: Always test the form in production before considering the project finished.
+
+**🚀 Good luck with your EmailJS integration!**

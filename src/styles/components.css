@@ -59,11 +59,11 @@
 }
 
 .card__title {
-  @apply text-lg sm:text-xl font-semibold text-text-primary;
+  @apply text-base sm:text-lg lg:text-xl font-semibold text-text-primary break-words;
 }
 
 .card__description {
-  @apply text-sm sm:text-base text-text-secondary;
+  @apply text-sm sm:text-base text-text-secondary break-words hyphens-auto;
 }
 
 /* ============================================================================
@@ -83,11 +83,11 @@
 }
 
 .btn--lg {
-  @apply px-6 py-3 text-base;
+  @apply px-5 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base whitespace-nowrap;
 }
 
 .btn--sm {
-  @apply px-4 py-2 text-sm;
+  @apply px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm whitespace-nowrap;
 }
 
 .btn__icon {
@@ -334,6 +334,36 @@
   .mobile-text-center {
     @apply text-center;
   }
+
+  .mobile-stack {
+    @apply flex-col items-stretch;
+  }
+
+  .mobile-full-width {
+    @apply w-full;
+  }
+
+  .mobile-text-sm {
+    @apply text-sm;
+  }
+
+  .mobile-p-4 {
+    @apply p-4;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .tablet-grid-2 {
+    @apply grid-cols-2;
+  }
+
+  .tablet-text-base {
+    @apply text-base;
+  }
+
+  .tablet-p-6 {
+    @apply p-6;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -347,6 +377,14 @@
 
   .desktop-grid-4 {
     @apply grid-cols-4;
+  }
+
+  .desktop-text-lg {
+    @apply text-lg;
+  }
+
+  .desktop-p-8 {
+    @apply p-8;
   }
 }
 

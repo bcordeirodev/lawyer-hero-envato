@@ -183,7 +183,7 @@ export function useContactForm(
 
         // Check if form has errors
         if (hasErrors(validationErrors)) {
-            setSubmitError('Por favor, corrija os erros no formulário')
+            setSubmitError('Please correct the errors in the form')
             return
         }
 
@@ -204,7 +204,7 @@ export function useContactForm(
         } catch (error) {
             console.error('Form submission error:', error)
 
-            const errorMessage = error instanceof Error ? error.message : 'Erro ao enviar formulário. Tente novamente.'
+            const errorMessage = error instanceof Error ? error.message : 'Error sending form. Please try again.'
             setSubmitError(errorMessage)
 
             // Call onError callback if provided
@@ -227,13 +227,13 @@ export function useContactForm(
     const submitFormData = async (data: ContactFormData): Promise<void> => {
         // Check if EmailJS is configured
         if (!isEmailJSConfigured()) {
-            throw new Error('Serviço de email não configurado. Entre em contato por telefone: (61) 99999-9999')
+            throw new Error('Email service not configured. Please contact us by phone: (555) 123-4567')
         }
 
         try {
             // Log attempt for analytics (in development)
             if (process.env.NODE_ENV === 'development') {
-                console.log('Enviando dados do formulário:', {
+                console.log('Sending form data:', {
                     name: data.name,
                     email: data.email,
                     hasPhone: !!data.phone,
@@ -248,7 +248,7 @@ export function useContactForm(
 
             // Log success for analytics (in development)
             if (process.env.NODE_ENV === 'development') {
-                console.log('✅ Email enviado com sucesso!')
+                console.log('✅ Email sent successfully!')
             }
         } catch (error) {
             console.error('❌ Email submission error:', error)
@@ -258,7 +258,7 @@ export function useContactForm(
                 throw error
             }
 
-            throw new Error('Erro ao enviar email. Tente novamente ou entre em contato por telefone.')
+            throw new Error('Error sending email. Please try again or contact us by phone.')
         }
     }
 

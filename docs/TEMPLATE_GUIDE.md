@@ -1,92 +1,92 @@
-# 📋 Guia do Template - LawyerHero
+# 📋 Template Guide - LawyerHero
 
-## 🎯 **VISÃO GERAL**
+## 🎯 **OVERVIEW**
 
-O **LawyerHero** é um template profissional para landing pages de advogados, desenvolvido com Next.js 15, TypeScript e Tailwind CSS. Este guia explica a estrutura original do template e como utilizá-lo de forma eficaz.
+**LawyerHero** is a professional template for lawyer landing pages, developed with Next.js 15, TypeScript, and Tailwind CSS. This guide explains the original template structure and how to use it effectively.
 
 ---
 
-## 🏗️ **ESTRUTURA DO PROJETO**
+## 🏗️ **PROJECT STRUCTURE**
 
-### **📁 Diretórios Principais**
+### **📁 Main Directories**
 
 ```
 src/
-├── app/                 # App Router do Next.js 15
-│   ├── layout.tsx      # Layout principal
-│   ├── page.tsx        # Página inicial
-│   └── globals.css     # Estilos globais
-├── components/          # Componentes React
+├── app/                 # Next.js 15 App Router
+│   ├── layout.tsx      # Main layout
+│   ├── page.tsx        # Home page
+│   └── globals.css     # Global styles
+├── components/          # React components
 │   ├── layout/         # Header, Footer
-│   ├── sections/       # Seções da página
-│   └── ui/            # Componentes base
-├── config/             # Configurações
-│   └── lawyer.ts      # Dados do advogado
-├── hooks/              # Hooks customizados
-├── lib/                # Utilitários e funções
-└── types/              # Definições TypeScript
+│   ├── sections/       # Page sections
+│   └── ui/            # Base components
+├── config/             # Configurations
+│   └── lawyer.ts      # Lawyer data
+├── hooks/              # Custom hooks
+├── lib/                # Utilities and functions
+└── types/              # TypeScript definitions
 ```
 
-### **🔧 Arquivos de Configuração**
+### **🔧 Configuration Files**
 
-- **`next.config.js`** - Configuração do Next.js
-- **`tailwind.config.ts`** - Configuração do Tailwind CSS
-- **`tsconfig.json`** - Configuração do TypeScript
-- **`package.json`** - Dependências e scripts
+- **`next.config.js`** - Next.js configuration
+- **`tailwind.config.ts`** - Tailwind CSS configuration
+- **`tsconfig.json`** - TypeScript configuration
+- **`package.json`** - Dependencies and scripts
 
 ---
 
-## 🎨 **SISTEMA DE DESIGN**
+## 🎨 **DESIGN SYSTEM**
 
-### **🎨 Paleta de Cores**
+### **🎨 Color Palette**
 
 ```typescript
-// Cores principais (configuráveis)
+// Main colors (configurable)
 primary: {
-  50: '#eff6ff',    // Azul claro
-  500: '#3b82f6',   // Azul principal
-  900: '#1e3a8a',   // Azul escuro
+  50: '#eff6ff',    // Light blue
+  500: '#3b82f6',   // Main blue
+  900: '#1e3a8a',   // Dark blue
 },
 secondary: {
-  500: '#f59e0b',   // Dourado
-  600: '#d97706',   // Dourado escuro
+  500: '#f59e0b',   // Gold
+  600: '#d97706',   // Dark gold
 }
 ```
 
-### **📱 Responsividade**
+### **📱 Responsiveness**
 
-- **Mobile First** - Design otimizado para dispositivos móveis
-- **Breakpoints** - Adaptação automática para tablets e desktops
-- **Touch Friendly** - Elementos otimizados para toque
+- **Mobile First** - Design optimized for mobile devices
+- **Breakpoints** - Automatic adaptation for tablets and desktops
+- **Touch Friendly** - Elements optimized for touch
 
 ---
 
-## ⚡ **FUNCIONALIDADES PRINCIPAIS**
+## ⚡ **MAIN FEATURES**
 
 ### **🚀 Performance**
 
-- **Lazy Loading** - Carregamento sob demanda
-- **Image Optimization** - Otimização automática de imagens
-- **Bundle Splitting** - Divisão inteligente do código
-- **Core Web Vitals** - Métricas de performance otimizadas
+- **Lazy Loading** - On-demand loading
+- **Image Optimization** - Automatic image optimization
+- **Bundle Splitting** - Smart code splitting
+- **Core Web Vitals** - Optimized performance metrics
 
 ### **🔍 SEO**
 
-- **Meta Tags** - Configuração automática para SEO
-- **Structured Data** - Dados estruturados para motores de busca
-- **Sitemap** - Geração automática de sitemap
-- **Robots.txt** - Configuração para crawlers
+- **Meta Tags** - Automatic SEO configuration
+- **Structured Data** - Structured data for search engines
+- **Sitemap** - Automatic sitemap generation
+- **Robots.txt** - Crawler configuration
 
-### **📱 Acessibilidade**
+### **📱 Accessibility**
 
-- **ARIA Labels** - Suporte completo para leitores de tela
-- **Keyboard Navigation** - Navegação por teclado
-- **Color Contrast** - Contraste adequado para leitura
-- **Semantic HTML** - HTML semântico e estruturado
+- **ARIA Labels** - Complete screen reader support
+- **Keyboard Navigation** - Keyboard navigation
+- **Color Contrast** - Adequate contrast for reading
+- **Semantic HTML** - Semantic and structured HTML
 
 ---
 
-## 🛠️ **COMPONENTES PRINCIPAIS**
+## 🛠️ **MAIN COMPONENTS**
 
 ### **🎯 Hero Section**
 
@@ -134,73 +134,73 @@ export const Contact = () => {
 
 ---
 
-## 🔧 **CONFIGURAÇÃO RÁPIDA**
+## 🔧 **QUICK SETUP**
 
-### **1. Dados do Advogado**
+### **1. Lawyer Data**
 
 ```typescript
 // src/config/lawyer.ts
 export const LAWYER_CONFIG: LawyerConfig = {
   lawyer: {
-    name: "Dr. Seu Nome",
-    title: "Advogado - Direito Civil",
-    description: "Descrição para SEO",
+    name: "Dr. Your Name",
+    title: "Attorney - Civil Law",
+    description: "SEO Description",
     credentials: {
-      bar: "OAB-SP 123456",
-      location: "São Paulo, SP",
+      bar: "BAR-123456",
+      location: "New York, NY",
     },
   },
 };
 ```
 
-### **2. Serviços**
+### **2. Services**
 
 ```typescript
 export const SERVICES = [
   {
     id: "civil",
-    title: "Direito Civil",
-    description: "Contratos, responsabilidade civil...",
+    title: "Civil Law",
+    description: "Contracts, civil liability...",
     icon: "scale",
   },
 ];
 ```
 
-### **3. Informações de Contato**
+### **3. Contact Information**
 
 ```typescript
 export const CONTACT_INFO = {
-  phone: "+55 11 99999-9999",
-  email: "contato@seuemail.com",
-  address: "Rua Exemplo, 123 - São Paulo, SP",
+  phone: "+1 555-123-4567",
+  email: "contact@youremail.com",
+  address: "123 Example St - New York, NY",
 };
 ```
 
 ---
 
-## 🚀 **SCRIPTS DISPONÍVEIS**
+## 🚀 **AVAILABLE SCRIPTS**
 
-### **Desenvolvimento**
+### **Development**
 
 ```bash
-npm run dev          # Servidor de desenvolvimento
-npm run build        # Build de produção
-npm run start        # Servidor de produção
-npm run lint         # Verificação de código
-npm run type-check   # Verificação de tipos
+npm run dev          # Development server
+npm run build        # Production build
+npm run start        # Production server
+npm run lint         # Code verification
+npm run type-check   # Type checking
 ```
 
-### **Análise**
+### **Analysis**
 
 ```bash
-npm run analyze      # Análise do bundle
-npm run lighthouse   # Teste de performance
-npm run test         # Executar testes
+npm run analyze      # Bundle analysis
+npm run lighthouse   # Performance test
+npm run test         # Run tests
 ```
 
 ---
 
-## 📱 **ADAPTAÇÃO PARA MOBILE**
+## 📱 **MOBILE ADAPTATION**
 
 ### **Breakpoints**
 
@@ -227,21 +227,21 @@ npm run test         # Executar testes
 
 ### **Touch Optimization**
 
-- **Botões** - Mínimo 44x44px para toque
-- **Links** - Espaçamento adequado entre elementos
-- **Scroll** - Scroll suave e responsivo
+- **Buttons** - Minimum 44x44px for touch
+- **Links** - Adequate spacing between elements
+- **Scroll** - Smooth and responsive scroll
 
 ---
 
-## 🔍 **OTIMIZAÇÃO DE PERFORMANCE**
+## 🔍 **PERFORMANCE OPTIMIZATION**
 
 ### **Lazy Loading**
 
 ```typescript
-// Carregamento sob demanda
+// On-demand loading
 const LazyComponent = lazy(() => import("./Component"));
 
-// Suspense para loading
+// Suspense for loading
 <Suspense fallback={<Loading />}>
   <LazyComponent />
 </Suspense>;
@@ -254,21 +254,21 @@ import Image from "next/image";
 
 <Image
   src="/image.jpg"
-  alt="Descrição"
+  alt="Description"
   width={800}
   height={600}
-  priority={true} // Para LCP
+  priority={true} // For LCP
 />;
 ```
 
 ---
 
-## 🛡️ **SEGURANÇA E VALIDAÇÃO**
+## 🛡️ **SECURITY AND VALIDATION**
 
 ### **Form Validation**
 
 ```typescript
-// Validação robusta de formulários
+// Robust form validation
 const { register, handleSubmit, errors } = useForm({
   resolver: yupResolver(contactSchema),
 });
@@ -277,7 +277,7 @@ const { register, handleSubmit, errors } = useForm({
 ### **Error Boundaries**
 
 ```typescript
-// Tratamento de erros
+// Error handling
 <ErrorBoundary fallback={<ErrorFallback />}>
   <Component />
 </ErrorBoundary>
@@ -285,33 +285,33 @@ const { register, handleSubmit, errors } = useForm({
 
 ---
 
-## 📚 **RECURSOS ADICIONAIS**
+## 📚 **ADDITIONAL RESOURCES**
 
-### **Documentação**
+### **Documentation**
 
-- **CUSTOMIZATION.md** - Guia completo de personalização
-- **DEPLOYMENT.md** - Instruções de deploy
-- **README.md** - Documentação principal
+- **CUSTOMIZATION.md** - Complete customization guide
+- **DEPLOYMENT.md** - Deployment instructions
+- **README.md** - Main documentation
 
-### **Suporte**
+### **Support**
 
-- **TypeScript** - Tipagem completa
-- **ESLint** - Padrões de código
-- **Prettier** - Formatação automática
+- **TypeScript** - Complete typing
+- **ESLint** - Code standards
+- **Prettier** - Automatic formatting
 - **Husky** - Git hooks
 
 ---
 
-## 🎯 **PRÓXIMOS PASSOS**
+## 🎯 **NEXT STEPS**
 
-1. **Configure** os dados do advogado
-2. **Personalize** cores e estilos
-3. **Adicione** suas informações de contato
-4. **Teste** em diferentes dispositivos
-5. **Faça deploy** na plataforma escolhida
+1. **Configure** lawyer data
+2. **Customize** colors and styles
+3. **Add** your contact information
+4. **Test** on different devices
+5. **Deploy** to chosen platform
 
 ---
 
-**💡 Dica**: Use o arquivo `CUSTOMIZATION.md` para instruções detalhadas de personalização e `DEPLOYMENT.md` para instruções de deploy.
+**💡 Tip**: Use the `CUSTOMIZATION.md` file for detailed customization instructions and `DEPLOYMENT.md` for deployment instructions.
 
-**🚀 Boa sorte com seu projeto!**
+**🚀 Good luck with your project!**

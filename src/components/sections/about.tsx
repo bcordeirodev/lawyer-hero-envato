@@ -27,7 +27,7 @@ export function About() {
                         <svg className="h-3 w-3 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                         </svg>
-                        Sobre
+                        About
                     </motion.div>
                     <motion.h2
                         className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-text-primary via-gold-500 to-text-primary bg-clip-text text-transparent mb-4 drop-shadow-sm hover:scale-105 transition-transform duration-300 cursor-default"
@@ -37,10 +37,10 @@ export function About() {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         whileHover={{ scale: 1.02 }}
                     >
-                        Sobre Mim
+                        About Me
                     </motion.h2>
                     <p className="text-lg text-text-secondary max-w-3xl mx-auto">
-                        Conheça minha trajetória e especialidades jurídicas
+                        Learn about my background and legal specialties
                     </p>
                 </div>
 
@@ -58,7 +58,7 @@ export function About() {
                                     <svg className="h-3 w-3 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                                     </svg>
-                                    Sobre
+                                    About
                                 </div>
                             </div>
 
@@ -69,9 +69,9 @@ export function About() {
                                 {lawyer.description}
                             </p>
                             <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg leading-7 sm:leading-8 text-text-secondary">
-                                Minha missão é fornecer soluções jurídicas eficazes, sempre priorizando a ética,
-                                transparência e compromisso com meus clientes. Acredito que cada caso é único e
-                                merece atenção especial, independentemente da complexidade.
+                                My mission is to provide effective legal solutions, always prioritizing ethics,
+                                transparency and commitment to my clients. I believe that each case is unique and
+                                deserves special attention, regardless of complexity.
                             </p>
 
                             <div className="mt-6 sm:mt-8 space-y-3 sm:space-y-4">
@@ -110,7 +110,7 @@ export function About() {
                                     <svg className="h-4 w-4 sm:h-5 sm:w-5 text-secondary-500 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
-                                    Por que escolher meus serviços?
+                                    Why choose my services?
                                 </h3>
                                 <ul className="space-y-2 sm:space-y-3">
                                     {about.whyChooseUs.map((item, index) => (
@@ -138,7 +138,7 @@ export function About() {
                                     <svg className="h-4 w-4 sm:h-5 sm:w-5 text-secondary-500 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                                     </svg>
-                                    Credenciais e Experiência
+                                    Credentials and Experience
                                 </h3>
                                 <div className="space-y-2 sm:space-y-3">
                                     <motion.div
@@ -159,7 +159,7 @@ export function About() {
                                         <svg className="h-4 w-4 sm:h-5 sm:w-5 text-secondary-500" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
-                                        <span className="text-sm sm:text-base text-text-primary font-medium">Experiência consolidada na área jurídica</span>
+                                        <span className="text-sm sm:text-base text-text-primary font-medium">Consolidated experience in the legal field</span>
                                     </motion.div>
                                     <motion.div
                                         className="flex items-center space-x-3 p-2 rounded-lg hover:bg-background-tertiary/50 transition-colors"
@@ -169,7 +169,7 @@ export function About() {
                                         <svg className="h-4 w-4 sm:h-5 sm:w-5 text-secondary-500" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
-                                        <span className="text-sm sm:text-base text-text-primary font-medium">Atuação em diversos casos jurídicos</span>
+                                        <span className="text-sm sm:text-base text-text-primary font-medium">Handling various legal cases</span>
                                     </motion.div>
                                 </div>
                             </motion.div>

@@ -1,173 +1,173 @@
-# 🔄 Instruções de Atualização - LawyerHero Template
+# 🔄 Update Instructions - LawyerHero Template
 
-## 📋 **FLUXO COMPLETO DE ATUALIZAÇÃO E PUBLICAÇÃO**
+## 📋 **COMPLETE UPDATE AND PUBLICATION FLOW**
 
-### 🎯 **Quando Atualizar**
+### 🎯 **When to Update**
 
-- Correções de bugs ou melhorias de código
-- Atualizações de dependências (Next.js, React, etc.)
-- Novos recursos ou funcionalidades
-- Atualizações de conformidade ética/legal
-- Melhorias de performance ou SEO
+- Bug fixes or code improvements
+- Dependency updates (Next.js, React, etc.)
+- New features or functionalities
+- Ethical/legal compliance updates
+- Performance or SEO improvements
 
 ---
 
-## 🛠️ **1. DESENVOLVIMENTO E TESTES**
+## 🛠️ **1. DEVELOPMENT AND TESTING**
 
-### ✅ **Preparação do Ambiente**
+### ✅ **Environment Preparation**
 
 ```bash
-# Instalar dependências
+# Install dependencies
 npm install
 
-# Verificar se tudo está funcionando
+# Check if everything is working
 npm run dev
 ```
 
-### ✅ **Fazer Alterações**
+### ✅ **Make Changes**
 
-1. **Editar código fonte** em `src/`
-2. **Atualizar configurações** em `src/config/lawyer.ts` se necessário
-3. **Testar localmente** com `npm run dev`
-4. **Verificar qualidade** do código:
+1. **Edit source code** in `src/`
+2. **Update configurations** in `src/config/lawyer.ts` if needed
+3. **Test locally** with `npm run dev`
+4. **Check code quality**:
    ```bash
    npm run lint
    npm run type-check
    npm run build
    ```
 
-### ✅ **Testes de Qualidade**
+### ✅ **Quality Tests**
 
 ```bash
-# Verificar ESLint (zero warnings)
+# Check ESLint (zero warnings)
 npm run lint
 
-# Verificar TypeScript (zero errors)
+# Check TypeScript (zero errors)
 npm run type-check
 
-# Testar build production
+# Test production build
 npm run build
 
-# Testar static export (para Envato)
+# Test static export (for Envato)
 STATIC_EXPORT=true NODE_ENV=production npm run build
 ```
 
 ---
 
-## 📚 **2. ATUALIZAR DOCUMENTAÇÃO**
+## 📚 **2. UPDATE DOCUMENTATION**
 
-### ✅ **Documentação HTML**
+### ✅ **HTML Documentation**
 
 ```bash
-# Editar documentação principal
+# Edit main documentation
 code documentation/index.html
 ```
 
-**Pontos importantes:**
+**Important points:**
 
-- Manter idioma em **inglês**
-- Atualizar capturas de tela se necessário
-- Verificar links e referências
-- Manter seção de conformidade ética atualizada
+- Keep language in **English**
+- Update screenshots if needed
+- Check links and references
+- Keep ethical compliance section updated
 
 ### ✅ **README.txt**
 
 ```bash
-# Atualizar README para compradores
+# Update README for buyers
 code README.txt
 ```
 
-**Verificar:**
+**Check:**
 
-- Versão do Node.js requerida
-- Instruções de instalação
-- Novos recursos adicionados
-- Seção de conformidade legal
+- Required Node.js version
+- Installation instructions
+- New features added
+- Legal compliance section
 
 ---
 
-## 📦 **3. GERAR PACOTE ENVATO**
+## 📦 **3. GENERATE ENVATO PACKAGE**
 
-### ✅ **Script Automático**
+### ✅ **Automatic Script**
 
 ```bash
-# Gerar pacote completo
+# Generate complete package
 npm run prepare-envato
 ```
 
-**Este comando:**
+**This command:**
 
-- Limpa pasta envato-package anterior
-- Faz build production com static export
-- Copia demo/ (site estático)
-- Copia documentation/ (guia HTML)
-- Copia template/ (código fonte)
-- Cria README.txt e INSTALL.txt
+- Cleans previous envato-package folder
+- Makes production build with static export
+- Copies demo/ (static site)
+- Copies documentation/ (HTML guide)
+- Copies template/ (source code)
+- Creates README.txt and INSTALL.txt
 
-### ✅ **Verificar Estrutura**
+### ✅ **Check Structure**
 
 ```bash
-# Verificar se estrutura está correta
+# Check if structure is correct
 ls -la envato-package/
 ```
 
-**Estrutura esperada:**
+**Expected structure:**
 
 ```
 envato-package/
-├── demo/              # Site compilado
-├── documentation/     # Guia HTML
-├── template/          # Código fonte
-├── README.txt         # Documentação principal
-├── LICENSE.txt        # Licença MIT
-└── INSTALL.txt        # Instalação rápida
+├── demo/              # Compiled site
+├── documentation/     # HTML guide
+├── template/          # Source code
+├── README.txt         # Main documentation
+├── LICENSE.txt        # MIT License
+└── INSTALL.txt        # Quick installation
 ```
 
-### ✅ **Testar Demo**
+### ✅ **Test Demo**
 
 ```bash
-# Testar se demo funciona
+# Test if demo works
 cd envato-package/demo
 python3 -m http.server 8080
 
-# Abrir http://localhost:8080 no navegador
-# Verificar se todas as páginas funcionam
+# Open http://localhost:8080 in browser
+# Check if all pages work
 ```
 
 ---
 
-## 🗂️ **4. CRIAR ZIP PARA UPLOAD**
+## 🗂️ **4. CREATE ZIP FOR UPLOAD**
 
-### ✅ **Gerar ZIP**
+### ✅ **Generate ZIP**
 
 ```bash
-# Voltar para diretório raiz
+# Return to root directory
 cd ../../
 
-# Criar ZIP para Envato
+# Create ZIP for Envato
 cd envato-package
-zip -r ../LawyerHero-Template-Envato-v[VERSAO].zip . -x "*.DS_Store" "*.git*" "*~" "*.tmp"
+zip -r ../LawyerHero-Template-Envato-v[VERSION].zip . -x "*.DS_Store" "*.git*" "*~" "*.tmp"
 cd ..
 
-# Verificar tamanho do arquivo
+# Check file size
 ls -lh LawyerHero-Template-Envato-v*.zip
 ```
 
-### ✅ **Validação Final**
+### ✅ **Final Validation**
 
-- **Tamanho**: Deve ser ~10-15MB
-- **Estrutura**: demo/, documentation/, template/
-- **Funcionalidade**: Demo deve abrir no navegador
-- **Qualidade**: Sem arquivos temporários ou lixo
+- **Size**: Should be ~10-15MB
+- **Structure**: demo/, documentation/, template/
+- **Functionality**: Demo should open in browser
+- **Quality**: No temporary or junk files
 
 ---
 
-## 💾 **5. COMMIT E VERSIONAMENTO**
+## 💾 **5. COMMIT AND VERSIONING**
 
-### ✅ **Commit das Alterações**
+### ✅ **Commit Changes**
 
 ```bash
-# Adicionar arquivos importantes
+# Add important files
 git add .
 git add documentation/
 git add scripts/prepare-envato.js
@@ -176,71 +176,71 @@ git add LICENSE.txt
 git add UPDATE_INSTRUCTIONS.md
 git add ENVATO_SUBMISSION_CHECKLIST.md
 
-# Fazer commit
-git commit -m "feat: versão X.X.X - [descrição das mudanças]
+# Make commit
+git commit -m "feat: version X.X.X - [change description]
 
-- Adiciona/corrige: [lista de mudanças]
-- Atualiza documentação
-- Melhora conformidade ética
-- Otimiza performance"
+- Adds/fixes: [list of changes]
+- Updates documentation
+- Improves ethical compliance
+- Optimizes performance"
 
-# Criar tag de versão
+# Create version tag
 git tag -a v1.1.0 -m "LawyerHero Template v1.1.0"
 
-# Push para repositório
+# Push to repository
 git push origin main
 git push origin v1.1.0
 ```
 
-### ✅ **O QUE COMITAR**
+### ✅ **WHAT TO COMMIT**
 
-#### 📁 **Arquivos ESSENCIAIS** (sempre comitar):
+#### 📁 **ESSENTIAL Files** (always commit):
 
 ```
-✅ src/                           # Todo código fonte
-✅ public/                        # Assets públicos
-✅ documentation/index.html       # Documentação principal
-✅ scripts/prepare-envato.js      # Script de build
-✅ package.json                   # Dependências
-✅ package-lock.json              # Lock de dependências
-✅ next.config.js                 # Configuração Next.js
-✅ tailwind.config.ts             # Configuração Tailwind
-✅ tsconfig.json                  # Configuração TypeScript
-✅ README.md                      # README desenvolvimento
-✅ README.txt                     # README compradores
-✅ LICENSE.txt                    # Licença MIT
+✅ src/                           # All source code
+✅ public/                        # Public assets
+✅ documentation/index.html       # Main documentation
+✅ scripts/prepare-envato.js      # Build script
+✅ package.json                   # Dependencies
+✅ package-lock.json              # Dependencies lock
+✅ next.config.js                 # Next.js configuration
+✅ tailwind.config.ts             # Tailwind configuration
+✅ tsconfig.json                  # TypeScript configuration
+✅ README.md                      # Development README
+✅ README.txt                     # Buyers README
+✅ LICENSE.txt                    # MIT License
 ✅ .gitignore                     # Ignore patterns
-✅ env.example                    # Exemplo de environment
-✅ UPDATE_INSTRUCTIONS.md         # Este arquivo
-✅ ENVATO_SUBMISSION_CHECKLIST.md # Checklist submissão
+✅ env.example                    # Environment example
+✅ UPDATE_INSTRUCTIONS.md         # This file
+✅ ENVATO_SUBMISSION_CHECKLIST.md # Submission checklist
 ```
 
-#### ❌ **Arquivos NÃO COMITAR** (temporários):
+#### ❌ **Files NOT TO COMMIT** (temporary):
 
 ```
-❌ node_modules/                  # Dependências npm
-❌ .next/                         # Build Next.js
-❌ out/                           # Export estático
-❌ envato-package/                # Pacote gerado
-❌ *.zip                          # ZIPs de upload
-❌ .env*                          # Variáveis ambiente
-❌ documentation/index copy.html  # Backups automáticos
+❌ node_modules/                  # npm dependencies
+❌ .next/                         # Next.js build
+❌ out/                           # Static export
+❌ envato-package/                # Generated package
+❌ *.zip                          # Upload ZIPs
+❌ .env*                          # Environment variables
+❌ documentation/index copy.html  # Automatic backups
 ```
 
 ---
 
-## 🚀 **6. UPLOAD PARA ENVATO**
+## 🚀 **6. UPLOAD TO ENVATO**
 
-### ✅ **Informações da Submissão**
+### ✅ **Submission Information**
 
-#### 📝 **Dados Básicos**
+#### 📝 **Basic Data**
 
-- **Nome**: LawyerHero - Professional Ethics-Compliant Lawyer Template
-- **Categoria**: Site Templates > Specialty Pages > Landing Pages
-- **Preço**: $55-$75 (premium justificado)
-- **Versão**: X.X.X
+- **Name**: LawyerHero - Professional Ethics-Compliant Lawyer Template
+- **Category**: Site Templates > Specialty Pages > Landing Pages
+- **Price**: $55-$75 (premium justified)
+- **Version**: X.X.X
 
-#### 🏷️ **Tags Recomendadas**
+#### 🏷️ **Recommended Tags**
 
 ```
 lawyer, attorney, legal, law-firm, nextjs, typescript,
@@ -248,14 +248,14 @@ tailwind, responsive, professional, ethics, compliance,
 seo, accessibility, modern, react, landing-page
 ```
 
-#### 📖 **Descrição Curta**
+#### 📖 **Short Description**
 
 ```
 Professional lawyer template with certified legal advertising compliance.
 Built with Next.js 15, TypeScript, and advanced SEO optimization.
 ```
 
-#### 📖 **Descrição Completa**
+#### 📖 **Complete Description**
 
 ```markdown
 🏛️ LawyerHero - Professional Ethics-Compliant Lawyer Template
@@ -311,168 +311,168 @@ and professionally designed lawyer template available!
 
 ---
 
-## 🔄 **7. VERSIONAMENTO SEMÂNTICO**
+## 🔄 **7. SEMANTIC VERSIONING**
 
-### 📋 **Padrão de Versões**
+### 📋 **Version Pattern**
 
-- **v1.X.Y** - Primeira versão Envato
-- **v1.X+1.0** - Novas funcionalidades
-- **v1.X.Y+1** - Correções de bugs
-- **v2.0.0** - Mudanças breaking
+- **v1.X.Y** - First Envato version
+- **v1.X+1.0** - New features
+- **v1.X.Y+1** - Bug fixes
+- **v2.0.0** - Breaking changes
 
-### 📋 **Exemplo de Changelog**
+### 📋 **Changelog Example**
 
 ```markdown
 ## v1.1.0 - 2024-XX-XX
 
-### Adicionado
+### Added
 
-- Nova seção de depoimentos
-- Integração com Google Analytics
-- Suporte a múltiplos idiomas
+- New testimonials section
+- Google Analytics integration
+- Multiple language support
 
-### Corrigido
+### Fixed
 
-- Performance em dispositivos móveis
-- Compatibilidade com Safari
-- Links de navegação
+- Mobile device performance
+- Safari compatibility
+- Navigation links
 
-### Atualizado
+### Updated
 
-- Next.js para versão 15.1
-- Documentação com novos exemplos
-- Conformidade ética expandida
+- Next.js to version 15.1
+- Documentation with new examples
+- Expanded ethical compliance
 ```
 
 ---
 
-## ⚠️ **8. CHECKLIST PRÉ-SUBMISSÃO**
+## ⚠️ **8. PRE-SUBMISSION CHECKLIST**
 
-### ✅ **Qualidade Técnica**
+### ✅ **Technical Quality**
 
 - [ ] `npm run lint` - Zero warnings
 - [ ] `npm run type-check` - Zero errors
-- [ ] `npm run build` - Build sucessful
-- [ ] Demo funciona no navegador
-- [ ] Todas as páginas carregam corretamente
-- [ ] Formulários de contato funcionam
-- [ ] Responsivo em mobile/tablet/desktop
+- [ ] `npm run build` - Build successful
+- [ ] Demo works in browser
+- [ ] All pages load correctly
+- [ ] Contact forms work
+- [ ] Responsive on mobile/tablet/desktop
 
-### ✅ **Documentação**
+### ✅ **Documentation**
 
-- [ ] README.txt atualizado em inglês
-- [ ] documentation/index.html completa
-- [ ] Screenshots atualizadas se necessário
-- [ ] Seção de conformidade ética presente
-- [ ] Instruções de instalação claras
+- [ ] README.txt updated in English
+- [ ] documentation/index.html complete
+- [ ] Screenshots updated if needed
+- [ ] Ethical compliance section present
+- [ ] Clear installation instructions
 
-### ✅ **Pacote Envato**
+### ✅ **Envato Package**
 
-- [ ] Estrutura demo/documentation/template/
-- [ ] LICENSE.txt presente
-- [ ] ZIP gerado sem erros
-- [ ] Tamanho apropriado (~10-15MB)
-- [ ] Sem arquivos temporários ou desnecessários
+- [ ] Structure demo/documentation/template/
+- [ ] LICENSE.txt present
+- [ ] ZIP generated without errors
+- [ ] Appropriate size (~10-15MB)
+- [ ] No temporary or unnecessary files
 
-### ✅ **Conformidade Ética**
+### ✅ **Ethical Compliance**
 
-- [ ] Linguagem neutra e profissional
-- [ ] Sem promessas de resultado
-- [ ] Disclaimers apropriados
-- [ ] Título sem "especialista" não comprovado
-- [ ] Estatísticas não enganosas
+- [ ] Neutral and professional language
+- [ ] No result promises
+- [ ] Appropriate disclaimers
+- [ ] Title without unproven "specialist"
+- [ ] Non-misleading statistics
 
 ---
 
-## 🆘 **9. SOLUÇÃO DE PROBLEMAS**
+## 🆘 **9. TROUBLESHOOTING**
 
-### 🔧 **Erros Comuns de Build**
+### 🔧 **Common Build Errors**
 
-#### **Problema**: Build falha com static export
+#### **Problem**: Build fails with static export
 
 ```bash
-Error: Page "/servicos/[service]" is missing "generateStaticParams()"
+Error: Page "/services/[service]" is missing "generateStaticParams()"
 ```
 
-**Solução**: Verificar se `generateStaticParams()` está presente em páginas dinâmicas
+**Solution**: Check if `generateStaticParams()` is present in dynamic pages
 
-#### **Problema**: Fontes não carregam no static export
+#### **Problem**: Fonts don't load in static export
 
 ```bash
 assetPrefix must start with a leading slash
 ```
 
-**Solução**: Remover `assetPrefix` da configuração de static export
+**Solution**: Remove `assetPrefix` from static export configuration
 
-#### **Problema**: API routes no static export
+#### **Problem**: API routes in static export
 
 ```bash
 API routes not supported with "output: export"
 ```
 
-**Solução**: Remover pasta `src/app/api/` ou usar imagens estáticas para OG
+**Solution**: Remove `src/app/api/` folder or use static images for OG
 
-### 🔧 **Problemas de Documentação**
+### 🔧 **Documentation Problems**
 
-#### **Problema**: Screenshots desatualizados
+#### **Problem**: Outdated screenshots
 
-**Solução**:
+**Solution**:
 
-1. Rodar `npm run dev`
-2. Fazer screenshots das páginas principais
-3. Substituir `public/landing-*.png`
-4. Rebuildar documentação
+1. Run `npm run dev`
+2. Take screenshots of main pages
+3. Replace `public/landing-*.png`
+4. Rebuild documentation
 
-#### **Problema**: Links quebrados na documentação
+#### **Problem**: Broken links in documentation
 
-**Solução**: Verificar todos os links relativos e absolutos
-
----
-
-## 📞 **10. SUPORTE CONTÍNUO**
-
-### 🔄 **Manutenção Regular**
-
-- **Mensal**: Verificar atualizações de dependências
-- **Trimestral**: Revisar conformidade ética
-- **Semestral**: Atualizar documentação e screenshots
-- **Anual**: Major version com novas funcionalidades
-
-### 📈 **Melhorias Futuras**
-
-- [ ] Múltiplos idiomas (i18n)
-- [ ] Mais layouts de página
-- [ ] Integração CMS (Contentful/Strapi)
-- [ ] Dashboard administrativo
-- [ ] Blog/notícias jurídicas
-- [ ] Calculadoras jurídicas
-- [ ] Sistema de agendamento
+**Solution**: Check all relative and absolute links
 
 ---
 
-## ✅ **CHECKLIST RÁPIDO DE ATUALIZAÇÃO**
+## 📞 **10. CONTINUOUS SUPPORT**
+
+### 🔄 **Regular Maintenance**
+
+- **Monthly**: Check dependency updates
+- **Quarterly**: Review ethical compliance
+- **Semi-annually**: Update documentation and screenshots
+- **Annually**: Major version with new features
+
+### 📈 **Future Improvements**
+
+- [ ] Multiple languages (i18n)
+- [ ] More page layouts
+- [ ] CMS integration (Contentful/Strapi)
+- [ ] Administrative dashboard
+- [ ] Blog/legal news
+- [ ] Legal calculators
+- [ ] Scheduling system
+
+---
+
+## ✅ **QUICK UPDATE CHECKLIST**
 
 ```bash
-# 1. Desenvolvimento
+# 1. Development
 npm run lint && npm run type-check && npm run build
 
-# 2. Gerar pacote
+# 2. Generate package
 npm run prepare-envato
 
-# 3. Testar demo
+# 3. Test demo
 cd envato-package/demo && python3 -m http.server 8080
 
-# 4. Criar ZIP
+# 4. Create ZIP
 cd .. && zip -r ../LawyerHero-Template-v1.X.X.zip . && cd ..
 
 # 5. Commit
-git add . && git commit -m "feat: v1.X.X - [mudanças]"
+git add . && git commit -m "feat: v1.X.X - [changes]"
 git tag v1.X.X && git push origin main && git push origin v1.X.X
 
 # 6. Upload Envato
-# Fazer upload manual do ZIP na plataforma
+# Manually upload ZIP to platform
 ```
 
 ---
 
-**🏆 Com essas instruções, futuras atualizações do LawyerHero serão rápidas, organizadas e consistentes, mantendo sempre a qualidade premium e conformidade ética que fazem dele único no mercado!** ⚖️🚀
+**🏆 With these instructions, future LawyerHero updates will be fast, organized, and consistent, always maintaining the premium quality and ethical compliance that make it unique in the market!** ⚖️🚀

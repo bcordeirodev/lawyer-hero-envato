@@ -40,7 +40,7 @@ export interface EnvironmentConfig {
  */
 function validateEnvVar(name: string, value: string | undefined, required: boolean = false): string | undefined {
     if (required && !value) {
-        console.warn(`⚠️  Variável de ambiente obrigatória não definida: ${name}`)
+        console.warn(`⚠️  Required environment variable not defined: ${name}`)
         return undefined
     }
     return value
@@ -81,7 +81,7 @@ export function loadEnvironmentConfig(): EnvironmentConfig {
         // App
         APP_NAME: validateEnvVar('NEXT_PUBLIC_APP_NAME', process.env.NEXT_PUBLIC_APP_NAME) || 'LawyerHero',
         APP_VERSION: validateEnvVar('NEXT_PUBLIC_APP_VERSION', process.env.NEXT_PUBLIC_APP_VERSION) || '1.0.0',
-        APP_URL: validateEnvVar('NEXT_PUBLIC_APP_URL', process.env.NEXT_PUBLIC_APP_URL) || 'https://geovannanery.com',
+        APP_URL: validateEnvVar('NEXT_PUBLIC_APP_URL', process.env.NEXT_PUBLIC_APP_URL) || 'https://johnsmithlaw.com',
 
         // Development
         NODE_ENV: validateEnvVar('NODE_ENV', process.env.NODE_ENV) || 'development',

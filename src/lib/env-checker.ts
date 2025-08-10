@@ -107,7 +107,7 @@ export function validateEnvironment(): {
 }
 
 /**
- * Loga informações sobre o ambiente atual
+ * Logs information about the current environment
  */
 export function logEnvironmentInfo(): void {
     const validation = validateEnvironment()

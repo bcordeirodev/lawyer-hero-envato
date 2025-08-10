@@ -1,94 +1,94 @@
-# 🎨 Guia de Personalização - LawyerHero Template
+# 🎨 Customization Guide - LawyerHero Template
 
-## 🚀 **INÍCIO RÁPIDO**
+## 🚀 **QUICK START**
 
-### 📋 **Requisitos Mínimos**
+### 📋 **Minimum Requirements**
 
-- **Node.js**: 18.17+ (recomendado: 20.x LTS)
-- **npm**: 9.x+ ou **yarn**: 1.22+
-- **Git**: Para controle de versão
+- **Node.js**: 18.17+ (recommended: 20.x LTS)
+- **npm**: 9.x+ or **yarn**: 1.22+
+- **Git**: For version control
 
-### ⚡ **Instalação em 3 Passos**
+### ⚡ **3-Step Installation**
 
 ```bash
-# 1. Clonar/baixar o template
-git clone [URL_DO_REPOSITORIO]
+# 1. Clone/download the template
+git clone [REPOSITORY_URL]
 cd lawyer-hero-envato
 
-# 2. Instalar dependências
+# 2. Install dependencies
 npm install
 
-# 3. Rodar em desenvolvimento
+# 3. Run in development
 npm run dev
 ```
 
-**🎯 Resultado**: Site rodando em `http://localhost:3000`
+**🎯 Result**: Site running at `http://localhost:3000`
 
 ---
 
-## 🔧 **CONFIGURAÇÃO PRINCIPAL**
+## 🔧 **MAIN CONFIGURATION**
 
-### 📝 **1. Dados do Advogado (`src/config/lawyer.ts`)**
+### 📝 **1. Lawyer Data (`src/config/lawyer.ts`)**
 
-#### **Informações Básicas**
+#### **Basic Information**
 
 ```typescript
 export const LAWYER_CONFIG: LawyerConfig = {
   lawyer: {
-    name: "Dr. [SEU_NOME]", // Nome completo
-    fullName: "[NOME_COMPLETO]", // Nome completo oficial
-    title: "Advogado - [AREAS_ATUACAO]", // Título profissional
-    description: "[DESCRICAO_CURTA]", // Descrição para SEO
-    detailedDescription: "[DESCRICAO_DETALHADA]", // Descrição completa
+    name: "Dr. [YOUR_NAME]", // Full name
+    fullName: "[FULL_NAME]", // Official full name
+    title: "Attorney - [PRACTICE_AREAS]", // Professional title
+    description: "[SHORT_DESCRIPTION]", // SEO description
+    detailedDescription: "[DETAILED_DESCRIPTION]", // Complete description
 
     credentials: {
-      bar: "OAB-[ESTADO] [NUMERO]", // Inscrição OAB
-      location: "[CIDADE], [ESTADO]", // Localização
+      bar: "BAR-[NUMBER]", // Bar registration
+      location: "[CITY], [STATE]", // Location
     },
   },
 };
 ```
 
-#### **⚠️ IMPORTANTE - Conformidade Ética**
+#### **⚠️ IMPORTANT - Ethical Compliance**
 
-- **NÃO** use "especialista" sem certificação oficial
-- **NÃO** prometa resultados específicos
-- **NÃO** use superlativos não comprovados
-- **SIM** use linguagem neutra e profissional
+- Do **NOT** use "specialist" without official certification
+- Do **NOT** promise specific results
+- Do **NOT** use unproven superlatives
+- Do use neutral and professional language
 
-**✅ Exemplo Correto:**
-
-```typescript
-title: "Advogado - Atuação em Direito Civil e Empresarial";
-description: "Advogado com experiência na área jurídica...";
-```
-
-**❌ Exemplo Incorreto:**
+**✅ Correct Example:**
 
 ```typescript
-title: "Especialista em Direito Civil"; // Sem certificação
-description: "Melhor advogado da cidade"; // Superlativo
+title: "Attorney - Civil and Business Law Practice";
+description: "Attorney with experience in legal practice...";
 ```
 
-### 🎨 **2. Cores e Tema (`tailwind.config.ts`)**
+**❌ Incorrect Example:**
 
-#### **Paleta Principal**
+```typescript
+title: "Civil Law Specialist"; // Without certification
+description: "Best lawyer in town"; // Superlative
+```
+
+### 🎨 **2. Colors and Theme (`tailwind.config.ts`)**
+
+#### **Main Palette**
 
 ```typescript
 colors: {
   primary: {
-    50: '#eff6ff',    // Azul claro
-    500: '#3b82f6',   // Azul principal
-    900: '#1e3a8a',   // Azul escuro
+    50: '#eff6ff',    // Light blue
+    500: '#3b82f6',   // Main blue
+    900: '#1e3a8a',   // Dark blue
   },
   secondary: {
-    500: '#f59e0b',   // Dourado
-    600: '#d97706',   // Dourado escuro
+    500: '#f59e0b',   // Gold
+    600: '#d97706',   // Dark gold
   }
 }
 ```
 
-#### **Temas Personalizados**
+#### **Custom Themes**
 
 ```typescript
 // src/lib/design-tokens.ts
@@ -106,9 +106,9 @@ export const THEME_COLORS = {
 };
 ```
 
-### 📱 **3. Layout e Responsividade**
+### 📱 **3. Layout and Responsiveness**
 
-#### **Breakpoints Tailwind**
+#### **Tailwind Breakpoints**
 
 ```css
 /* src/app/globals.css */
@@ -129,10 +129,10 @@ export const THEME_COLORS = {
 }
 ```
 
-#### **Componentes Responsivos**
+#### **Responsive Components**
 
 ```tsx
-// Exemplo de componente responsivo
+// Example of responsive component
 <div
   className="
   grid 
@@ -144,54 +144,54 @@ export const THEME_COLORS = {
   lg:gap-8
 "
 >
-  {/* Conteúdo */}
+  {/* Content */}
 </div>
 ```
 
 ---
 
-## 🎯 **PERSONALIZAÇÃO AVANÇADA**
+## 🎯 **ADVANCED CUSTOMIZATION**
 
-### 🧩 **1. Componentes Reutilizáveis**
+### 🧩 **1. Reusable Components**
 
-#### **Criar Novo Componente**
+#### **Create New Component**
 
 ```tsx
-// src/components/sections/[novo-componente].tsx
+// src/components/sections/[new-component].tsx
 import { motion } from "framer-motion";
 import { SectionBadge } from "@/components/ui/design-system";
 
-export function NovoComponente() {
+export function NewComponent() {
   return (
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
-        <SectionBadge>Novo Recurso</SectionBadge>
+        <SectionBadge>New Feature</SectionBadge>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-3xl font-bold text-center mb-8"
         >
-          Título do Componente
+          Component Title
         </motion.h2>
-        {/* Conteúdo */}
+        {/* Content */}
       </div>
     </section>
   );
 }
 ```
 
-#### **Registrar no Layout**
+#### **Register in Layout**
 
 ```tsx
 // src/app/page.tsx
-import { NovoComponente } from "@/components/sections/novo-componente";
+import { NewComponent } from "@/components/sections/new-component";
 
 export default function HomePage() {
   return (
     <main>
       <Hero />
       <Services />
-      <NovoComponente /> {/* Adicionar aqui */}
+      <NewComponent /> {/* Add here */}
       <About />
       <Contact />
     </main>
@@ -199,33 +199,33 @@ export default function HomePage() {
 }
 ```
 
-### 🎭 **2. Animações com Framer Motion**
+### 🎭 **2. Animations with Framer Motion**
 
-#### **Animações Básicas**
+#### **Basic Animations**
 
 ```tsx
 import { motion } from 'framer-motion'
 
-// Fade in simples
+// Simple fade in
 <motion.div
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
   transition={{ duration: 0.5 }}
 >
-  Conteúdo animado
+  Animated content
 </motion.div>
 
-// Slide in da esquerda
+// Slide in from left
 <motion.div
   initial={{ x: -100, opacity: 0 }}
   animate={{ x: 0, opacity: 1 }}
   transition={{ duration: 0.6, ease: "easeOut" }}
 >
-  Conteúdo deslizante
+  Sliding content
 </motion.div>
 ```
 
-#### **Animações Avançadas**
+#### **Advanced Animations**
 
 ```tsx
 // src/lib/animations/animations.ts
@@ -246,19 +246,19 @@ export const fadeInUp = {
 };
 ```
 
-### 🔍 **3. SEO e Metadados**
+### 🔍 **3. SEO and Metadata**
 
-#### **Metadados de Página**
+#### **Page Metadata**
 
 ```tsx
-// src/app/[pagina]/page.tsx
+// src/app/[page]/page.tsx
 import { Metadata } from "next";
 import { generateMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = generateMetadata({
-  title: "Título Personalizado",
-  description: "Descrição personalizada da página",
-  image: "/images/pagina-especifica.jpg",
+  title: "Custom Title",
+  description: "Custom page description",
+  image: "/images/specific-page.jpg",
 });
 ```
 
@@ -274,8 +274,8 @@ export function LawyerStructuredData() {
     description: LAWYER_CONFIG.lawyer.description,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "São Paulo",
-      addressRegion: "SP",
+      addressLocality: "New York",
+      addressRegion: "NY",
     },
   };
 
@@ -292,22 +292,22 @@ export function LawyerStructuredData() {
 
 ## 🎨 **DESIGN SYSTEM**
 
-### 🎯 **1. Componentes Base**
+### 🎯 **1. Base Components**
 
-#### **Botões**
+#### **Buttons**
 
 ```tsx
 // src/components/ui/primitives/button.tsx
 <Button variant="primary" size="lg">
-  Botão Principal
+  Primary Button
 </Button>
 
 <Button variant="secondary" size="md">
-  Botão Secundário
+  Secondary Button
 </Button>
 
 <Button variant="outline" size="sm">
-  Botão Outline
+  Outline Button
 </Button>
 ```
 
@@ -317,16 +317,16 @@ export function LawyerStructuredData() {
 // src/components/ui/primitives/card.tsx
 <Card className="hover:shadow-lg transition-shadow">
   <CardHeader>
-    <CardTitle>Título do Card</CardTitle>
-    <CardDescription>Descrição do card</CardDescription>
+    <CardTitle>Card Title</CardTitle>
+    <CardDescription>Card description</CardDescription>
   </CardHeader>
-  <CardContent>Conteúdo do card</CardContent>
+  <CardContent>Card content</CardContent>
 </Card>
 ```
 
-### 🌈 **2. Sistema de Cores**
+### 🌈 **2. Color System**
 
-#### **Variáveis CSS**
+#### **CSS Variables**
 
 ```css
 /* src/app/globals.css */
@@ -338,7 +338,7 @@ export function LawyerStructuredData() {
   --color-error: 239 68 68; /* #ef4444 */
 }
 
-/* Uso com Tailwind */
+/* Usage with Tailwind */
 .bg-primary {
   background-color: rgb(var(--color-primary));
 }
@@ -347,59 +347,59 @@ export function LawyerStructuredData() {
 }
 ```
 
-#### **Gradientes**
+#### **Gradients**
 
 ```tsx
 // src/components/ui/design-system/GradientIcon.tsx
 <div className="bg-gradient-to-r from-primary-500 to-secondary-500">
-  Conteúdo com gradiente
+  Content with gradient
 </div>
 ```
 
 ---
 
-## 📱 **RESPONSIVIDADE**
+## 📱 **RESPONSIVENESS**
 
 ### 📐 **1. Grid System**
 
-#### **Layout Responsivo**
+#### **Responsive Layout**
 
 ```tsx
 <div
   className="
   grid 
-  grid-cols-1          /* Mobile: 1 coluna */
-  sm:grid-cols-2       /* Small: 2 colunas */
-  md:grid-cols-3       /* Medium: 3 colunas */
-  lg:grid-cols-4       /* Large: 4 colunas */
-  gap-4                /* Espaçamento base */
-  md:gap-6             /* Espaçamento medium */
-  lg:gap-8             /* Espaçamento large */
+  grid-cols-1          /* Mobile: 1 column */
+  sm:grid-cols-2       /* Small: 2 columns */
+  md:grid-cols-3       /* Medium: 3 columns */
+  lg:grid-cols-4       /* Large: 4 columns */
+  gap-4                /* Base spacing */
+  md:gap-6             /* Medium spacing */
+  lg:gap-8             /* Large spacing */
 "
 >
-  {/* Itens do grid */}
+  {/* Grid items */}
 </div>
 ```
 
-#### **Flexbox Responsivo**
+#### **Responsive Flexbox**
 
 ```tsx
 <div
   className="
   flex 
-  flex-col             /* Mobile: coluna */
-  md:flex-row          /* Medium+: linha */
-  items-center         /* Centralizar itens */
-  justify-between      /* Espaçar entre itens */
-  gap-4                /* Espaçamento */
-  md:gap-8             /* Espaçamento medium */
+  flex-col             /* Mobile: column */
+  md:flex-row          /* Medium+: row */
+  items-center         /* Center items */
+  justify-between      /* Space between items */
+  gap-4                /* Spacing */
+  md:gap-8             /* Medium spacing */
 "
 >
-  {/* Conteúdo flexível */}
+  {/* Flexible content */}
 </div>
 ```
 
-### 🖼️ **2. Imagens Responsivas**
+### 🖼️ **2. Responsive Images**
 
 #### **Next.js Image**
 
@@ -408,7 +408,7 @@ import Image from "next/image";
 
 <Image
   src="/images/hero.jpg"
-  alt="Imagem hero"
+  alt="Hero image"
   width={1200}
   height={600}
   className="
@@ -418,7 +418,7 @@ import Image from "next/image";
     rounded-lg
     shadow-lg
   "
-  priority // Para imagens acima da dobra
+  priority // For above-the-fold images
 />;
 ```
 
@@ -438,7 +438,7 @@ import Image from "next/image";
     backgroundImage: "url('/images/background.jpg')",
   }}
 >
-  {/* Conteúdo sobre a imagem */}
+  {/* Content over image */}
 </div>
 ```
 
@@ -446,9 +446,9 @@ import Image from "next/image";
 
 ## 🚀 **PERFORMANCE**
 
-### ⚡ **1. Otimizações de Imagem**
+### ⚡ **1. Image Optimizations**
 
-#### **Formatos Modernos**
+#### **Modern Formats**
 
 ```tsx
 // next.config.js
@@ -491,7 +491,7 @@ export function useLazyLoad() {
 }
 ```
 
-### 📊 **2. Monitoramento de Performance**
+### 📊 **2. Performance Monitoring**
 
 #### **Web Vitals**
 
@@ -516,21 +516,21 @@ export function usePerformance() {
 
 ---
 
-## 🔧 **CONFIGURAÇÕES AVANÇADAS**
+## 🔧 **ADVANCED CONFIGURATIONS**
 
 ### ⚙️ **1. Environment Variables**
 
-#### **Arquivo .env.local**
+#### **File .env.local**
 
 ```bash
 # .env.local
-NEXT_PUBLIC_SITE_URL=https://seusite.com
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=sua_chave_publica
-EMAILJS_SERVICE_ID=seu_service_id
-EMAILJS_TEMPLATE_ID=seu_template_id
+NEXT_PUBLIC_SITE_URL=https://yoursite.com
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+EMAILJS_SERVICE_ID=your_service_id
+EMAILJS_TEMPLATE_ID=your_template_id
 ```
 
-#### **Uso no Código**
+#### **Usage in Code**
 
 ```tsx
 // src/lib/env.ts
@@ -544,9 +544,9 @@ export const env = {
 };
 ```
 
-### 🎨 **2. Tema Dinâmico**
+### 🎨 **2. Dynamic Theme**
 
-#### **Context de Tema**
+#### **Theme Context**
 
 ```tsx
 // src/contexts/ThemeContext.tsx
@@ -575,31 +575,31 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
 ---
 
-## 📚 **RECURSOS ADICIONAIS**
+## 📚 **ADDITIONAL RESOURCES**
 
-### 🔗 **1. Links Úteis**
+### 🔗 **1. Useful Links**
 
 - [Tailwind CSS Docs](https://tailwindcss.com/docs)
 - [Framer Motion](https://www.framer.com/motion/)
 - [Next.js Docs](https://nextjs.org/docs)
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 
-### 📖 **2. Arquivos de Referência**
+### 📖 **2. Reference Files**
 
-- `src/config/lawyer.ts` - Configuração principal
-- `src/lib/design-tokens.ts` - Tokens de design
-- `src/components/ui/` - Componentes base
-- `tailwind.config.ts` - Configuração Tailwind
+- `src/config/lawyer.ts` - Main configuration
+- `src/lib/design-tokens.ts` - Design tokens
+- `src/components/ui/` - Base components
+- `tailwind.config.ts` - Tailwind configuration
 
-### 🎯 **3. Próximos Passos**
+### 🎯 **3. Next Steps**
 
-1. **Personalizar dados** em `src/config/lawyer.ts`
-2. **Ajustar cores** em `tailwind.config.ts`
-3. **Modificar layout** nos componentes
-4. **Adicionar conteúdo** específico
-5. **Testar responsividade** em diferentes dispositivos
-6. **Otimizar performance** com Lighthouse
+1. **Customize data** in `src/config/lawyer.ts`
+2. **Adjust colors** in `tailwind.config.ts`
+3. **Modify layout** in components
+4. **Add specific** content
+5. **Test responsiveness** on different devices
+6. **Optimize performance** with Lighthouse
 
 ---
 
-**🏆 Com este guia, você tem tudo para personalizar o LawyerHero Template e criar um site profissional único para sua advocacia!** ⚖️✨
+**🏆 With this guide, you have everything to customize the LawyerHero Template and create a unique professional website for your law practice!** ⚖️✨

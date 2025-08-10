@@ -14,13 +14,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 1,
         },
         {
-            url: `${baseUrl}/sobre`,
+            url: `${baseUrl}/about`,
             lastModified: new Date(),
             changeFrequency: 'monthly' as const,
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/contato`,
+            url: `${baseUrl}/contact`,
             lastModified: new Date(),
             changeFrequency: 'monthly' as const,
             priority: 0.8,
@@ -28,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ]
 
     const servicePages = LAWYER_CONFIG.services.map((service) => ({
-        url: `${baseUrl}/servicos/${service.id}`,
+        url: `${baseUrl}/services/${service.id}`,
         lastModified: new Date(),
         changeFrequency: 'monthly' as const,
         priority: 0.9,

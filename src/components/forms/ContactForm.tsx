@@ -110,10 +110,10 @@ export const ContactForm: React.FC<ContactFormProps> = ({
                 <CheckCircle className="h-8 w-8 text-success" />
             </div>
             <h3 className="text-lg font-semibold text-text-primary mb-2">
-                Mensagem Enviada!
+                Message Sent!
             </h3>
             <p className="text-text-secondary mb-4">
-                Obrigado pelo contato. Entrarei em contato em breve.
+                Thank you for contacting us. I&apos;ll get back to you soon.
             </p>
             <motion.button
                 onClick={resetForm}
@@ -121,7 +121,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
             >
-                Enviar Nova Mensagem
+                Send New Message
             </motion.button>
         </motion.div>
     )

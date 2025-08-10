@@ -55,9 +55,9 @@ const sizeVariants = {
  * ```tsx
  * <StandardSection
  *   id="services"
- *   badge="⚖️ Nossos Serviços"
- *   title="Áreas de Atuação"
- *   description="Especialidades jurídicas com atendimento personalizado"
+ *   badge="⚖️ Our Services"
+ *   title="Practice Areas"
+*   description="Legal specialties with personalized service"
  * >
  *   <ServiceGrid />
  * </StandardSection>

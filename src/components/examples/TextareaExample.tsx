@@ -127,7 +127,7 @@ export const TextareaExample: React.FC = () => {
 
                     <Textarea
                         label="Campo Desabilitado"
-                        value="Este campo está desabilitado e não pode ser editado."
+                        value="This field is disabled and cannot be edited."
                         onChange={() => { }}
                         disabled
                         minHeight={80}

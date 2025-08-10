@@ -5,9 +5,9 @@ import { LAWYER_CONFIG } from "@/config"
 import { motion } from "framer-motion"
 
 /**
- * Componente Services - Seção de especialidades jurídicas
- * Exibe os serviços oferecidos pelo advogado
- * Refatorado para usar componentes padronizados
+ * Services Component - Legal specialties section
+ * Displays the services offered by the attorney
+ * Refactored to use standardized components
  */
 export function Services() {
     const allServices = LAWYER_CONFIG.services
@@ -15,9 +15,9 @@ export function Services() {
     return (
         <StandardSection
             id="services"
-            badge="⚖️ Nossos Serviços"
-            title="Nossos Serviços"
-            description="Especialidades jurídicas com atendimento personalizado e soluções eficazes"
+            badge="⚖️ Our Services"
+            title="Our Services"
+            description="Legal specialties with personalized service and effective solutions"
         >
             <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                 {allServices.map((service, _index) => (

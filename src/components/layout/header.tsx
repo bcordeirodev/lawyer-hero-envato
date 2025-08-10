@@ -49,7 +49,7 @@ export function Header() {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            Início
+                            Home
                         </motion.a>
                         <motion.a
                             href="#services"
@@ -57,7 +57,7 @@ export function Header() {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            Serviços
+                            Services
                         </motion.a>
                         <motion.a
                             href="#about"
@@ -65,7 +65,7 @@ export function Header() {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            Sobre
+                            About
                         </motion.a>
                         <motion.a
                             href="#contact"
@@ -73,7 +73,7 @@ export function Header() {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            Contato
+                            Contact
                         </motion.a>
 
                         {/* Theme Toggle */}
@@ -111,7 +111,7 @@ export function Header() {
                                     whileHover={{ x: 10 }}
                                     onClick={() => setIsMenuOpen(false)}
                                 >
-                                    Início
+                                    Home
                                 </motion.a>
                                 <motion.a
                                     href="#services"
@@ -119,7 +119,7 @@ export function Header() {
                                     whileHover={{ x: 10 }}
                                     onClick={() => setIsMenuOpen(false)}
                                 >
-                                    Serviços
+                                    Services
                                 </motion.a>
                                 <motion.a
                                     href="#about"
@@ -127,7 +127,7 @@ export function Header() {
                                     whileHover={{ x: 10 }}
                                     onClick={() => setIsMenuOpen(false)}
                                 >
-                                    Sobre
+                                    About
                                 </motion.a>
                                 <motion.a
                                     href="#contact"
@@ -135,7 +135,7 @@ export function Header() {
                                     whileHover={{ x: 10 }}
                                     onClick={() => setIsMenuOpen(false)}
                                 >
-                                    Contato
+                                    Contact
                                 </motion.a>
                             </div>
                         </motion.div>

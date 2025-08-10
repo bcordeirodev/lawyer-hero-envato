@@ -54,7 +54,7 @@ const sizeVariants = {
 
 /**
  * GradientIcon Component
- * Ícone padronizado com container gradiente
+ * Standardized icon with gradient container
  * 
  * @example
  * ```tsx
@@ -76,14 +76,19 @@ export function GradientIcon({
 
     const Container = animated ? motion.div : 'div'
     const animationProps = animated ? {
-        whileHover: { scale: 1.1, rotate: 5 },
-        transition: { duration: 0.2 }
+        whileHover: { scale: 1.05, rotate: 3, y: -2 },
+        whileTap: { scale: 0.95 },
+        transition: {
+            duration: 0.2,
+            type: "spring" as const,
+            stiffness: 300
+        }
     } : {}
 
     return (
         <Container
             className={cn(
-                'flex items-center justify-center rounded-lg shadow-lg',
+                'flex items-center justify-center rounded-lg shadow-lg shadow-gold-500/20 hover:shadow-xl hover:shadow-gold-500/30',
                 `bg-gradient-to-br ${DESIGN_TOKENS.gradients[gradient]}`,
                 sizeClasses.container,
                 animated && 'transition-all duration-200',
@@ -127,14 +132,14 @@ export function LegalIcon(props: Omit<GradientIconProps, 'gradient'>) {
 }
 
 /**
- * ContactIcon - Preset para ícones de contato
+ * ContactIcon - Preset for contact icons
  */
 export function ContactIcon(props: Omit<GradientIconProps, 'gradient' | 'size'>) {
     return <GradientIcon {...props} gradient="gold" size="md" />
 }
 
 /**
- * ServiceIcon - Preset para ícones de serviços
+ * ServiceIcon - Preset for service icons
  */
 export function ServiceIcon(props: Omit<GradientIconProps, 'gradient' | 'animated'>) {
     return <GradientIcon {...props} gradient="gold" animated />

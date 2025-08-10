@@ -57,7 +57,7 @@ export function Footer() {
                         </div>
 
                         <p className="text-sm sm:text-base text-text-secondary mb-6 max-w-lg leading-relaxed">
-                            Advocacia especializada com atendimento personalizado e soluções jurídicas eficazes
+                            Specialized law practice with personalized service and effective legal solutions
                         </p>
 
                         {/* Stats */}
@@ -72,8 +72,8 @@ export function Footer() {
                                         <Users className="h-3.5 w-3.5 text-secondary-500" />
                                     </div>
                                     <div>
-                                        <p className="text-lg font-bold text-text-primary">Diversos</p>
-                                        <p className="text-xs text-text-secondary">Casos Atendidos</p>
+                                        <p className="text-lg font-bold text-text-primary">Various</p>
+                                        <p className="text-xs text-text-secondary">Cases Handled</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -89,7 +89,7 @@ export function Footer() {
                                     </div>
                                     <div>
                                         <p className="text-lg font-bold text-text-primary">Total</p>
-                                        <p className="text-xs text-text-secondary">Dedicação</p>
+                                        <p className="text-xs text-text-secondary">Dedication</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -138,7 +138,7 @@ export function Footer() {
                                 <Zap className="h-4 w-4 text-secondary-500" />
                             </div>
                             <h3 className="text-lg font-semibold text-text-primary">
-                                Especialidades
+                                Specialties
                             </h3>
                         </div>
                         <ul className="space-y-2">
@@ -170,7 +170,7 @@ export function Footer() {
                                 <Phone className="h-4 w-4 text-gold-500" />
                             </div>
                             <h3 className="text-lg font-semibold text-text-primary">
-                                Contato
+                                Contact
                             </h3>
                         </div>
                         <ul className="space-y-3">
@@ -204,17 +204,17 @@ export function Footer() {
                     {/* Disclaimer Legal */}
                     <div className="mb-6 bg-background-secondary p-4 rounded-lg">
                         <p className="text-xs text-text-secondary text-center leading-relaxed">
-                            <strong>Aviso Legal:</strong> As informações contidas neste site têm caráter meramente informativo.
-                            Cada caso é único e não há garantia de resultado. O resultado de processos judiciais depende de
-                            diversos fatores e circunstâncias específicas de cada situação. A consulta jurídica adequada
-                            deve ser sempre buscada para análise do caso concreto.
+                            <strong>Legal Notice:</strong> The information contained on this website is for informational purposes only.
+                            Each case is unique and there is no guarantee of results. The outcome of legal proceedings depends on
+                            various factors and specific circumstances of each situation. Proper legal consultation
+                            should always be sought for analysis of the specific case.
                         </p>
                     </div>
 
                     {/* Copyright - mais compacto */}
                     <div className="mb-4">
                         <p className="text-sm font-medium text-text-primary">
-                            &copy; 2024 {lawyer.name}. Todos os direitos reservados.
+                            &copy; 2024 {lawyer.name}. All rights reserved.
                         </p>
                         <p className="text-xs text-text-secondary mt-1">
                             {lawyer.credentials.bar} - {lawyer.title}
@@ -224,7 +224,7 @@ export function Footer() {
                     {/* Developer info - mais espaçoso */}
                     <div className="bg-background-secondary border border-border-secondary rounded-lg p-4 max-w-lg mx-auto">
                         <p className="text-xs text-text-muted mb-2 font-medium text-center">
-                            Desenvolvido por
+                            Developed by
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 text-xs text-text-muted">
                             <span className="font-medium text-text-primary">Bruno Cordeiro da Silva</span>
