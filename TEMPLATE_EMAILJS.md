@@ -1,382 +1,592 @@
-# 📧 Template EmailJS - Formulário de Contato Advogado
+# 📧 Guia EmailJS - LawyerHero Template
 
-## 🎯 Como Configurar
+## 🎯 **VISÃO GERAL**
 
-1. **Acesse o EmailJS**: https://emailjs.com
-2. **Vá em Email Templates**
-3. **Clique em "Create New Template"**
-4. **Copie e cole o template abaixo**
+O **EmailJS** é uma solução para enviar emails diretamente do frontend sem necessidade de backend. Este guia explica como configurar e integrar o EmailJS no template LawyerHero para formulários de contato funcionais.
 
 ---
 
-## 📋 TEMPLATE PARA EMAILJS
+## 🚀 **CONFIGURAÇÃO RÁPIDA**
 
-### **Subject (Assunto):**
+### **1. Criar Conta EmailJS**
 
+1. Acesse [emailjs.com](https://emailjs.com)
+2. Crie uma conta gratuita
+3. Verifique seu email
+
+### **2. Configurar Serviço de Email**
+
+1. No dashboard, vá em **"Email Services"**
+2. Clique em **"Add New Service"**
+3. Escolha seu provedor (Gmail, Outlook, etc.)
+4. Configure as credenciais
+5. Anote o **Service ID**
+
+### **3. Criar Template de Email**
+
+1. Vá em **"Email Templates"**
+2. Clique em **"Create New Template"**
+3. Use o template padrão ou crie um personalizado
+4. Anote o **Template ID**
+
+---
+
+## ⚙️ **CONFIGURAÇÃO NO PROJETO**
+
+### **1. Variáveis de Ambiente**
+
+Crie um arquivo `.env.local` na raiz do projeto:
+
+```bash
+# .env.local
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=sua_chave_publica
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=seu_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=seu_template_id
 ```
-{{urgency_level == 'URGENTE' ? '🚨 URGENTE' : urgency_level == 'ALTA' ? '⚡ ALTA PRIORIDADE' : '📋'}} Nova Consulta: {{consultation_subject}}
+
+### **2. Instalar Dependências**
+
+```bash
+npm install @emailjs/browser
 ```
 
-### **Content (Conteúdo):**
+### **3. Configurar EmailJS**
+
+```typescript
+// src/lib/email/emailjs.ts
+import emailjs from '@emailjs/browser';
+
+// Inicializar EmailJS
+emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
+
+export const sendEmail = async (formData: ContactFormData) => {
+  try {
+    const result = await emailjs.send(
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        phone: formData.phone,
+        subject: `Novo contato de ${formData.name}`,
+      }
+    );
+    
+    return { success: true, result };
+  } catch (error) {
+    console.error('EmailJS error:', error);
+    return { success: false, error };
+  }
+};
+```
+
+---
+
+## 📝 **TEMPLATE DE EMAIL RECOMENDADO**
+
+### **Template HTML**
 
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        color: #2d3748;
-        line-height: 1.7;
-        margin: 0;
-        padding: 0;
-        background-color: #f7fafc;
-      }
-      .email-container {
-        max-width: 650px;
-        margin: 0 auto;
-        background: white;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-      .header {
-        background: linear-gradient(135deg, #2c5530 0%, #1a3a1f 100%);
-        color: white;
-        padding: 30px 20px;
-        text-align: center;
-      }
-      .header h1 {
-        margin: 0;
-        font-size: 24px;
-        font-weight: 600;
-      }
-      .header p {
-        margin: 8px 0 0 0;
-        opacity: 0.9;
-        font-size: 14px;
-      }
-      .content {
-        padding: 30px;
-      }
-      .priority-badge {
-        display: inline-block;
-        padding: 8px 16px;
-        border-radius: 20px;
-        font-weight: 600;
-        font-size: 13px;
-        margin-bottom: 20px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-      .urgent-badge {
-        background: #fed7d7;
-        color: #c53030;
-        border: 1px solid #fc8181;
-      }
-      .high-badge {
-        background: #fefcbf;
-        color: #d69e2e;
-        border: 1px solid #f6e05e;
-      }
-      .normal-badge {
-        background: #bee3f8;
-        color: #2b6cb0;
-        border: 1px solid #90cdf4;
-      }
-      .info-card {
-        background: #f7fafc;
-        border-radius: 8px;
-        padding: 24px;
-        margin: 20px 0;
-        border: 1px solid #e2e8f0;
-      }
-      .info-card h2 {
-        margin: 0 0 16px 0;
-        font-size: 18px;
-        color: #2d3748;
-        font-weight: 600;
-      }
-      .info-row {
-        display: flex;
-        margin-bottom: 12px;
-        align-items: center;
-      }
-      .info-label {
-        font-weight: 600;
-        color: #4a5568;
-        min-width: 140px;
-        font-size: 14px;
-      }
-      .info-value {
-        color: #2d3748;
-        font-size: 14px;
-      }
-      .message-box {
-        background: white;
-        border: 2px solid #e2e8f0;
-        border-radius: 8px;
-        padding: 20px;
-        margin: 16px 0;
-        font-style: italic;
-        color: #4a5568;
-        position: relative;
-      }
-      .message-box:before {
-        content: '"';
-        font-size: 60px;
-        color: #cbd5e0;
-        position: absolute;
-        top: -10px;
-        left: 10px;
-        font-family: serif;
-      }
-      .actions-section {
-        background: #edf2f7;
-        border-radius: 8px;
-        padding: 24px;
-        margin: 24px 0;
-        text-align: center;
-      }
-      .action-button {
-        display: inline-block;
-        padding: 12px 24px;
-        margin: 8px;
-        border-radius: 6px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 14px;
-        transition: all 0.2s;
-      }
-      .btn-primary {
-        background: #2c5530;
-        color: white;
-      }
-      .btn-whatsapp {
-        background: #25d366;
-        color: white;
-      }
-      .system-info {
-        background: #f0f8ff;
-        border-left: 4px solid #3182ce;
-        padding: 16px;
-        margin: 20px 0;
-        border-radius: 0 8px 8px 0;
-        font-size: 13px;
-        color: #2d3748;
-      }
-      .footer {
-        background: #edf2f7;
-        text-align: center;
-        padding: 24px;
-        color: #718096;
-        font-size: 13px;
-        border-top: 1px solid #e2e8f0;
-      }
-      .footer strong {
-        color: #2d3748;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="email-container">
-      <!-- HEADER -->
-      <div class="header">
-        <h1>🏛️ Nova Consulta Jurídica</h1>
-        <p>Formulário de Contato - Website</p>
-      </div>
-
-      <div class="content">
-        <!-- PRIORIDADE -->
-        <div
-          class="priority-badge {{urgency_level == 'URGENTE' ? 'urgent-badge' : urgency_level == 'ALTA' ? 'high-badge' : 'normal-badge'}}"
-        >
-          {{urgency_level == 'URGENTE' ? '🚨 URGENTE' : urgency_level == 'ALTA'
-          ? '⚡ ALTA PRIORIDADE' : '📋 NORMAL'}}
+<head>
+    <meta charset="utf-8">
+    <title>Novo Contato - LawyerHero</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+    <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+        <h2 style="color: #3b82f6; border-bottom: 2px solid #3b82f6; padding-bottom: 10px;">
+            🎯 Novo Contato Recebido
+        </h2>
+        
+        <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3 style="color: #1e3a8a; margin-top: 0;">📋 Informações do Contato</h3>
+            
+            <p><strong>👤 Nome:</strong> {{from_name}}</p>
+            <p><strong>📧 Email:</strong> {{from_email}}</p>
+            <p><strong>📱 Telefone:</strong> {{phone}}</p>
+            <p><strong>📝 Assunto:</strong> {{subject}}</p>
         </div>
-
-        <!-- INFORMAÇÕES DO CLIENTE -->
-        <div class="info-card">
-          <h2>👤 Informações do Cliente</h2>
-          <div class="info-row">
-            <span class="info-label">Nome:</span>
-            <span class="info-value">{{client_name}}</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Email:</span>
-            <span class="info-value">
-              <a
-                href="mailto:{{client_email}}"
-                style="color: #2c5530; text-decoration: none;"
-                >{{client_email}}</a
-              >
-            </span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Telefone:</span>
-            <span class="info-value">{{client_phone}}</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Preferência de Contato:</span>
-            <span class="info-value">{{contact_preference}}</span>
-          </div>
+        
+        <div style="background: #ffffff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;">
+            <h3 style="color: #1e3a8a; margin-top: 0;">💬 Mensagem</h3>
+            <p style="white-space: pre-wrap;">{{message}}</p>
         </div>
-
-        <!-- INFORMAÇÕES DA CONSULTA -->
-        <div class="info-card">
-          <h2>⚖️ Detalhes da Consulta</h2>
-          <div class="info-row">
-            <span class="info-label">Área do Direito:</span>
-            <span class="info-value">{{practice_area}}</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Assunto:</span>
-            <span class="info-value">{{consultation_subject}}</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Tipo de Consulta:</span>
-            <span class="info-value">{{consultation_type}}</span>
-          </div>
-
-          <h3 style="margin: 20px 0 10px 0; color: #2d3748;">
-            📝 Mensagem do Cliente:
-          </h3>
-          <div class="message-box">{{consultation_message}}</div>
-          <p style="margin: 5px 0; font-size: 12px; color: #718096;">
-            <em>Tamanho da mensagem: {{message_length}} caracteres</em>
-          </p>
+        
+        <div style="margin-top: 30px; padding: 20px; background: #f0f9ff; border-radius: 8px; border-left: 4px solid #3b82f6;">
+            <p style="margin: 0; color: #1e40af;">
+                <strong>⏰ Recebido em:</strong> {{sent_date}}
+            </p>
         </div>
-
-        <!-- INFORMAÇÕES DO SISTEMA -->
-        <div class="system-info">
-          <h3 style="margin: 0 0 12px 0; color: #2d3748;">
-            🔧 Informações Técnicas
-          </h3>
-          <p style="margin: 6px 0;">
-            <strong>Data e Hora:</strong> {{timestamp}} ({{day_of_week}})
-          </p>
-          <p style="margin: 6px 0;">
-            <strong>Data:</strong> {{date_only}} |
-            <strong>Horário:</strong> {{time_only}}
-          </p>
-          <p style="margin: 6px 0;"><strong>Origem:</strong> {{source}}</p>
-          <p style="margin: 6px 0;">
-            <strong>Tem Telefone:</strong> {{has_phone}}
-          </p>
-        </div>
-
-        <!-- AÇÕES RÁPIDAS -->
-        <div class="actions-section">
-          <h3 style="margin: 0 0 16px 0; color: #2d3748;">🚀 Ações Rápidas</h3>
-          <a
-            href="mailto:{{client_email}}?subject=Re: {{consultation_subject}}&body=Olá {{client_name}},%0D%0A%0D%0AObrigado pelo seu contato sobre {{consultation_subject}}.%0D%0A%0D%0AAtenciosamente,%0D%0ADra. Geovanna Nery"
-            class="action-button btn-primary"
-          >
-            📧 Responder por Email
-          </a>
-          {{client_phone != 'Não informado' ? '<a
-            href="https://wa.me/55' + client_phone.replace(/\D/g, '') + '?text=Olá ' + client_name + '! Recebi sua mensagem sobre ' + consultation_subject + '. Vamos conversar?"
-            class="action-button btn-whatsapp"
-            >📱 WhatsApp</a
-          >' : ''}}
-        </div>
-      </div>
+        
+        <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 30px 0;">
+        
+        <p style="text-align: center; color: #64748b; font-size: 14px;">
+            Este email foi enviado através do formulário de contato do seu site.
+        </p>
     </div>
+</body>
+</html>
+```
 
-           <!-- FOOTER -->
-       <div class="footer">
-         <p>Este email foi gerado automaticamente pelo sistema de contato do website.</p>
-         <p><strong>Dra. Geovanna Nery</strong> | Advocacia Especializada</p>
-         <p>OAB/DF 123.456 | {{to_email}}</p>
-       </div>
-     </div>
-   </body>
- </html>
+### **Template de Texto Simples**
+
+```text
+🎯 NOVO CONTATO RECEBIDO
+
+📋 INFORMAÇÕES DO CONTATO:
+👤 Nome: {{from_name}}
+📧 Email: {{from_email}}
+📱 Telefone: {{phone}}
+📝 Assunto: {{subject}}
+
+💬 MENSAGEM:
+{{message}}
+
+⏰ Recebido em: {{sent_date}}
+
+---
+Este email foi enviado através do formulário de contato do seu site.
 ```
 
 ---
 
-## 🔧 Variáveis Disponíveis no Template
+## 🔧 **INTEGRAÇÃO NO COMPONENTE**
 
-### 👤 **Informações do Cliente**
+### **1. Hook Personalizado**
 
-- `{{client_name}}` - Nome do cliente
-- `{{client_email}}` - Email do cliente
-- `{{client_phone}}` - Telefone do cliente
-- `{{reply_to}}` - Email para resposta
-- `{{contact_preference}}` - Preferência de contato
+```typescript
+// src/hooks/useContactForm.ts
+import { useState } from 'react';
+import { sendEmail } from '@/lib/email/emailjs';
 
-### ⚖️ **Informações da Consulta**
+export const useContactForm = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-- `{{consultation_subject}}` - Assunto da consulta
-- `{{consultation_message}}` - Mensagem do cliente
-- `{{consultation_type}}` - Tipo de consulta
-- `{{practice_area}}` - Área do direito identificada
-- `{{urgency_level}}` - Nível de urgência (NORMAL/ALTA/URGENTE)
+  const handleSubmit = async (formData: ContactFormData) => {
+    setIsLoading(true);
+    setError(null);
+    
+    try {
+      const result = await sendEmail(formData);
+      
+      if (result.success) {
+        setIsSuccess(true);
+        return true;
+      } else {
+        setError('Erro ao enviar email. Tente novamente.');
+        return false;
+      }
+    } catch (err) {
+      setError('Erro inesperado. Tente novamente.');
+      return false;
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
-### 🕐 **Informações de Tempo**
+  return {
+    isLoading,
+    isSuccess,
+    error,
+    handleSubmit,
+    reset: () => {
+      setIsSuccess(false);
+      setError(null);
+    }
+  };
+};
+```
 
-- `{{timestamp}}` - Data e hora completa
-- `{{date_only}}` - Apenas a data
-- `{{time_only}}` - Apenas o horário
-- `{{day_of_week}}` - Dia da semana
+### **2. Componente do Formulário**
 
-### 🔧 **Informações Técnicas**
+```typescript
+// src/components/forms/ContactForm.tsx
+import { useContactForm } from '@/hooks/useContactForm';
 
-- `{{source}}` - Origem do contato
-- `{{message_length}}` - Tamanho da mensagem
-- `{{has_phone}}` - Se tem telefone (Sim/Não)
-- `{{to_email}}` - Email de destino
+export const ContactForm = () => {
+  const { isLoading, isSuccess, error, handleSubmit, reset } = useContactForm();
+
+  const onSubmit = async (data: ContactFormData) => {
+    const success = await handleSubmit(data);
+    if (success) {
+      // Limpar formulário ou mostrar sucesso
+      reset();
+    }
+  };
+
+  if (isSuccess) {
+    return (
+      <div className="success-message">
+        <h3>✅ Mensagem Enviada!</h3>
+        <p>Obrigado pelo contato. Retornaremos em breve.</p>
+        <button onClick={reset}>Enviar Nova Mensagem</button>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      {/* Campos do formulário */}
+      
+      {error && (
+        <div className="error-message">
+          ❌ {error}
+        </div>
+      )}
+      
+      <button 
+        type="submit" 
+        disabled={isLoading}
+        className="submit-button"
+      >
+        {isLoading ? 'Enviando...' : 'Enviar Mensagem'}
+      </button>
+    </form>
+  );
+};
+```
 
 ---
 
-## 📱 Template Simplificado (Alternativa)
+## 🎨 **ESTILIZAÇÃO CSS**
 
-Se preferir um template mais simples:
+### **Estilos para Mensagens**
 
-### **Subject:**
+```css
+/* src/styles/components.css */
 
+.success-message {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+}
+
+.success-message h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.success-message button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.success-message button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.error-message {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
 ```
-Nova Consulta: {{consultation_subject}}
-```
-
-### **Content:**
-
-```
-Olá Dra. Geovanna,
-
-Você recebeu uma nova consulta através do website:
-
-CLIENTE:
-Nome: {{client_name}}
-Email: {{client_email}}
-Telefone: {{client_phone}}
-
-CONSULTA:
-Assunto: {{consultation_subject}}
-Área: {{practice_area}}
-Prioridade: {{urgency_level}}
-
-MENSAGEM:
-{{consultation_message}}
-
-DETALHES:
-Data/Hora: {{timestamp}}
-Origem: {{source}}
-
-Para responder, clique aqui: mailto:{{client_email}}
 
 ---
-Sistema de Contato - Dra. Geovanna Nery
+
+## 🔒 **SEGURANÇA E VALIDAÇÃO**
+
+### **1. Validação do Frontend**
+
+```typescript
+// src/lib/validation/contact-schema.ts
+import * as yup from 'yup';
+
+export const contactSchema = yup.object({
+  name: yup
+    .string()
+    .required('Nome é obrigatório')
+    .min(2, 'Nome deve ter pelo menos 2 caracteres')
+    .max(100, 'Nome deve ter no máximo 100 caracteres'),
+  
+  email: yup
+    .string()
+    .required('Email é obrigatório')
+    .email('Email inválido'),
+  
+  phone: yup
+    .string()
+    .required('Telefone é obrigatório')
+    .matches(/^[\d\s\-\+\(\)]+$/, 'Telefone inválido'),
+  
+  message: yup
+    .string()
+    .required('Mensagem é obrigatória')
+    .min(10, 'Mensagem deve ter pelo menos 10 caracteres')
+    .max(1000, 'Mensagem deve ter no máximo 1000 caracteres'),
+});
+```
+
+### **2. Rate Limiting**
+
+```typescript
+// src/hooks/useContactForm.ts
+const [lastSubmission, setLastSubmission] = useState<number>(0);
+
+const handleSubmit = async (formData: ContactFormData) => {
+  const now = Date.now();
+  const timeSinceLastSubmission = now - lastSubmission;
+  
+  // Limitar a 1 envio por minuto
+  if (timeSinceLastSubmission < 60000) {
+    setError('Aguarde 1 minuto antes de enviar outra mensagem.');
+    return false;
+  }
+  
+  // ... resto da lógica
+  
+  setLastSubmission(now);
+};
 ```
 
 ---
 
-## ✅ Próximos Passos
+## 🧪 **TESTANDO A INTEGRAÇÃO**
 
-1. Copie o template desejado
-2. Cole no EmailJS
-3. Teste enviando um formulário
-4. Ajuste conforme necessário
-5. O email chegará em: **bcordeiro.dev@gmail.com**
+### **1. Teste Local**
+
+```bash
+# 1. Configure as variáveis de ambiente
+cp env.example .env.local
+
+# 2. Edite .env.local com suas credenciais
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=sua_chave
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=seu_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=seu_template_id
+
+# 3. Execute o projeto
+npm run dev
+
+# 4. Teste o formulário em localhost:3000
+```
+
+### **2. Verificação de Envio**
+
+1. **Console do Navegador** - Verifique logs de sucesso/erro
+2. **Dashboard EmailJS** - Confirme emails recebidos
+3. **Caixa de Entrada** - Verifique se emails chegaram
+4. **Spam** - Verifique pasta de spam
+
+---
+
+## 🚀 **DEPLOY E PRODUÇÃO**
+
+### **1. Variáveis de Produção**
+
+```bash
+# Vercel
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=sua_chave
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=seu_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=seu_template_id
+
+# Netlify
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=sua_chave
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=seu_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=seu_template_id
+```
+
+### **2. Verificação Pós-Deploy**
+
+1. **Teste o formulário** no site em produção
+2. **Verifique logs** de erro no console
+3. **Confirme emails** sendo recebidos
+4. **Teste em diferentes dispositivos**
+
+---
+
+## 🔧 **TROUBLESHOOTING**
+
+### **Problemas Comuns**
+
+#### **❌ "EmailJS is not defined"**
+
+```typescript
+// Solução: Verificar importação
+import emailjs from '@emailjs/browser';
+
+// E inicialização
+emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
+```
+
+#### **❌ "Service ID not found"**
+
+1. Verificar se o Service ID está correto
+2. Confirmar se o serviço está ativo no dashboard
+3. Verificar variáveis de ambiente
+
+#### **❌ "Template ID not found"**
+
+1. Verificar se o Template ID está correto
+2. Confirmar se o template está publicado
+3. Verificar variáveis de ambiente
+
+#### **❌ "Public Key invalid"**
+
+1. Verificar se a chave pública está correta
+2. Confirmar se a conta está verificada
+3. Verificar se não há espaços extras
+
+---
+
+## 📊 **MONITORAMENTO E ANALYTICS**
+
+### **1. Tracking de Envios**
+
+```typescript
+// src/lib/email/emailjs.ts
+export const sendEmail = async (formData: ContactFormData) => {
+  try {
+    // Google Analytics (se configurado)
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'form_submit', {
+        event_category: 'Contact',
+        event_label: 'Contact Form'
+      });
+    }
+    
+    const result = await emailjs.send(/* ... */);
+    
+    // Tracking de sucesso
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'form_success', {
+        event_category: 'Contact',
+        event_label: 'Email Sent'
+      });
+    }
+    
+    return { success: true, result };
+  } catch (error) {
+    // Tracking de erro
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'form_error', {
+        event_category: 'Contact',
+        event_label: 'Email Failed'
+      });
+    }
+    
+    throw error;
+  }
+};
+```
+
+### **2. Dashboard EmailJS**
+
+- **Email Delivery Rate** - Taxa de entrega
+- **Bounce Rate** - Taxa de retorno
+- **Spam Reports** - Relatórios de spam
+- **Usage Analytics** - Uso da API
+
+---
+
+## 💡 **DICAS E MELHORIAS**
+
+### **1. Personalização Avançada**
+
+```typescript
+// Adicionar campos customizados
+const emailParams = {
+  from_name: formData.name,
+  from_email: formData.email,
+  message: formData.message,
+  phone: formData.phone,
+  subject: formData.subject,
+  // Campos customizados
+  lawyer_name: LAWYER_CONFIG.lawyer.name,
+  service_area: formData.serviceArea,
+  urgency: formData.urgency,
+  preferred_contact: formData.preferredContact,
+};
+```
+
+### **2. Notificações Múltiplas**
+
+```typescript
+// Enviar para múltiplos emails
+const emails = [
+  'contato@seuemail.com',
+  'secretaria@seuemail.com'
+];
+
+for (const email of emails) {
+  await emailjs.send(
+    serviceId,
+    templateId,
+    { ...params, to_email: email }
+  );
+}
+```
+
+---
+
+## 📚 **RECURSOS ADICIONAIS**
+
+### **Documentação Oficial**
+
+- [EmailJS Documentation](https://www.emailjs.com/docs/)
+- [React Integration](https://www.emailjs.com/docs/react/)
+- [Template Examples](https://www.emailjs.com/docs/templates/)
+
+### **Alternativas**
+
+- **Formspree** - Formulários sem backend
+- **Netlify Forms** - Formulários nativos do Netlify
+- **Getform** - Formulários com webhooks
+
+---
+
+## 🎯 **PRÓXIMOS PASSOS**
+
+1. **Configure** sua conta EmailJS
+2. **Crie** o template de email
+3. **Configure** as variáveis de ambiente
+4. **Teste** localmente
+5. **Faça deploy** e teste em produção
+6. **Monitore** o funcionamento
+
+---
+
+**💡 Dica**: Sempre teste o formulário em produção antes de considerar o projeto finalizado.
+
+**🚀 Boa sorte com sua integração EmailJS!**

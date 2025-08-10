@@ -1,7 +1,7 @@
 {
-  "name": "lawyer-hero-envato",
+  "name": "lawyer-hero-template",
   "version": "1.0.0",
-  "description": "Professional landing page template for lawyers built with Next.js 15, TypeScript and Tailwind CSS",
+  "description": "Professional landing page template for lawyers and law firms. Built with Next.js 15, TypeScript, Tailwind CSS, and Framer Motion. Features responsive design, contact forms, SEO optimization, and accessibility compliance.",
   "repository": {
     "type": "git",
     "url": "https://github.com/bcordeirodev/lawyer-hero-envato.git"
@@ -9,13 +9,38 @@
   "homepage": "https://github.com/bcordeirodev/lawyer-hero-envato",
   "keywords": [
     "lawyer",
+    "attorney",
+    "law-firm",
+    "legal",
     "template",
     "landing-page",
+    "website",
     "nextjs",
     "typescript",
-    "tailwind"
+    "tailwind",
+    "react",
+    "responsive",
+    "professional",
+    "business",
+    "modern",
+    "seo",
+    "accessibility",
+    "framer-motion",
+    "envato",
+    "themeforest"
   ],
-  "author": "LawyerHero Template",
+  "author": {
+    "name": "LawyerHero Template",
+    "email": "contact@lawyerhero.template",
+    "url": "https://github.com/bcordeirodev/lawyer-hero-envato"
+  },
+  "contributors": [
+    {
+      "name": "Bruno Cordeiro",
+      "email": "bcordeiro.dev@gmail.com",
+      "role": "Developer"
+    }
+  ],
   "license": "MIT",
   "private": false,
   "scripts": {
@@ -33,7 +58,12 @@
     "test:e2e:ui": "playwright test --ui",
     "test:all": "npm run lint && npm run type-check && npm run test:run && npm run test:e2e",
     "analyze": "cross-env ANALYZE=true npm run build",
-    "preview": "npm run build && npm run start"
+    "preview": "npm run build && npm run start",
+    "export": "next build && next export",
+    "clean": "rm -rf .next out node_modules/.cache",
+    "prepare-envato": "node scripts/prepare-envato.js",
+    "quality-check": "npm run lint && npm run type-check && npm run test:run",
+    "full-test": "npm run quality-check && npm run test:e2e"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -76,5 +106,43 @@
     "tailwindcss": "^3.4.17",
     "typescript": "^5",
     "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "main": "next.config.js",
+  "files": [
+    "src/**/*",
+    "public/**/*",
+    "*.md",
+    "*.json",
+    "*.js",
+    "*.ts"
+  ],
+  "envato": {
+    "category": "Site Templates",
+    "subcategory": "Specialty Pages",
+    "tags": [
+      "lawyer",
+      "attorney", 
+      "law firm",
+      "legal",
+      "professional",
+      "business",
+      "landing page",
+      "responsive",
+      "modern",
+      "clean"
+    ],
+    "live_preview": "https://lawyer-hero-demo.vercel.app",
+    "version": "1.0.0",
+    "framework": "Next.js 15",
+    "compatibility": "All Modern Browsers"
   }
 }

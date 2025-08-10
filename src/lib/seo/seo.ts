@@ -5,7 +5,7 @@ export const SEO_CONFIG = {
     siteName: `${LAWYER_CONFIG.lawyer.name} - Advocacia`,
     siteUrl: 'https://geovannanery.com',
     siteDescription: LAWYER_CONFIG.lawyer.description,
-    siteImage: '/api/og',
+    siteImage: '/images/og-default.jpg',
     twitterHandle: '@advocaciageovanna',
     locale: 'pt_BR',
     type: 'website' as const,

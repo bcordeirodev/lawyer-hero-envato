@@ -1,6 +1,8 @@
 import { LAWYER_CONFIG } from '@/config'
 import { MetadataRoute } from 'next'
 
+export const dynamic = 'force-static'
+
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://geovannanery.com'
 

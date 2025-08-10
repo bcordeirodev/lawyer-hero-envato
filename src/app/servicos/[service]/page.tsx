@@ -1,13 +1,19 @@
-import { Metadata } from 'next'
-import { generateServiceMetadata } from '@/lib/seo/metadata'
-import { LAWYER_CONFIG } from '@/config'
-import { notFound } from 'next/navigation'
 import { ServiceStructuredData } from '@/components/common/ServiceStructuredData'
+import { LAWYER_CONFIG } from '@/config'
+import { generateServiceMetadata } from '@/lib/seo/metadata'
+import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
 interface ServicePageProps {
     params: Promise<{
         service: string
     }>
+}
+
+export function generateStaticParams() {
+    return LAWYER_CONFIG.services.map((service) => ({
+        service: service.id,
+    }))
 }
 
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {

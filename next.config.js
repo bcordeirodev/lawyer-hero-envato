@@ -33,28 +33,30 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
 
-  // Security headers
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: [
-          {
-            key: "X-Frame-Options",
-            value: "DENY",
-          },
-          {
-            key: "X-Content-Type-Options",
-            value: "nosniff",
-          },
-          {
-            key: "Referrer-Policy",
-            value: "strict-origin-when-cross-origin",
-          },
-        ],
-      },
-    ];
-  },
+  // Security headers (disabled for static export)
+  ...(process.env.STATIC_EXPORT !== "true" && {
+    async headers() {
+      return [
+        {
+          source: "/(.*)",
+          headers: [
+            {
+              key: "X-Frame-Options",
+              value: "DENY",
+            },
+            {
+              key: "X-Content-Type-Options",
+              value: "nosniff",
+            },
+            {
+              key: "Referrer-Policy",
+              value: "strict-origin-when-cross-origin",
+            },
+          ],
+        },
+      ];
+    },
+  }),
 
   // TypeScript configuration
   typescript: {
@@ -69,8 +71,21 @@ const nextConfig = {
   },
 
   // Output configuration for static export
-  output: "standalone",
+  output:
+    process.env.NODE_ENV === "production" &&
+    process.env.STATIC_EXPORT === "true"
+      ? "export"
+      : "standalone",
   trailingSlash: false,
+
+  // Static export configuration
+  ...(process.env.STATIC_EXPORT === "true" && {
+    images: {
+      unoptimized: true,
+    },
+    // Remove assetPrefix for static export to avoid font loading issues
+    trailingSlash: true,
+  }),
 };
 
 module.exports = nextConfig;

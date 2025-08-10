@@ -72,8 +72,8 @@ export function Footer() {
                                         <Users className="h-3.5 w-3.5 text-secondary-500" />
                                     </div>
                                     <div>
-                                        <p className="text-lg font-bold text-text-primary">{lawyer.statistics.casesResolved}</p>
-                                        <p className="text-xs text-text-secondary">Casos Resolvidos</p>
+                                        <p className="text-lg font-bold text-text-primary">Diversos</p>
+                                        <p className="text-xs text-text-secondary">Casos Atendidos</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -88,8 +88,8 @@ export function Footer() {
                                         <Shield className="h-3.5 w-3.5 text-gold-500" />
                                     </div>
                                     <div>
-                                        <p className="text-lg font-bold text-text-primary">{lawyer.statistics.successRate}</p>
-                                        <p className="text-xs text-text-secondary">Taxa de Sucesso</p>
+                                        <p className="text-lg font-bold text-text-primary">Total</p>
+                                        <p className="text-xs text-text-secondary">Dedicação</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -201,6 +201,16 @@ export function Footer() {
                     transition={{ duration: 0.6, delay: 0.3 }}
                     className="pt-6 sm:pt-8 border-t border-border-secondary text-center mt-2"
                 >
+                    {/* Disclaimer Legal */}
+                    <div className="mb-6 bg-background-secondary p-4 rounded-lg">
+                        <p className="text-xs text-text-secondary text-center leading-relaxed">
+                            <strong>Aviso Legal:</strong> As informações contidas neste site têm caráter meramente informativo.
+                            Cada caso é único e não há garantia de resultado. O resultado de processos judiciais depende de
+                            diversos fatores e circunstâncias específicas de cada situação. A consulta jurídica adequada
+                            deve ser sempre buscada para análise do caso concreto.
+                        </p>
+                    </div>
+
                     {/* Copyright - mais compacto */}
                     <div className="mb-4">
                         <p className="text-sm font-medium text-text-primary">

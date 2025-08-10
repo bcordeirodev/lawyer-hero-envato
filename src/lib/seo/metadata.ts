@@ -15,7 +15,7 @@ export function generateMetadata(options: MetadataOptions = {}): Metadata {
 
     const defaultTitle = `${lawyer.name} - ${lawyer.title}`
     const defaultDescription = lawyer.detailedDescription
-    const defaultImage = `${SEO_CONFIG.siteImage}?name=${encodeURIComponent(lawyer.name)}&title=${encodeURIComponent(lawyer.title)}`
+    const defaultImage = SEO_CONFIG.siteImage
 
     const title = options.title || defaultTitle
     const description = options.description || defaultDescription

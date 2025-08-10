@@ -109,17 +109,17 @@ export const LAWYER_CONFIG: LawyerConfig = {
     lawyer: {
         name: "Dr. Alexandre Silva",
         fullName: "Alexandre Silva Santos",
-        title: "Advogado Especialista em Direito Civil, Empresarial e Família",
-        description: "Olá! Sou o Dr. Alexandre Silva, advogado com sólida experiência na área jurídica. Acredito que cada caso é único e merece atenção especial. Minha missão é oferecer soluções práticas e eficazes, sempre com transparência e dedicação aos meus clientes.",
-        detailedDescription: "Sou advogado com vasta experiência e atuação dedicada na busca de soluções jurídicas eficazes. Acredito que cada cliente é único e que cada caso exige atenção personalizada, estratégia e comprometimento. Por isso, me envolvo diretamente em cada demanda, com ética, excelência técnica e foco em resultados, oferecendo um atendimento jurídico completo e de confiança.",
+        title: "Advogado - Atuação em Direito Civil, Empresarial e Família",
+        description: "Olá! Sou o Dr. Alexandre Silva, advogado inscrito na OAB-SP. Acredito que cada caso é único e merece atenção especial. Atuo com transparência, ética e dedicação, sempre priorizando o interesse dos meus clientes.",
+        detailedDescription: "Advogado com atuação dedicada na prestação de serviços jurídicos. Acredito que cada cliente é único e que cada caso exige atenção personalizada, estratégia e comprometimento. Atuo com ética, transparência e dedicação, oferecendo um atendimento jurídico cuidadoso e profissional.",
         credentials: {
             bar: "OAB-SP 123.456",
             location: "São Paulo, SP"
         },
         statistics: {
-            experience: "8+",
-            casesResolved: "500+",
-            successRate: "95%"
+            experience: "Experiência",
+            casesResolved: "Casos",
+            successRate: "Dedicação"
         },
         contact: {
             email: "contato@alexandresilva.adv.br",
@@ -265,16 +265,16 @@ export const LAWYER_CONFIG: LawyerConfig = {
 
     about: {
         highlights: [
-            "Especialização em Direito Civil e Empresarial",
-            "Mais de 8 anos de experiência jurídica",
+            "Atuação focada em Direito Civil e Empresarial",
+            "Experiência consolidada na área jurídica",
             "Atendimento personalizado e transparente",
-            "Compromisso com resultados eficazes"
+            "Compromisso com ética e dedicação"
         ],
         whyChooseUs: [
             "Atendimento personalizado e dedicado",
             "Transparência em todos os processos",
-            "Experiência em casos complexos",
-            "Compromisso com prazos e resultados"
+            "Atuação em diversos casos jurídicos",
+            "Compromisso com ética e responsabilidade"
         ]
     }
 } 

@@ -1,469 +1,605 @@
-# 🎨 Guia de Customização - LawyerHero
+# 🎨 Guia de Personalização - LawyerHero Template
 
-Este guia ensina como personalizar completamente o template para qualquer advogado.
+## 🚀 **INÍCIO RÁPIDO**
 
-## 📝 Configuração Básica
+### 📋 **Requisitos Mínimos**
 
-### 1. Dados do Advogado
+- **Node.js**: 18.17+ (recomendado: 20.x LTS)
+- **npm**: 9.x+ ou **yarn**: 1.22+
+- **Git**: Para controle de versão
 
-Edite `src/config/lawyer.ts`:
+### ⚡ **Instalação em 3 Passos**
+
+```bash
+# 1. Clonar/baixar o template
+git clone [URL_DO_REPOSITORIO]
+cd lawyer-hero-envato
+
+# 2. Instalar dependências
+npm install
+
+# 3. Rodar em desenvolvimento
+npm run dev
+```
+
+**🎯 Resultado**: Site rodando em `http://localhost:3000`
+
+---
+
+## 🔧 **CONFIGURAÇÃO PRINCIPAL**
+
+### 📝 **1. Dados do Advogado (`src/config/lawyer.ts`)**
+
+#### **Informações Básicas**
 
 ```typescript
 export const LAWYER_CONFIG: LawyerConfig = {
   lawyer: {
-    name: "Seu Nome",
-    fullName: "Seu Nome Completo",
-    title: "Advogado Especialista em...",
-    description: "Sua descrição breve",
-    detailedDescription: "Descrição detalhada sobre você",
+    name: "Dr. [SEU_NOME]", // Nome completo
+    fullName: "[NOME_COMPLETO]", // Nome completo oficial
+    title: "Advogado - [AREAS_ATUACAO]", // Título profissional
+    description: "[DESCRICAO_CURTA]", // Descrição para SEO
+    detailedDescription: "[DESCRICAO_DETALHADA]", // Descrição completa
+
     credentials: {
-      bar: "OAB-XX 123456",
-      location: "Sua Cidade, Estado",
-    },
-    statistics: {
-      experience: "X+",
-      casesResolved: "XXX+",
-      successRate: "XX%",
-    },
-    contact: {
-      email: "seu@email.com",
-      phone: "(XX) XXXXX-XXXX",
-      workingHours: "Segunda a Sexta: 9h às 18h",
-    },
-    photo: {
-      src: "/images/sua-foto.jpg",
-      placeholder: "Seu Nome",
-      alt: "Sua descrição da foto",
+      bar: "OAB-[ESTADO] [NUMERO]", // Inscrição OAB
+      location: "[CIDADE], [ESTADO]", // Localização
     },
   },
 };
 ```
 
-### 2. Áreas de Atuação
+#### **⚠️ IMPORTANTE - Conformidade Ética**
 
-Customize as especialidades:
+- **NÃO** use "especialista" sem certificação oficial
+- **NÃO** prometa resultados específicos
+- **NÃO** use superlativos não comprovados
+- **SIM** use linguagem neutra e profissional
 
-```typescript
-services: [
-  {
-    id: "area-1",
-    title: "Direito Civil",
-    description: "Descrição da área",
-    icon: Scale, // Importe de lucide-react
-    features: ["Serviço 1", "Serviço 2", "Serviço 3"],
-    gradient: "from-blue-500 to-blue-600",
-    category: "civil",
-  },
-];
-```
-
-### 3. Redes Sociais
-
-Configure seus perfis:
+**✅ Exemplo Correto:**
 
 ```typescript
-socialMedia: {
-    whatsapp: "https://wa.me/5511999999999",
-    instagram: "https://instagram.com/seuusuario",
-    linkedin: "https://linkedin.com/in/seuusuario",
-    facebook: "https://facebook.com/seuusuario"
-}
+title: "Advogado - Atuação em Direito Civil e Empresarial";
+description: "Advogado com experiência na área jurídica...";
 ```
 
-## 🎨 Personalização Visual
+**❌ Exemplo Incorreto:**
 
-### Cores e Tema
+```typescript
+title: "Especialista em Direito Civil"; // Sem certificação
+description: "Melhor advogado da cidade"; // Superlativo
+```
 
-Edite `tailwind.config.ts`:
+### 🎨 **2. Cores e Tema (`tailwind.config.ts`)**
+
+#### **Paleta Principal**
 
 ```typescript
 colors: {
-    // Sua paleta principal
-    primary: {
-        50: '#f0f9ff',
-        500: '#3b82f6',
-        900: '#1e3a8a'
-    },
-    secondary: {
-        500: '#10b981',
-        600: '#059669'
-    }
+  primary: {
+    50: '#eff6ff',    // Azul claro
+    500: '#3b82f6',   // Azul principal
+    900: '#1e3a8a',   // Azul escuro
+  },
+  secondary: {
+    500: '#f59e0b',   // Dourado
+    600: '#d97706',   // Dourado escuro
+  }
 }
 ```
 
-### Design Tokens
-
-Modifique `src/lib/design-tokens.ts`:
+#### **Temas Personalizados**
 
 ```typescript
-export const GRADIENTS = {
-  primary: "from-blue-500 to-blue-600",
-  secondary: "from-green-500 to-green-600",
-  // Seus gradientes personalizados
-};
-```
-
-### Fontes
-
-Altere no `src/app/layout.tsx`:
-
-```typescript
-import { Poppins } from "next/font/google";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-```
-
-## 🖼️ Imagens e Assets
-
-### Foto do Advogado
-
-1. Adicione sua foto em `public/images/`
-2. Recomendações:
-   - **Formato**: WebP ou JPG
-   - **Tamanho**: 400x400px mínimo
-   - **Peso**: Máximo 200KB
-   - **Estilo**: Profissional, fundo neutro
-
-### Favicon
-
-Substitua `src/app/favicon.ico` ou use:
-
-```typescript
-// src/app/layout.tsx
-export const metadata = {
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+// src/lib/design-tokens.ts
+export const THEME_COLORS = {
+  light: {
+    background: "#ffffff",
+    text: "#1f2937",
+    accent: "#3b82f6",
+  },
+  dark: {
+    background: "#111827",
+    text: "#f9fafb",
+    accent: "#60a5fa",
   },
 };
 ```
 
-### Logo (Opcional)
+### 📱 **3. Layout e Responsividade**
 
-Para adicionar logo:
-
-```typescript
-// src/components/layout/header.tsx
-<div className="flex items-center">
-  <Image src="/images/logo.png" alt="Logo" width={120} height={40} />
-</div>
-```
-
-## 📝 Conteúdo
-
-### Seção Hero
-
-Edite `src/components/sections/hero.tsx`:
-
-```typescript
-// Customize o título principal
-<h1 className="text-4xl font-bold">
-    Seu título único aqui
-</h1>
-
-// Altere o subtítulo
-<p className="text-xl">
-    Sua proposta de valor
-</p>
-```
-
-### Seção Sobre
-
-Modifique `src/components/sections/about.tsx`:
-
-```typescript
-// Adicione seus diferenciais
-const highlights = [
-  "Seu diferencial 1",
-  "Seu diferencial 2",
-  "Seu diferencial 3",
-];
-```
-
-### Formulário de Contato
-
-Configure em `src/config/lawyer.ts`:
-
-```typescript
-form: {
-    subjects: [
-        "Consulta Jurídica",
-        "Sua Área 1",
-        "Sua Área 2",
-        "Outro"
-    ],
-    placeholders: {
-        name: "Seu nome completo",
-        email: "seu@email.com",
-        // ... outros campos
-    }
-}
-```
-
-## 📧 EmailJS Setup
-
-### 1. Criar Conta
-
-1. Acesse [EmailJS](https://emailjs.com)
-2. Crie conta gratuita
-3. Conecte seu email (Gmail, Outlook, etc.)
-
-### 2. Configurar Template
-
-Template de exemplo:
-
-```html
-Novo contato do site: Nome: {{name}} Email: {{email}} Telefone: {{phone}}
-Assunto: {{subject}} Mensagem: {{message}} --- Enviado através do formulário de
-contato
-```
-
-### 3. Configurar Ambiente
-
-```env
-# .env.local
-NEXT_PUBLIC_EMAILJS_SERVICE_ID=service_xxxxxxx
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=template_xxxxxxx
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=user_xxxxxxxxxxxx
-```
-
-## 🔧 Componentes Customizáveis
-
-### Botões
-
-Customize em `src/components/ui/primitives/button.tsx`:
-
-```typescript
-const buttonVariants = cva("base-classes", {
-  variants: {
-    variant: {
-      primary: "seu-estilo-primario",
-      secondary: "seu-estilo-secundario",
-    },
-  },
-});
-```
-
-### Cards
-
-Modifique `src/components/ui/primitives/card.tsx`:
-
-```typescript
-// Adicione novos estilos de card
-const cardVariants = {
-  elegant: "bg-white shadow-2xl border-gold-200",
-  modern: "bg-gradient-to-br from-gray-50 to-white",
-};
-```
-
-## 📱 Layout e Responsividade
-
-### Breakpoints Customizados
-
-```typescript
-// tailwind.config.ts
-screens: {
-    'xs': '475px',
-    'sm': '640px',
-    'md': '768px',
-    'lg': '1024px',
-    'xl': '1280px',
-    '2xl': '1536px',
-    '3xl': '1792px', // Adicione se necessário
-}
-```
-
-### Grid Personalizado
-
-```typescript
-// Modifique layouts em sections
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-  {/* Seu conteúdo */}
-</div>
-```
-
-## 🌟 Animações
-
-### Framer Motion
-
-Customize animações em `src/lib/animations/`:
-
-```typescript
-export const customFadeIn = {
-  initial: { opacity: 0, y: 30 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.8, ease: "easeOut" },
-};
-```
-
-### CSS Animations
-
-Adicione no `src/app/globals.css`:
+#### **Breakpoints Tailwind**
 
 ```css
-@keyframes slideInUp {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+/* src/app/globals.css */
+@screen sm {
+  /* 640px+ */
 }
-
-.slide-in-up {
-  animation: slideInUp 0.6s ease-out;
+@screen md {
+  /* 768px+ */
 }
-```
-
-## 🔍 SEO Customização
-
-### Metadata
-
-Edite `src/lib/seo/metadata.ts`:
-
-```typescript
-export function generateMetadata() {
-  return {
-    title: "Seu Nome - Advogado em Sua Cidade",
-    description: "Sua descrição otimizada para SEO",
-    keywords: ["advogado", "sua cidade", "suas especialidades"],
-    authors: [{ name: "Seu Nome" }],
-    openGraph: {
-      title: "Seu Nome - Advogado",
-      description: "Sua descrição",
-      images: ["/images/og-image.jpg"],
-    },
-  };
+@screen lg {
+  /* 1024px+ */
+}
+@screen xl {
+  /* 1280px+ */
+}
+@screen 2xl {
+  /* 1536px+ */
 }
 ```
 
-### Structured Data
+#### **Componentes Responsivos**
 
-Modifique `src/components/common/StructuredData.tsx`:
-
-```typescript
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "LegalService",
-  name: "Seu Nome",
-  address: "Seu Endereço",
-  telephone: "Seu Telefone",
-};
+```tsx
+// Exemplo de componente responsivo
+<div
+  className="
+  grid 
+  grid-cols-1 
+  md:grid-cols-2 
+  lg:grid-cols-3 
+  gap-4 
+  md:gap-6 
+  lg:gap-8
+"
+>
+  {/* Conteúdo */}
+</div>
 ```
-
-## 🎯 Funcionalidades Extras
-
-### Google Analytics
-
-```typescript
-// lib/gtag.js
-export const GA_TRACKING_ID = 'G-XXXXXXXXXX'
-
-// Adicione no layout.tsx
-<Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
-```
-
-### WhatsApp Flutuante
-
-Customize em `src/components/ui/floating-whatsapp.tsx`:
-
-```typescript
-const whatsappMessage = encodeURIComponent(
-  "Olá! Gostaria de mais informações sobre seus serviços jurídicos."
-);
-```
-
-### Chat Online
-
-Para integrar chat (Tawk.to, Zendesk, etc.):
-
-```typescript
-// components/Chat.tsx
-useEffect(() => {
-  // Código do chat
-  var Tawk_API = Tawk_API || {};
-  // ... configuração
-}, []);
-```
-
-## 📊 Performance
-
-### Otimização de Imagens
-
-```typescript
-// next.config.js
-images: {
-    formats: ['image/webp', 'image/avif'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
-}
-```
-
-### Lazy Loading
-
-```typescript
-// Para componentes pesados
-const HeavyComponent = dynamic(() => import("./HeavyComponent"), {
-  loading: () => <p>Carregando...</p>,
-});
-```
-
-## ✅ Checklist de Customização
-
-### Básico
-
-- [ ] Nome e dados pessoais
-- [ ] Áreas de atuação
-- [ ] Informações de contato
-- [ ] Foto profissional
-- [ ] Cores da marca
-
-### Avançado
-
-- [ ] EmailJS configurado
-- [ ] SEO otimizado
-- [ ] Google Analytics
-- [ ] Favicon personalizado
-- [ ] Redes sociais
-
-### Performance
-
-- [ ] Imagens otimizadas
-- [ ] Lighthouse 90+
-- [ ] Core Web Vitals
-- [ ] Mobile friendly
-
-## 🆘 Dicas e Troubleshooting
-
-### Cores não Aplicando
-
-```bash
-# Limpe cache do Tailwind
-rm -rf .next
-npm run dev
-```
-
-### Problemas de Build
-
-```bash
-# Verifique sintaxe TypeScript
-npm run type-check
-
-# Verifique linting
-npm run lint
-```
-
-### Performance Lenta
-
-1. Otimize imagens
-2. Use next/image
-3. Remova imports desnecessários
-4. Use lazy loading
 
 ---
 
-**💡 Dica**: Sempre teste em dispositivos móveis após customizações!
+## 🎯 **PERSONALIZAÇÃO AVANÇADA**
+
+### 🧩 **1. Componentes Reutilizáveis**
+
+#### **Criar Novo Componente**
+
+```tsx
+// src/components/sections/[novo-componente].tsx
+import { motion } from "framer-motion";
+import { SectionBadge } from "@/components/ui/design-system";
+
+export function NovoComponente() {
+  return (
+    <section className="py-16 bg-background">
+      <div className="container mx-auto px-4">
+        <SectionBadge>Novo Recurso</SectionBadge>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-3xl font-bold text-center mb-8"
+        >
+          Título do Componente
+        </motion.h2>
+        {/* Conteúdo */}
+      </div>
+    </section>
+  );
+}
+```
+
+#### **Registrar no Layout**
+
+```tsx
+// src/app/page.tsx
+import { NovoComponente } from "@/components/sections/novo-componente";
+
+export default function HomePage() {
+  return (
+    <main>
+      <Hero />
+      <Services />
+      <NovoComponente /> {/* Adicionar aqui */}
+      <About />
+      <Contact />
+    </main>
+  );
+}
+```
+
+### 🎭 **2. Animações com Framer Motion**
+
+#### **Animações Básicas**
+
+```tsx
+import { motion } from 'framer-motion'
+
+// Fade in simples
+<motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 0.5 }}
+>
+  Conteúdo animado
+</motion.div>
+
+// Slide in da esquerda
+<motion.div
+  initial={{ x: -100, opacity: 0 }}
+  animate={{ x: 0, opacity: 1 }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+>
+  Conteúdo deslizante
+</motion.div>
+```
+
+#### **Animações Avançadas**
+
+```tsx
+// src/lib/animations/animations.ts
+export const staggerContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+export const fadeInUp = {
+  hidden: { y: 60, opacity: 0 },
+  show: { y: 0, opacity: 1 },
+};
+```
+
+### 🔍 **3. SEO e Metadados**
+
+#### **Metadados de Página**
+
+```tsx
+// src/app/[pagina]/page.tsx
+import { Metadata } from "next";
+import { generateMetadata } from "@/lib/seo/metadata";
+
+export const metadata: Metadata = generateMetadata({
+  title: "Título Personalizado",
+  description: "Descrição personalizada da página",
+  image: "/images/pagina-especifica.jpg",
+});
+```
+
+#### **Structured Data (Schema.org)**
+
+```tsx
+// src/components/common/StructuredData.tsx
+export function LawyerStructuredData() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    name: LAWYER_CONFIG.lawyer.name,
+    description: LAWYER_CONFIG.lawyer.description,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "São Paulo",
+      addressRegion: "SP",
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+    />
+  );
+}
+```
+
+---
+
+## 🎨 **DESIGN SYSTEM**
+
+### 🎯 **1. Componentes Base**
+
+#### **Botões**
+
+```tsx
+// src/components/ui/primitives/button.tsx
+<Button variant="primary" size="lg">
+  Botão Principal
+</Button>
+
+<Button variant="secondary" size="md">
+  Botão Secundário
+</Button>
+
+<Button variant="outline" size="sm">
+  Botão Outline
+</Button>
+```
+
+#### **Cards**
+
+```tsx
+// src/components/ui/primitives/card.tsx
+<Card className="hover:shadow-lg transition-shadow">
+  <CardHeader>
+    <CardTitle>Título do Card</CardTitle>
+    <CardDescription>Descrição do card</CardDescription>
+  </CardHeader>
+  <CardContent>Conteúdo do card</CardContent>
+</Card>
+```
+
+### 🌈 **2. Sistema de Cores**
+
+#### **Variáveis CSS**
+
+```css
+/* src/app/globals.css */
+:root {
+  --color-primary: 59 130 246; /* #3b82f6 */
+  --color-secondary: 245 158 11; /* #f59e0b */
+  --color-success: 34 197 94; /* #22c55e */
+  --color-warning: 251 146 60; /* #fb923c */
+  --color-error: 239 68 68; /* #ef4444 */
+}
+
+/* Uso com Tailwind */
+.bg-primary {
+  background-color: rgb(var(--color-primary));
+}
+.text-primary {
+  color: rgb(var(--color-primary));
+}
+```
+
+#### **Gradientes**
+
+```tsx
+// src/components/ui/design-system/GradientIcon.tsx
+<div className="bg-gradient-to-r from-primary-500 to-secondary-500">
+  Conteúdo com gradiente
+</div>
+```
+
+---
+
+## 📱 **RESPONSIVIDADE**
+
+### 📐 **1. Grid System**
+
+#### **Layout Responsivo**
+
+```tsx
+<div
+  className="
+  grid 
+  grid-cols-1          /* Mobile: 1 coluna */
+  sm:grid-cols-2       /* Small: 2 colunas */
+  md:grid-cols-3       /* Medium: 3 colunas */
+  lg:grid-cols-4       /* Large: 4 colunas */
+  gap-4                /* Espaçamento base */
+  md:gap-6             /* Espaçamento medium */
+  lg:gap-8             /* Espaçamento large */
+"
+>
+  {/* Itens do grid */}
+</div>
+```
+
+#### **Flexbox Responsivo**
+
+```tsx
+<div
+  className="
+  flex 
+  flex-col             /* Mobile: coluna */
+  md:flex-row          /* Medium+: linha */
+  items-center         /* Centralizar itens */
+  justify-between      /* Espaçar entre itens */
+  gap-4                /* Espaçamento */
+  md:gap-8             /* Espaçamento medium */
+"
+>
+  {/* Conteúdo flexível */}
+</div>
+```
+
+### 🖼️ **2. Imagens Responsivas**
+
+#### **Next.js Image**
+
+```tsx
+import Image from "next/image";
+
+<Image
+  src="/images/hero.jpg"
+  alt="Imagem hero"
+  width={1200}
+  height={600}
+  className="
+    w-full 
+    h-auto 
+    object-cover
+    rounded-lg
+    shadow-lg
+  "
+  priority // Para imagens acima da dobra
+/>;
+```
+
+#### **Background Images**
+
+```tsx
+<div
+  className="
+    bg-cover 
+    bg-center 
+    bg-no-repeat
+    h-64 
+    md:h-96 
+    lg:h-[500px]
+  "
+  style={{
+    backgroundImage: "url('/images/background.jpg')",
+  }}
+>
+  {/* Conteúdo sobre a imagem */}
+</div>
+```
+
+---
+
+## 🚀 **PERFORMANCE**
+
+### ⚡ **1. Otimizações de Imagem**
+
+#### **Formatos Modernos**
+
+```tsx
+// next.config.js
+module.exports = {
+  images: {
+    formats: ["image/webp", "image/avif"],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+  },
+};
+```
+
+#### **Lazy Loading**
+
+```tsx
+// src/lib/performance/lazy-loading.ts
+export function useLazyLoad() {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return { ref, isVisible };
+}
+```
+
+### 📊 **2. Monitoramento de Performance**
+
+#### **Web Vitals**
+
+```tsx
+// src/hooks/usePerformance.ts
+export function usePerformance() {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      import("web-vitals").then(
+        ({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+          getCLS(console.log);
+          getFID(console.log);
+          getFCP(console.log);
+          getLCP(console.log);
+          getTTFB(console.log);
+        }
+      );
+    }
+  }, []);
+}
+```
+
+---
+
+## 🔧 **CONFIGURAÇÕES AVANÇADAS**
+
+### ⚙️ **1. Environment Variables**
+
+#### **Arquivo .env.local**
+
+```bash
+# .env.local
+NEXT_PUBLIC_SITE_URL=https://seusite.com
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=sua_chave_publica
+EMAILJS_SERVICE_ID=seu_service_id
+EMAILJS_TEMPLATE_ID=seu_template_id
+```
+
+#### **Uso no Código**
+
+```tsx
+// src/lib/env.ts
+export const env = {
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
+  emailjs: {
+    publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "",
+    serviceId: process.env.EMAILJS_SERVICE_ID || "",
+    templateId: process.env.EMAILJS_TEMPLATE_ID || "",
+  },
+};
+```
+
+### 🎨 **2. Tema Dinâmico**
+
+#### **Context de Tema**
+
+```tsx
+// src/contexts/ThemeContext.tsx
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") as "light" | "dark";
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      setTheme(prefersDark ? "dark" : "light");
+    }
+  }, []);
+
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+```
+
+---
+
+## 📚 **RECURSOS ADICIONAIS**
+
+### 🔗 **1. Links Úteis**
+
+- [Tailwind CSS Docs](https://tailwindcss.com/docs)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Next.js Docs](https://nextjs.org/docs)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
+
+### 📖 **2. Arquivos de Referência**
+
+- `src/config/lawyer.ts` - Configuração principal
+- `src/lib/design-tokens.ts` - Tokens de design
+- `src/components/ui/` - Componentes base
+- `tailwind.config.ts` - Configuração Tailwind
+
+### 🎯 **3. Próximos Passos**
+
+1. **Personalizar dados** em `src/config/lawyer.ts`
+2. **Ajustar cores** em `tailwind.config.ts`
+3. **Modificar layout** nos componentes
+4. **Adicionar conteúdo** específico
+5. **Testar responsividade** em diferentes dispositivos
+6. **Otimizar performance** com Lighthouse
+
+---
+
+**🏆 Com este guia, você tem tudo para personalizar o LawyerHero Template e criar um site profissional único para sua advocacia!** ⚖️✨
